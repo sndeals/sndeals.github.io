@@ -1,70 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SN Deals | Home</title>
-<style>
-body{font-family:Arial,sans-serif;margin:0;background:#f6f7fb;color:#1f2937}
-.skip-link{position:absolute;left:-999px;top:auto}.skip-link:focus{left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem .75rem;z-index:1000}
-.site-header{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;padding:28px 16px;text-align:center}
-.site-header h1{margin:0 0 6px;font-size:2rem}.site-header p{margin:0;opacity:.95}
-.site-nav{background:#0f172a;padding:.75rem 1rem}
-.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
-.nav-list a{display:inline-block;text-decoration:none;color:#fff;padding:.6rem .95rem;border-radius:.55rem;transition:background .2s ease}
-.nav-list a:hover,.nav-list a:focus{background:rgba(255,255,255,.16);outline:none}
-.nav-list a[aria-current="page"]{background:#fff;color:#0f172a;font-weight:700}
-.main{max-width:1100px;margin:0 auto;padding:24px 16px 40px}
-.hero{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(15,23,42,.06)}
-.hero h2{margin:0 0 10px}.hero p{margin:0;line-height:1.65;color:#4b5563}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;box-shadow:0 6px 24px rgba(15,23,42,.05)}
-.card h3{margin-top:0}
-.btn{display:inline-block;background:#ff9800;color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.55rem;font-weight:700}
-.btn:hover,.btn:focus{filter:brightness(.96)}
-footer{padding:18px 16px;text-align:center;color:#6b7280}
-@media (max-width:640px){.nav-list a{width:100%;text-align:center}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SN Deals | Home</title>
+    <style>
+        body{font-family:Arial,sans-serif;margin:0;background:#f6f7fb;color:#1f2937}
+        .skip-link{position:absolute;left:-999px;top:auto}.skip-link:focus{left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem .75rem;z-index:1000}
+        .site-header{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;padding:28px 16px;text-align:center}
+        .site-header h1{margin:0 0 8px;font-size:2rem}.site-header p{margin:0;opacity:.95}
+        .site-nav{background:#0f172a;padding:.75rem 1rem}
+        .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+        .nav-list a{display:inline-block;text-decoration:none;color:#fff;padding:.6rem .85rem;border-radius:.35rem;transition:background .2s ease}
+        .nav-list a:hover,.nav-list a:focus{background:rgba(255,255,255,.16);outline:none}
+        .nav-list a[aria-current="page"]{background:#0f172a;font-weight:700}
+        .main{max-width:1100px;margin:0 auto;padding:24px 16px 40px}
+        .hero{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(15,23,42,.06)}
+        .hero h2{margin:0 0 10px}.hero p{margin:0;line-height:1.65;color:#4b5563}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+        .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;box-shadow:0 6px 24px rgba(15,23,42,.05)}
+        .card h3{margin-top:0}
+        .btn{display:inline-block;background:#ff9800;color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.35rem;font-weight:700}
+        .btn:hover,.btn:focus{filter:brightness(.96)}
+        footer{padding:18px 16px;text-align:center;color:#6b7280}
+        @media (max-width:640px){.nav-list a{width:100%;text-align:center}}
+    </style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header">
-  <h1>SN Deals</h1>
-  <p>Best deals for mobiles, electronics and fashion</p>
-</header>
-<nav class="site-nav" aria-label="Main navigation">
-  <ul class="nav-list">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="mobiles.html">mobiles</a></li>
-    <li><a href="electronics.html">electronics</a></li>
-    <li><a href="fashion.html">fashion</a></li>
-  </ul>
-</nav>
-<main id="main" class="main">
-  <section class="hero">
-    <h2>Welcome to SN Deals</h2>
-    <p>Tap any category above to open the dedicated page. This layout is simple, mobile-friendly, and works well on GitHub Pages.</p>
-  </section>
-  <section class="grid" aria-label="Featured categories">
-    <article class="card"><h3>mobiles</h3><p>Latest phone deals and offers.</p><a class="btn" href="Mobiles.html">Open Mobiles</a></article>
-    <article class="card"><h3>electronics</h3><p>Useful gadgets and home electronics.html</p><a class="btn" href="Electronics.html">Open Electronics.html</a></article>
-   <section id="affiliate-links">
-  <h2>Shop Through My Affiliate Links</h2>
-
-  <p><a href="https://amzn.to/446v3Rj" target="_blank" rel="noopener noreferrer">🛒 Amazon Deals</a></p>
-
-  <p><a href="https://nikolatoy.com/?ref=exttozbk" target="_blank" rel="noopener noreferrer">🎁 NikolaToy</a></p>
-
-  <p><a href="https://mavigadget.com/?ref=3rqtosfk" target="_blank" rel="noopener noreferrer">📦 MaviGadget</a></p>
-         </section>
-
-      <article class="card">
-          <h3>fashion</h3>
-          <p>Trending clothes and accessories.</p>
-          <a class="btn" href="fashion.html">Open fashion.html</a>
-      </article>
-  </main>
-
-<footer>© SN Deals</footer>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+        <h1>SN Deals</h1>
+        <p>Best deals for mobiles, electronics and fashion</p>
+    </header>
+    <nav class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="mobiles.html">Mobiles</a></li>
+            <li><a href="electronics.html">Electronics</a></li>
+            <li><a href="Fashion.html">Fashion</a></li>
+        </ul>
+    </nav>
+    <main id="main" class="main">
+        <section class="hero">
+            <h2>Welcome to SN Deals</h2>
+            <p>Tap any category above to open the dedicated page. This layout is simple, mobile-friendly, and works well on GitHub Pages.</p>
+        </section>
+        <section class="grid" aria-label="Featured categories">
+            <article class="card">
+                <h3>Mobiles</h3>
+                <p>Latest phone deals and offers.</p>
+                <a class="btn" href="mobiles.html">Open Mobiles</a>
+            </article>
+            <article class="card">
+                <h3>Electronics</h3>
+                <p>Useful gadgets and home electronics.</p>
+                <a class="btn" href="electronics.html">Open Electronics</a>
+            </article>
+            <article class="card">
+                <h3>Fashion</h3>
+                <p>Trending clothes and accessories.</p>
+                <a class="btn" href="Fashion.html">Open Fashion</a>
+            </article>
+        </section>
+        
+        <section id="affiliate-links">
+            <h2>Shop Through My Affiliate Links</h2>
+            <p><a href="https://amzn.to/446v3Rj" target="_blank" rel="noopener noreferrer">🎁 Amazon Deals</a></p>
+            <p><a href="https://nikolatoy.com/?ref=exttozbk" target="_blank" rel="noopener noreferrer">🎁 NikolaToy</a></p>
+            <p><a href="https://navigadget.com/?ref=3rqtosfk" target="_blank" rel="noopener noreferrer">🎁 MaviGadget</a></p>
+        </section>
+    </main>
+    <footer>© SN Deals</footer>
 </body>
 </html>
