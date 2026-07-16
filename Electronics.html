@@ -3,316 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Deals | Premium Online Hub</title>
+    <title>SN Deals | MaviGadget Tech Store</title>
     <style>
-        :root {
-            --primary: #1e40af;
-            --primary-hover: #1d4ed8;
-            --accent: #f97316;
-            --accent-hover: #ea580c;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-        }
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.5;
-        }
-        .site-header {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-        .site-header h1 {
-            margin: 0 0 10px;
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-        }
-        .site-header p {
-            margin: 0;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .site-nav {
-            background-color: #0f172a;
-            padding: 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .nav-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        .nav-list a {
-            display: block;
-            text-decoration: none;
-            color: #94a3b8;
-            padding: 16px 20px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-        }
-        .nav-list a:hover {
-            color: #ffffff;
-            background-color: rgba(255,255,255,0.05);
-        }
-        .nav-list a[aria-current="page"] {
-            color: #ffffff;
-            border-bottom: 3px solid #3b82f6;
-            background-color: rgba(255,255,255,0.03);
-        }
-        .main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 32px 20px 60px;
-        }
-        .hero {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        .hero h2 {
-            margin-top: 0;
-            color: var(--primary);
-            font-size: 1.75rem;
-        }
-        .hero p {
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 8px;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 4px;
-            background-color: #3b82f6;
-            border-radius: 2px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-        .card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.06);
-        }
-        .card h3 {
-            margin: 0 0 10px;
-            font-size: 1.3rem;
-            color: var(--text-main);
-        }
-        .card p {
-            color: var(--text-muted);
-            margin: 0 0 20px;
-            font-size: 0.95rem;
-            flex-grow: 1;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-            transition: background-color 0.2s ease;
-            font-size: 0.95rem;
-        }
-        .btn:hover {
-            background-color: var(--primary-hover);
-        }
-        .affiliate-section {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
-        }
-        .links-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            padding: 0;
-            list-style: none;
-        }
-        .links-list li a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px;
-            background-color: #f1f5f9;
-            color: var(--text-main);
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            border: 1px solid #e2e8f0;
-        }
-        .links-list li a:hover {
-            background-color: #3b82f6;
-            color: #ffffff;
-            border-color: #3b82f6;
-            transform: scale(1.02);
-        }
-        .earnkaro-btn {
-            background-color: #10b981 !important; /* Green Accent for EarnKaro */
-            color: white !important;
-            border-color: #10b981 !important;
-        }
-        .earnkaro-btn:hover {
-            background-color: #059669 !important;
-            border-color: #059669 !important;
-        }
-        footer {
-            padding: 24px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid #e2e8f0;
-            background-color: #ffffff;
-            margin-top: 40px;
-        }
-        @media (max-width: 640px) {
-            .nav-list { flex-direction: column; text-align: center; }
-            .nav-list a { padding: 12px; }
-            .site-header h1 { font-size: 2rem; }
-        }
+        body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f6f7fb;color:#1f2937}
+        .site-header{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:30px 16px;text-align:center;box-shadow:0 4px 15px rgba(37,99,235,0.15)}
+        .site-header h1 { margin: 0; font-size: 2.4rem; font-weight: 800; }
+        .site-header p { margin: 8px 0 0 0; opacity: 0.95; font-size: 1.1rem; }
+        .site-nav{background:#0f172a;padding:.75rem 1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+        .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+        .nav-list a{display:inline-block;text-decoration:none;color:#fff;padding:.6rem .95rem;border-radius:.55rem;font-weight: 600;font-size:0.95rem;transition:all 0.2s;}
+        .nav-list a:hover{background:rgba(255,255,255,.16)}
+        .nav-list a[aria-current="page"]{background:#fff;color:#0f172a;font-weight:700}
+        
+        .main{max-width:1100px;margin:0 auto;padding:30px 16px 50px}
+        .section-title { color: #0f172a; font-size: 1.6rem; margin-bottom: 25px; font-weight: 700; text-align: center; }
+        
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .product-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 22px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: transform 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-emoji { font-size: 3.5rem; margin-bottom: 12px; }
+        .product-card h3 { margin: 10px 0 8px; color: #0f172a; font-size: 1.3rem; }
+        .product-card p { color: #6b7280; font-size: 0.9rem; margin-bottom: 18px; line-height: 1.4; }
+        
+        .buy-btn { display: block; padding: 12px; background: #2563eb; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
+        .buy-btn:hover { background: #1d4ed8; }
+        @media (max-width:640px){.nav-list a{width:100%;text-align:center}}
     </style>
 </head>
 <body>
-
     <header class="site-header">
-        <h1>SN Deals</h1>
-        <p>Your Premium Hub for Mobiles, Electronics & Fashion Offers</p>
+        <h1>MaviGadget Store</h1>
+        <p>Discover Ultra-Modern Lifestyle Gadgets & Creative Electronics</p>
     </header>
-
-    <nav class="site-nav" aria-label="Main navigation">
+    
+    <nav class="site-nav">
         <ul class="nav-list">
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="Mobiles.html">Mobiles</a></li>
-            <li><a href="Electronics.html">Electronics</a></li>
-            <li><a href="Fashion.html">Fashion</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Mobiles.html">Amazon</a></li>
+            <li><a href="Electronics.html" aria-current="page">MaviGadget</a></li>
+            <li><a href="Fashion.html">NikolaToy</a></li>
+            <li><a href="StoreOffers.html" style="background: #10b981; color: white; border-radius: 8px;">🔥 All Store Offers</a></li>
         </ul>
     </nav>
 
-    <main id="main" class="main">
-        <section class="hero">
-            <h2>Welcome to SN Deals Hub</h2>
-            <p>Discover handpicked curated deals across top online shopping platforms. Simple, smooth, and designed exclusively for smart shoppers.</p>
-        </section>
+    <main class="main">
+        <h2 class="section-title">⚡ Smart & Creative Gadget Picks</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div>
+                    <div class="product-emoji">🔌</div>
+                    <h3>Smart Multi-Utility Tools</h3>
+                    <p>Brilliant pocket-sized tools, keychains, and daily utility tech designed for ease.</p>
+                </div>
+                <a href="https://mavigadget.com" class="buy-btn" target="_blank" rel="noopener noreferrer">Shop Utility Tech</a>
+            </div>
+            
+            <div class="product-card">
+                <div>
+                    <div class="product-emoji">💡</div>
+                    <h3>Creative Lighting</h3>
+                    <p>Futuristic ambient table lamps, visual projectors, and workspace LEDs.</p>
+                </div>
+                <a href="https://mavigadget.com" class="buy-btn" target="_blank" rel="noopener noreferrer">Explore Lighting</a>
+            </div>
 
-        <h2 class="section-title">Explore Categories</h2>
-        <section class="grid" aria-label="Featured categories">
-            <article class="card">
-                <h3>Mobiles</h3>
-                <p>Get instant updates on the latest smartphones, price drops, and launch offers.</p>
-                <a class="btn" href="Mobiles.html">View Mobile Deals</a>
-            </article>
-            <article class="card">
-                <h3>Electronics</h3>
-                <p>From smart wearable devices to computing accessories, grab tech at a bargain.</p>
-                <a class="btn" href="Electronics.html">View Tech Deals</a>
-            </article>
-            <article class="card">
-                <h3>Fashion</h3>
-                <p>Trending styles, shoes, apparel and accessories straight from global top brands.</p>
-                <a class="btn" href="Fashion.html">View Style Deals</a>
-            </article>
-        </section>
-        
-        <section class="affiliate-section">
-            <h2 class="section-title">Quick Partner Stores</h2>
-            <ul class="links-list">
-                
-                                <!-- FLIPKART DEALS -->
-                <li><a href="https://fktr.in/HhQbd65" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🛍️ Flipkart Super Deal 1</a></li>
-                <li><a href="https://fktr.in/XRAn1q1" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🛍️ Flipkart Super Deal 2</a></li>
-
-                <!-- AJIO DEALS -->
-                <li><a href="https://ajiio.in/A6R4ac6" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🛍️ Ajio Premium Offers</a></li>
-                <li><a href="https://ajiio.in/Fpj3niG" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">👕 Ajio Fashion Deals</a></li>
-                <li><a href="https://ajiio.in/31FAfnF" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">👟 Ajio Trendy Collection</a></li>
-                
-                <!-- MYNTRA DEALS -->
-                <li><a href="https://myntr.it/lc2Qacn" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💰 Best EarnKaro Offers</a></li>
-                <li><a href="https://myntr.it/Xw11l7B" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">👗 Myntra Hot Trends</a></li>
-                <li><a href="https://myntr.it/iq4lWIF" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">✨ Myntra Special Deal 1</a></li>
-                <li><a href="https://myntr.it/zNujv1V" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">✨ Myntra Special Deal 2</a></li>
-                
-                <!-- SPECIAL SAVINGS DEALS (BITLI LINKS) -->
-                <li><a href="https://bitli.in/ECUfnvo" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">⚡ Special Discount 1</a></li>
-                <li><a href="https://bitli.in/kk4kqbD" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🔥 Special Discount 2</a></li>
-                <li><a href="https://bitli.in/0uWlzCr" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">✨ Special Discount 3</a></li>
-                <li><a href="https://bitli.in/kpHx9qk" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💥 Mega Saving Link 4</a></li>
-                <li><a href="https://bitli.in/NxZ3H2A" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💥 Mega Saving Link 5</a></li>
-                <li><a href="https://bitli.in/Rc1y39v" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💥 Mega Saving Link 6</a></li>
-                <li><a href="https://bitli.in/5eRYTnA" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💥 Mega Saving Link 7</a></li>
-                <li><a href="https://bitli.in/pNwOuuy" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💥 Mega Saving Link 8</a></li>
-                <li><a href="https://bitli.in/cAHyNg6" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💎 Premium Discount 9</a></li>
-                <li><a href="https://bitli.in/Fgklok9" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💎 Premium Discount 10</a></li>
-                <li><a href="https://bitli.in/CfqiYSH" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💎 Premium Discount 11</a></li>
-                <li><a href="https://bitli.in/1DcLt5c" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">💎 Premium Discount 12</a></li>
-                <li><a href="https://bitli.in/dt2lDyt" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🎁 Surprise Deal 13</a></li>
-                <li><a href="https://bitli.in/9pfB24b" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🎁 Surprise Deal 14</a></li>
-                <li><a href="https://bitli.in/19tkz1h" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🎁 Surprise Deal 15</a></li>
-                <li><a href="https://bitli.in/8cV2904" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🎁 Surprise Deal 16</a></li>
-                <li><a href="https://bitli.in/zPSDr8X" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🌟 Star Offer 17</a></li>
-                <li><a href="https://bitli.in/LiCq1Xj" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🌟 Star Offer 18</a></li>
-                <li><a href="https://bitli.in/bEnOUm9" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🌟 Star Offer 19</a></li>
-                <li><a href="https://bitli.in/buh79dl" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🚀 Loot Deal 20</a></li>
-                <li><a href="https://bitli.in/xa9QN3X" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🚀 Loot Deal 21</a></li>
-                <li><a href="https://bitli.in/f8Xput4" class="earnkaro-btn" target="_blank" rel="noopener noreferrer">🚀 Loot Deal 22</a></li>
-                
-                <!-- ORIGINAL PARTNERS -->
-                <li><a href="https://amzn.to/446v3Rj" target="_blank" rel="noopener noreferrer">📦 Amazon Hot Deals</a></li>
-                <li><a href="https://nikolatoy.com/?ref=exttozbk" target="_blank" rel="noopener noreferrer">🧸 NikolaToy Store</a></li>
-                <li><a href="https://navigadget.com/?ref=3rqtosfk" target="_blank" rel="noopener noreferrer">⚡ MaviGadget Tech</a></li>
-
-            </ul>
-        </section>
+            <div class="product-card">
+                <div>
+                    <div class="product-emoji">🚗</div>
+                    <h3>Smart Car Accessories</h3>
+                    <p>Interactive car air fresheners, organizers, and high-tech safety accessories.</p>
+                </div>
+                <a href="https://mavigadget.com" class="buy-btn" target="_blank" rel="noopener noreferrer">View Car Gadgets</a>
+            </div>
+        </div>
     </main>
 
-    <footer>&copy; SN Deals. All rights reserved.</footer>
-
+    <footer style="text-align: center; padding: 25px; color: #6b7280; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #e5e7eb;">
+        &copy; SN Deals. All rights reserved.
+    </footer>
 </body>
 </html>
