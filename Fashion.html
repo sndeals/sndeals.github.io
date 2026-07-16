@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Deals | NikolaToy & Fashion Hub</title>
+    <title>SN Deals | NikolaToy Store</title>
     <style>
         body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f6f7fb;color:#1f2937}
         .site-header{background:linear-gradient(135deg,#ec4899,#db2777);color:#fff;padding:30px 16px;text-align:center;box-shadow:0 4px 15px rgba(236,72,153,0.15)}
@@ -15,25 +15,21 @@
         .nav-list a:hover{background:rgba(255,255,255,.16)}
         .nav-list a[aria-current="page"]{background:#fff;color:#0f172a;font-weight:700}
         
-        .main{max-width:1100px;margin:0 auto;padding:30px 16px 50px}
-        .section-title { color: #0f172a; font-size: 1.6rem; margin-bottom: 25px; font-weight: 700; text-align: center; }
+        .main{max-width:800px;margin:0 auto;padding:50px 16px}
+        .brand-hub { background: #fff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .brand-logo { font-size: 5rem; margin-bottom: 20px; }
+        .brand-hub h2 { color: #0f172a; font-size: 2rem; margin: 0 0 15px; }
+        .brand-hub p { color: #4b5563; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
         
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .product-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 22px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: transform 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-emoji { font-size: 3.5rem; margin-bottom: 12px; }
-        .product-card h3 { margin: 10px 0 8px; color: #0f172a; font-size: 1.3rem; }
-        .product-card p { color: #6b7280; font-size: 0.9rem; margin-bottom: 18px; line-height: 1.4; }
-        
-        .buy-btn { display: block; padding: 12px; background: #ec4899; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
-        .buy-btn:hover { background: #db2777; }
+        .buy-btn { display: inline-block; padding: 16px 40px; background: #ec4899; color: #fff; text-decoration: none; border-radius: 30px; font-weight: 800; font-size: 1.1rem; transition: transform 0.2s, background 0.2s; box-shadow: 0 4px 15px rgba(236,72,153,0.3); }
+        .buy-btn:hover { background: #db2777; transform: scale(1.03); }
         @media (max-width:640px){.nav-list a{width:100%;text-align:center}}
     </style>
 </head>
 <body>
     <header class="site-header">
         <h1>NikolaToy Store</h1>
-        <p>Premium Toys, Creative Gifts, Kids Apparel & Lifestyle Styles</p>
+        <p>Premium Toys, Kids Wear, Gifting & Cute Accessories</p>
     </header>
     
     <nav class="site-nav">
@@ -47,38 +43,15 @@
     </nav>
 
     <main class="main">
-        <h2 class="section-title">🧸 Curated Kids & Lifestyle Collections</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div>
-                    <div class="product-emoji">🧸</div>
-                    <h3>Premium Kids Toys</h3>
-                    <p>Educational blocks, action figures, and amazing puzzle sets with warehouse direct pricing.</p>
-                </div>
-                <a href="https://nikolatoy.com" class="buy-btn" target="_blank" rel="noopener noreferrer">Shop NikolaToy</a>
-            </div>
-            
-            <div class="product-card">
-                <div>
-                    <div class="product-emoji">🎒</div>
-                    <h3>Kids Apparel & Accessories</h3>
-                    <p>Comfortable organic fabrics, cute outfits, school accessories and adorable backpacks.</p>
-                </div>
-                <a href="https://nikolatoy.com" class="buy-btn" target="_blank" rel="noopener noreferrer">Explore Kids Clothes</a>
-            </div>
-
-            <div class="product-card">
-                <div>
-                    <div class="product-emoji">🎁</div>
-                    <h3>Unique Birthday Gifts</h3>
-                    <p>Handpicked custom gifting sets and surprise toy items that children absolutely love.</p>
-                </div>
-                <a href="https://nikolatoy.com" class="buy-btn" target="_blank" rel="noopener noreferrer">View Gift Items</a>
-            </div>
+        <div class="brand-hub">
+            <div class="brand-logo">🧸</div>
+            <h2>NikolaToy Official</h2>
+            <p>Grab handpicked premium toys, organic kids wear, developmental blocks, and beautiful gifts directly from NikolaToy.</p>
+            <a href="https://nikolatoy.com" class="buy-btn" target="_blank" rel="noopener noreferrer">Explore NikolaToy ➔</a>
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 25px; color: #6b7280; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #e5e7eb;">
+    <footer style="text-align: center; padding: 25px; color: #6b7280; font-size: 0.9rem; margin-top: 50px;">
         &copy; SN Deals. All rights reserved.
     </footer>
 </body>
