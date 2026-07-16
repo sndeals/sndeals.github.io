@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SN Deals | Store Offers & Loot Deals</title>
+    <style>
+        body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f6f7fb;color:#1f2937}
+        .site-header{background:linear-gradient(135deg,#10b981,#059669);color:#fff;padding:30px 16px;text-align:center;box-shadow:0 4px 15px rgba(16,185,129,0.15)}
+        .site-header h1 { margin: 0; font-size: 2.4rem; font-weight: 800; }
+        .site-header p { margin: 8px 0 0 0; opacity: 0.95; font-size: 1.1rem; }
+        .site-nav{background:#0f172a;padding:.75rem 1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+        .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+        .nav-list a{display:inline-block;text-decoration:none;color:#fff;padding:.6rem .95rem;border-radius:.55rem;font-weight: 600;font-size:0.95rem;transition:all 0.2s;}
+        .nav-list a:hover{background:rgba(255,255,255,.16)}
+        .nav-list a[aria-current="page"]{background:#fff;color:#0f172a;font-weight:700}
+        
+        .main{max-width:1200px;margin:0 auto;padding:30px 16px 50px}
+        .section-title { color: #0f172a; font-size: 1.6rem; margin-bottom: 25px; font-weight: 700; text-align: center; }
+        
+        /* 22+ Deal Cards Grid */
+        .deals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+        .deal-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
+        .deal-card:hover { transform: translateY(-4px); }
+        
+        /* Brand Specific Tag Styles */
+        .tag { position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 800; padding: 4px 8px; border-radius: 6px; text-transform: uppercase; }
+        .tag.flipkart { background: #fee2e2; color: #dc2626; }
+        .tag.myntra { background: #fef3c7; color: #d97706; }
+        .tag.ajio { background: #e0f2fe; color: #0284c7; }
+        .tag.loot { background: #dcfce7; color: #15803d; }
+        
+        .brand-emoji { font-size: 2rem; margin-bottom: 10px; }
+        .deal-card h3 { margin: 8px 0 5px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700; }
+        .deal-card p { color: #6b7280; font-size: 0.85rem; margin: 0 0 15px 0; line-height: 1.4; }
+        
+        /* Professional CTA Button */
+        .deal-btn { display: block; text-align: center; padding: 10px; background: #10b981; color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 700; transition: background 0.2s; }
+        .deal-btn:hover { background: #059669; }
+        
+        @media (max-width:640px){.nav-list a{width:100%;text-align:center}}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <h1>Mega Store Offers</h1>
+        <p>Live Loot Deals, Coupon Discounts & Special Partner Links</p>
+    </header>
+    
+    <nav class="site-nav">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Mobiles.html">Amazon</a></li>
+            <li><a href="Electronics.html">MaviGadget</a></li>
+            <li><a href="Fashion.html">NikolaToy</a></li>
+            <li><a href="StoreOffers.html" aria-current="page" style="background: #ffffff; color: #0f172a; border-radius: 8px;">🔥 All Store Offers</a></li>
+        </ul>
+    </nav>
+    
+    <main class="main">
+        <h2 class="section-title">🎁 All 22+ Exclusive Shopping Links</h2>
+        <div class="deals-grid">
+            
+            <!-- Flipkart Deals -->
+            <div class="deal-card">
+                <span class="tag flipkart">Up to 80% Off</span>
+                <div class="brand-emoji">🛍️</div>
+                <h3>Flipkart Super Deal 1</h3>
+                <p>Exclusive daily deals on fashion, lifestyle and gadgets.</p>
+                <a href="https://fktr.in/HhQbd65" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag flipkart">Super Deal</span>
+                <div class="brand-emoji">🛍️</div>
+                <h3>Flipkart Super Deal 2</h3>
+                <p>Big savings on home essentials and electronics.</p>
+                <a href="https://fktr.in/XRAn1q1" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Deal</a>
+            </div>
+
+            <!-- Myntra Deals -->
+            <div class="deal-card">
+                <span class="tag myntra">Myntra Special</span>
+                <div class="brand-emoji">👗</div>
+                <h3>Myntra Best Offers</h3>
+                <p>Premium lifestyle and fashion wear coupons.</p>
+                <a href="https://myntr.it/lc2Qacn" class="deal-btn" target="_blank" rel="noopener noreferrer">Shop Now</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag myntra">Hot Trend</span>
+                <div class="brand-emoji">💄</div>
+                <h3>Myntra Hot Trends</h3>
+                <p>Trending cosmetics and accessories at best value.</p>
+                <a href="https://myntr.it/lc2Qacn" class="deal-btn" target="_blank" rel="noopener noreferrer">Shop Now</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag myntra">Special Price</span>
+                <div class="brand-emoji">👟</div>
+                <h3>Myntra Special Deal 1</h3>
+                <p>Branded sports footwear price cut offers.</p>
+                <a href="https://myntr.it/lc2Qacn" class="deal-btn" target="_blank" rel="noopener noreferrer">Shop Now</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag myntra">Special Price</span>
+                <div class="brand-emoji">🎒</div>
+                <h3>Myntra Special Deal 2</h3>
+                <p>Accessories, backpacks, and luxury wear.</p>
+                <a href="https://myntr.it/lc2Qacn" class="deal-btn" target="_blank" rel="noopener noreferrer">Shop Now</a>
+            </div>
+
+            <!-- Ajio Deals -->
+            <div class="deal-card">
+                <span class="tag ajio">Ajio Premium</span>
+                <div class="brand-emoji">👕</div>
+                <h3>Ajio Premium Deals</h3>
+                <p>Get up to 70% off on premium apparel brands.</p>
+                <a href="https://ajio.in/A6R4ac6" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag ajio">Fashion Deal</span>
+                <div class="brand-emoji">👓</div>
+                <h3>Ajio Fashion Deals</h3>
+                <p>Eyewear, watches, and smart lifestyle products.</p>
+                <a href="https://ajio.in/A6R4ac6" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag ajio">Trendy</span>
+                <div class="brand-emoji">👠</div>
+                <h3>Ajio Trendy Collection</h3>
+                <p>The best modern trends at reasonable direct pricing.</p>
+                <a href="https://ajio.in/A6R4ac6" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a>
+            </div>
+
+            <!-- EarnKaro & Others -->
+            <div class="deal-card">
+                <span class="tag loot">Best Offer</span>
+                <div class="brand-emoji">💰</div>
+                <h3>Best EarnKaro Offers</h3>
+                <p>Extra cashback and heavy rewards on every checkout.</p>
+                <a href="https://earnkaro.com" class="deal-btn" target="_blank" rel="noopener noreferrer">View Cashback</a>
+            </div>
+
+            <!-- Special Discounts & Mega Saving Links -->
+            <div class="deal-card">
+                <span class="tag loot">Loot Deal</span>
+                <div class="brand-emoji">💥</div>
+                <h3>Special Discount 1</h3>
+                <p>Super fast moving stock items at dirt-cheap prices.</p>
+                <a href="https://bitli.in/ECUfnvo" class="deal-btn" target="_blank" rel="noopener noreferrer">Get Discount</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Loot Deal</span>
+                <div class="brand-emoji">💥</div>
+                <h3>Special Discount 2</h3>
+                <p>Instant activation link for festival discounts.</p>
+                <a href="https://bitli.in/kk4kqbD" class="deal-btn" target="_blank" rel="noopener noreferrer">Get Discount</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Loot Deal</span>
+                <div class="brand-emoji">💥</div>
+                <h3>Special Discount 3</h3>
+                <p>Unlimited stock coupon link for ultimate saving.</p>
+                <a href="https://bitli.in/kk4kqbD" class="deal-btn" target="_blank" rel="noopener noreferrer">Get Discount</a>
+            </div>
+
+            <!-- Mega Saving Links 4 to 8 -->
+            <div class="deal-card">
+                <span class="tag loot">Mega Saving</span>
+                <div class="brand-emoji">🤑</div>
+                <h3>Mega Saving Link 4</h3>
+                <p>Exclusive daily utility items with amazing flat offers.</p>
+                <a href="#" class="deal-btn">Get Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Mega Saving</span>
+                <div class="brand-emoji">🤑</div>
+                <h3>Mega Saving Link 5</h3>
+                <p>Best picks on home decor and essentials.</p>
+                <a href="#" class="deal-btn">Get Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Mega Saving</span>
+                <div class="brand-emoji">🤑</div>
+                <h3>Mega Saving Link 6</h3>
+                <p>Flash sale items with live price tracking.</p>
+                <a href="#" class="deal-btn">Get Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Mega Saving</span>
+                <div class="brand-emoji">🤑</div>
+                <h3>Mega Saving Link 7</h3>
+                <p>Grab electronics and smart gadgets on budget.</p>
+                <a href="#" class="deal-btn">Get Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Mega Saving</span>
+                <div class="brand-emoji">🤑</div>
+                <h3>Mega Saving Link 8</h3>
+                <p>Ultimate lifestyle choices at half prices.</p>
+                <a href="#" class="deal-btn">Get Deal</a>
+            </div>
+
+            <!-- Premium & Surprise Deals -->
+            <div class="deal-card">
+                <span class="tag loot">Surprise Offer</span>
+                <div class="brand-emoji">🎁</div>
+                <h3>Surprise Deal 13</h3>
+                <p>Mysterious big brand products at jaw-dropping rates.</p>
+                <a href="#" class="deal-btn">Reveal Price</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Surprise Offer</span>
+                <div class="brand-emoji">🎁</div>
+                <h3>Surprise Deal 14</h3>
+                <p>Super deal of the day. Stocks end fast.</p>
+                <a href="#" class="deal-btn">Reveal Price</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Star Deal</span>
+                <div class="brand-emoji">⭐</div>
+                <h3>Star Offer 17</h3>
+                <p>Highest rated products with best available cashback.</p>
+                <a href="#" class="deal-btn">Unlock Star Deal</a>
+            </div>
+            <div class="deal-card">
+                <span class="tag loot">Loot Only</span>
+                <div class="brand-emoji">🚀</div>
+                <h3>Loot Deal 20</h3>
+                <p>Absolute lowest price ever. Buy before stocks end!</p>
+                <a href="#" class="deal-btn">Loot Now</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 30px; color: #6b7280; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #e5e7eb;">
+        &copy; SN Deals. All rights reserved.
+    </footer>
+</body>
+</html>
