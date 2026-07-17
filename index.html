@@ -1,50 +1,44 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SN Deals - Live Deals Hub</title>
     <style>
-        body { font-family: sans-serif; margin: 0; background-color: #f4f4f4; }
-        .header { background: #232f3e; padding: 15px; display: flex; align-items: center; justify-content: space-between; }
-        .logo { color: white; font-weight: bold; font-size: 1.5rem; }
-        .search-box { width: 300px; padding: 8px; }
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f4f4; }
+        .header { background: #232f3e; padding: 20px; text-align: center; color: white; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; padding: 20px; }
-        .card { background: white; padding: 15px; text-align: center; border: 1px solid #ddd; }
-        .card img { width: 100%; height: 150px; object-fit: contain; }
-        .btn { display: block; background: #ff9900; padding: 10px; margin-top: 5px; text-decoration: none; color: black; font-weight: bold; }
+        .card { background: white; padding: 15px; text-align: center; border: 1px solid #ddd; border-radius: 5px; }
+        .card img { width: 100%; height: 150px; object-fit: contain; background: #eee; }
+        .btn { display: block; background: #ff9900; padding: 8px; margin-top: 5px; text-decoration: none; color: black; font-weight: bold; font-size: 0.9rem; border-radius: 3px; }
+        .buy { background: #fa8900; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="logo">SN Deals</div>
-    <input type="text" class="search-box" placeholder="Search 1,000+ live products...">
+    <h1>🔥 Live Deals Hub (1050 Offers Active)</h1>
 </div>
 
 <div class="grid" id="container"></div>
 
 <script>
-    // Ye raha aapka original format
-    const products = Array.from({length: 50}, (_, i) => ({
-        name: `Product ${i + 1}`,
-        price: 1000 + (i * 50),
-        // Yeh line image error fix karti hai
-        img: `https://picsum.photos/seed/${i}/200/200` 
-    }));
-
+    const categories = ["Laptop", "Smart TV", "Washing Machine", "Fridge", "Mobile", "Gadgets", "Tools"];
     const container = document.getElementById('container');
-    products.forEach(p => {
+
+    // 1050 products ka loop
+    for(let i = 1; i <= 1050; i++) {
+        const cat = categories[i % categories.length];
         container.innerHTML += `
             <div class="card">
-                <img src="${p.img}" onerror="this.src='https://placehold.co/200x200?text=Product'">
-                <h3>${p.name}</h3>
-                <p>₹${p.price}</p>
+                <img src="https://picsum.photos/seed/${i}/200/200" onerror="this.src='https://placehold.co/200x200?text=Product'">
+                <h4>${cat} - V${i}</h4>
+                <p>₹${(Math.random() * 50000 + 1000).toFixed(0)}</p>
                 <a href="#" class="btn">Add to Cart</a>
-                <a href="#" class="btn" style="background:#f3a847">Buy Now</a>
+                <a href="#" class="btn buy">Buy Now</a>
             </div>
         `;
-    });
+    }
 </script>
 
 </body>
