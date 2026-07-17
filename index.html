@@ -16,7 +16,7 @@
         
         .main { max-width: 1500px; margin: 0 auto; padding: 0 0 50px; position: relative; }
 
-        /* --- 1. AMAZON LARGE SLIDE WALL (BANNER) --- */
+        /* --- 1. SLIDER (BANNER) --- */
         .slider-container { width: 100%; height: 380px; position: relative; overflow: hidden; background: #eaeded; }
         .slides { display: flex; width: 300%; height: 100%; transition: transform 0.5s ease-in-out; }
         .slide { width: 33.333%; height: 100%; position: relative; }
@@ -26,7 +26,7 @@
         .slider-container::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; background: linear-gradient(to bottom, transparent, #eaeded); pointer-events: none; }
         
         /* Slider Arrows */
-        .arrow { position: absolute; top: 40%; transform: translateY(-50%); font-size: 2.5rem; color: #333; background: rgba(255, 255, 255, 0.4); border: none; cursor: pointer; padding: 15px; z-index: 10; font-weight: bold; border-radius: 4px; }
+        .arrow { position: absolute; top: 40%; transform: translateY(-50%); font-size: 2.5rem; color: #333; background: rgba(255, 255, 255, 0.6); border: none; cursor: pointer; padding: 15px; z-index: 10; font-weight: bold; border-radius: 4px; }
         .arrow:focus { outline: none; }
         .prev-arrow { left: 10px; }
         .next-arrow { right: 10px; }
@@ -40,8 +40,8 @@
         /* 2x2 Image Grid Inside Box */
         .quad-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; flex-grow: 1; }
         .quad-item { display: flex; flex-direction: column; text-decoration: none; color: #111; cursor: pointer; }
-        .quad-img-box { width: 100%; height: 110px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #f3f4f6; }
-        .quad-img-box img { max-width: 90%; max-height: 90%; object-fit: contain; transition: transform 0.2s; }
+        .quad-img-box { width: 100%; height: 110px; background: #fff; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #f3f4f6; border-radius: 4px; }
+        .quad-img-box img { max-width: 95%; max-height: 95%; object-fit: contain; transition: transform 0.2s; }
         .quad-item:hover img { transform: scale(1.05); }
         .quad-item span { font-size: 0.8rem; margin-top: 6px; color: #565959; line-height: 1.3; }
         
@@ -76,28 +76,28 @@
 
     <main class="main">
         
-        <!-- --- 1. BANNER SLIDER WITH LIVE HIGH-QUALITY URLS --- -->
+        <!-- --- 1. BANNER SLIDER --- -->
         <div class="slider-container">
             <button class="arrow prev-arrow" onclick="moveSlide(-1)">❮</button>
             <div class="slides" id="slider">
                 <!-- Slide 1 -->
                 <div class="slide">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Sports/July/GW/Hero/Unrec/3000-PC_Unrec_Deals._CB569800634_.jpg" alt="Slide 1">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&auto=format&fit=crop" alt="Shopping Sale Banner">
                 </div>
                 <!-- Slide 2 -->
                 <div class="slide">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/GW/Mar/Deals-PC._CB579899342_.jpg" alt="Slide 2">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop" alt="Electronics Tech Banner">
                 </div>
                 <!-- Slide 3 -->
                 <div class="slide">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wired/Gizmos/GW/PC_Hero_Gizmos._CB580922312_.jpg" alt="Slide 3">
+                    <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=1200&auto=format&fit=crop" alt="Fashion Store Banner">
                 </div>
             </div>
             <button class="arrow next-arrow" onclick="moveSlide(1)">❯</button>
         </div>
 
 
-        <!-- --- 2. 2x2 GRID (AMAZON, MAVIGADGET, MYNTRA, NIKOLATOY) --- -->
+        <!-- --- 2. 2x2 GRID --- -->
         <div class="amazon-grid">
             
             <!-- Box 1: Amazon Store (Mobiles & Electronics) -->
@@ -106,25 +106,25 @@
                 <div class="quad-grid">
                     <a href="Mobiles.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/71GLMJ7TQiL._AC_UY327_FMwebp_QL65_.jpg" alt="Smartphone">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200&auto=format&fit=crop" alt="Smartphone">
                         </div>
                         <span>Smartphones</span>
                     </a>
                     <a href="Mobiles.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/61SSVxV93AL._AC_UY327_FMwebp_QL65_.jpg" alt="Smartwatch">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&auto=format&fit=crop" alt="Smartwatch">
                         </div>
                         <span>Smartwatches</span>
                     </a>
                     <a href="Mobiles.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/61eXv867-PL._AC_UY327_FMwebp_QL65_.jpg" alt="Earbuds">
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=200&auto=format&fit=crop" alt="Earbuds">
                         </div>
                         <span>Earbuds Audio</span>
                     </a>
                     <a href="Mobiles.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/71fV3b6Bf6L._AC_UY327_FMwebp_QL65_.jpg" alt="Powerbank">
+                            <img src="https://images.unsplash.com/photo-1609592424083-d5df3ee3e2c6?w=200&auto=format&fit=crop" alt="Powerbank">
                         </div>
                         <span>Powerbanks</span>
                     </a>
@@ -138,57 +138,57 @@
                 <div class="quad-grid">
                     <a href="Electronics.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_SL1500_.jpg" alt="Cool Light">
+                            <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=200&auto=format&fit=crop" alt="Desk Lamp">
                         </div>
-                        <span>Projector Lights</span>
+                        <span>Smart Lights</span>
                     </a>
                     <a href="Electronics.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/51bA9pPjS5L._AC_SL1000_.jpg" alt="Organizer">
+                            <img src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=200&auto=format&fit=crop" alt="Organizer">
                         </div>
                         <span>Desk Organizers</span>
                     </a>
                     <a href="Electronics.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/61mO-pQkGmL._AC_SL1500_.jpg" alt="Clock">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&auto=format&fit=crop" alt="Headphone">
                         </div>
-                        <span>Creative Clocks</span>
+                        <span>Studio Gadgets</span>
                     </a>
                     <a href="Electronics.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/71p0Wf8P7PL._AC_SL1500_.jpg" alt="Humidifier">
+                            <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=200&auto=format&fit=crop" alt="Tablet">
                         </div>
-                        <span>Air Humidifiers</span>
+                        <span>Home Tech</span>
                     </a>
                 </div>
                 <a href="Electronics.html" class="box-link">Explore all</a>
             </div>
 
-            <!-- Box 3: Myntra / Ajio (Footwear & Bags) -->
+            <!-- Box 3: Footwear & Bags -->
             <div class="amazon-box">
                 <h2>Up to 60% off | Footwear & Bags</h2>
                 <div class="quad-grid">
                     <a href="StoreOffers.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" alt="Sports Shoes">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&auto=format&fit=crop" alt="Sports Shoes">
                         </div>
                         <span>Sports Shoes</span>
                     </a>
                     <a href="StoreOffers.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=300" alt="Sneakers">
+                            <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=200&auto=format&fit=crop" alt="Sneakers">
                         </div>
                         <span>Casual Sneakers</span>
                     </a>
                     <a href="StoreOffers.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300" alt="Heels">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=200&auto=format&fit=crop" alt="Heels">
                         </div>
                         <span>Women Heels</span>
                     </a>
                     <a href="StoreOffers.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300" alt="Handbag">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=200&auto=format&fit=crop" alt="Handbag">
                         </div>
                         <span>Handbags & Totes</span>
                     </a>
@@ -202,25 +202,25 @@
                 <div class="quad-grid">
                     <a href="NikolaToy.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/71u9S+7qDVL._AC_SL1500_.jpg" alt="Teddy">
+                            <img src="https://images.unsplash.com/photo-1559251606-c623743a6d76?w=200&auto=format&fit=crop" alt="Teddy Bear">
                         </div>
                         <span>Plush Soft Toys</span>
                     </a>
                     <a href="NikolaToy.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/81SStm5xofL._AC_SL1500_.jpg" alt="Blocks">
+                            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=200&auto=format&fit=crop" alt="Blocks">
                         </div>
                         <span>Building Blocks</span>
                     </a>
                     <a href="NikolaToy.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/81xU21K1C1L._AC_SL1500_.jpg" alt="Doctor kit">
+                            <img src="https://images.unsplash.com/photo-1515488042361-404e9250afef?w=200&auto=format&fit=crop" alt="Doctor kit">
                         </div>
                         <span>Learning Games</span>
                     </a>
                     <a href="NikolaToy.html" class="quad-item">
                         <div class="quad-img-box">
-                            <img src="https://m.media-amazon.com/images/I/81wCHv9607L._AC_SL1500_.jpg" alt="Puzzle">
+                            <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=200&auto=format&fit=crop" alt="Puzzle">
                         </div>
                         <span>Puzzles Shop</span>
                     </a>
