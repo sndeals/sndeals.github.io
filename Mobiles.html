@@ -3,108 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Deals Hub - Dynamic Auto Listing | SN Deals</title>
+    <title>Live Deals Hub - Premium Store | SN Deals</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #eaeded; color: #111; padding-bottom: 20px; }
-        
-        /* Navigation & Header */
-        .site-nav { background: #131921; padding: 12px 16px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap; }
-        .nav-list a { text-decoration: none; color: #fff; padding: 8px 14px; border-radius: 4px; font-weight: 600; font-size: 0.95rem; }
-        .nav-list a[aria-current="page"] { background: #febd69; color: #111; }
-        
-        /* Header-integrated Cart Icon (Fixes the ugly layout issue) */
-        .header-cart-btn { background: none; border: none; color: #fff; display: flex; align-items: center; gap: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; position: relative; }
-        .header-cart-btn .badge { background: #cc0c39; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 0.8rem; min-width: 15px; text-align: center; }
-
-        .brand-header { background: #232f3e; color: #fff; padding: 15px 20px; text-align: center; }
-        .brand-header h1 { margin: 0; font-size: 1.6rem; color: #febd69; }
-
-        /* LIVE OFFERS SMOOTH AUTO-SLIDER (Fixes non-sliding issue) */
-        .offers-slider { background: #cc0c39; color: white; padding: 12px 0; font-weight: bold; overflow: hidden; position: relative; width: 100%; display: flex; }
-        .slider-track { display: flex; width: max-content; animation: scrollOffers 20s linear infinite; }
-        .slider-item { padding: 0 30px; font-size: 0.95rem; flex-shrink: 0; white-space: nowrap; }
-        .slider-item span { background: #fff; color: #cc0c39; padding: 2px 6px; border-radius: 3px; margin-right: 8px; font-weight: 800; }
-
-        @keyframes scrollOffers {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Infinite loop fix */
+        :root {
+            --amazon-dark: #131921;
+            --amazon-light: #232f3e;
+            --amazon-orange: #ff9900;
+            --amazon-yellow: #febd69;
+            --deal-red: #cc0c39;
+            --bg-gray: #f3f3f3;
         }
 
-        /* Main Container Layout */
-        .main-container { max-width: 1400px; margin: 20px auto; padding: 0 15px; }
-        .content-area { width: 100%; }
-
-        .section-title { background: #fff; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 5px solid #e47911; font-size: 1.25rem; font-weight: 700; }
-
-        /* Products Grid optimized for Mobile/Desktop */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            margin: 0; 
+            background: var(--bg-gray); 
+            color: #111; 
+            padding-bottom: 20px; 
+        }
         
-        /* Product Card */
-        .product-card { background: #fff; border-radius: 6px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.08); position: relative; border: 1px solid #ddd; }
-        .tag-badge { position: absolute; top: 10px; left: 10px; background: #cc0c39; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 2px; z-index: 5; }
-        
-        /* Fixed Images (Using Premium Live Links) */
-        .product-img-box { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; background: #fff; border-radius: 4px; overflow: hidden; }
-        .product-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        
-        .product-name { font-size: 0.95rem; font-weight: 600; line-height: 1.4; height: 40px; overflow: hidden; margin-bottom: 8px; color: #0f1111; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-        .stars { color: #ffa41c; font-size: 0.85rem; margin-bottom: 8px; }
-        
-        .price-box { margin-bottom: 12px; }
-        .price-main { display: flex; align-items: baseline; gap: 6px; }
-        .curr-price { font-size: 1.4rem; font-weight: 700; color: #111; }
-        .disc-percent { color: #cc0c39; font-weight: 700; font-size: 1rem; }
-        .mrp { color: #565959; text-decoration: line-through; font-size: 0.85rem; }
+        /* Navigation & Brand Header */
+        .site-nav { 
+            background: var(--amazon-dark); 
+            padding: 12px 16px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo {
+            font-weight: 800;
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        .logo span { color: var(--amazon-orange); }
 
-        /* Action Buttons */
-        .action-btns { display: flex; flex-direction: column; gap: 8px; }
-        .btn { display: block; text-align: center; padding: 10px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid; cursor: pointer; transition: 0.2s; }
-        .btn-cart { background: #fad14b; border-color: #a88734; color: #111; }
-        .btn-cart:hover { background: #f7c521; }
-        .btn-buy { background: #e47911; border-color: #944d06; color: #fff; }
-        .btn-buy:hover { background: #d06d0b; }
+        .header-cart-btn { 
+            background: none; 
+            border: none; 
+            color: #fff; 
+            display: flex; 
+            align-items: center; 
+            gap: 6px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            position: relative; 
+        }
+        .header-cart-btn .badge { 
+            background: var(--deal-red); 
+            color: #fff; 
+            border-radius: 50%; 
+            padding: 2px 6px; 
+            font-size: 0.75rem; 
+            min-width: 14px; 
+            text-align: center; 
+        }
 
-        /* --- SLIDE-OUT CART PANEL (Clean, Modern drawer style) --- */
-        .cart-overlay { position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px; height: 100%; background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.2); transition: 0.3s ease-in-out; z-index: 300; display: flex; flex-direction: column; }
+        /* DYNAMIC HERO SLIDER */
+        .hero-slider {
+            width: 100%;
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide.active { opacity: 1; }
+        .slide-content {
+            background: rgba(0,0,0,0.55);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .slide h2 { margin: 0 0 5px 0; font-size: 1.3rem; color: var(--amazon-yellow); }
+        .slide p { margin: 0; font-size: 0.9rem; font-weight: bold; }
+
+        /* CATEGORY CHIPS */
+        .categories-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 12px 15px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .categories-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for clean look */
+        }
+        .category-chip {
+            background: #f0f2f2;
+            border: 1px solid #d5d9d9;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .category-chip.active {
+            background: var(--amazon-dark);
+            color: white;
+            border-color: var(--amazon-dark);
+        }
+
+        /* Main Area */
+        .main-container { max-width: 1200px; margin: 15px auto; padding: 0 10px; }
+        .section-title { 
+            font-size: 1.1rem; 
+            font-weight: 800; 
+            margin-bottom: 15px; 
+            padding-left: 5px; 
+            border-left: 4px solid var(--amazon-orange);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* DOUBLE COLUMN GRID FOR MOBILE */
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px; 
+        }
+        
+        /* Product Card Design */
+        .product-card { 
+            background: #fff; 
+            border-radius: 8px; 
+            padding: 10px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            position: relative; 
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s;
+        }
+        .product-card:active {
+            transform: scale(0.98);
+        }
+        .tag-badge { 
+            position: absolute; 
+            top: 8px; 
+            left: 8px; 
+            background: var(--deal-red); 
+            color: #fff; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            padding: 3px 6px; 
+            border-radius: 3px; 
+            z-index: 5; 
+        }
+        
+        .product-img-box { 
+            width: 100%; 
+            height: 140px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 8px; 
+            background: #fff; 
+            border-radius: 4px; 
+            overflow: hidden; 
+        }
+        .product-img-box img { 
+            max-width: 90%; 
+            max-height: 90%; 
+            object-fit: contain; 
+        }
+        
+        .product-name { 
+            font-size: 0.8rem; 
+            font-weight: 600; 
+            line-height: 1.3; 
+            height: 32px; 
+            overflow: hidden; 
+            margin-bottom: 6px; 
+            color: #0f1111; 
+            display: -webkit-box; 
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical; 
+        }
+        .stars { color: #ffa41c; font-size: 0.75rem; margin-bottom: 6px; }
+        
+        .price-box { margin-bottom: 10px; }
+        .price-main { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+        .curr-price { font-size: 1.1rem; font-weight: 800; color: #111; }
+        .disc-percent { color: var(--deal-red); font-weight: 800; font-size: 0.85rem; }
+        .mrp { color: #565959; text-decoration: line-through; font-size: 0.75rem; display: block; }
+
+        /* Actions */
+        .action-btns { display: flex; flex-direction: column; gap: 6px; }
+        .btn { 
+            display: block; 
+            text-align: center; 
+            padding: 8px 4px; 
+            border-radius: 6px; 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            font-weight: bold; 
+            border: 1px solid; 
+            cursor: pointer; 
+            transition: 0.1s; 
+        }
+        .btn-cart { background: var(--amazon-yellow); border-color: #a88734; color: #111; }
+        .btn-buy { background: var(--amazon-orange); border-color: #944d06; color: #fff; }
+
+        /* CART PANEL */
+        .cart-overlay { 
+            position: fixed; 
+            top: 0; 
+            right: -100%; 
+            width: 100%; 
+            max-width: 380px; 
+            height: 100%; 
+            background: white; 
+            box-shadow: -5px 0 15px rgba(0,0,0,0.15); 
+            transition: 0.3s ease-in-out; 
+            z-index: 300; 
+            display: flex; 
+            flex-direction: column; 
+        }
         .cart-overlay.active { right: 0; }
-
-        .cart-header { background: #232f3e; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .cart-header { background: var(--amazon-light); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
         .cart-header h3 { margin: 0; font-size: 1.1rem; }
         .close-cart { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
-
         .cart-items { list-style: none; padding: 15px; margin: 0; overflow-y: auto; flex-grow: 1; }
-        .cart-item { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 10px 0; border-bottom: 1px solid #eee; align-items: center; }
-        
+        .cart-item { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 10px 0; border-bottom: 1px solid #eee; align-items: center; }
         .cart-footer { padding: 15px; background: #f9f9f9; border-top: 1px solid #ddd; }
-        .cart-total { font-weight: 700; font-size: 1.1rem; display: flex; justify-content: space-between; margin-bottom: 15px; }
-        .checkout-btn { display: block; width: 100%; text-align: center; background: #e47911; color: #fff; border: none; padding: 12px; font-weight: bold; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+        .cart-total { font-weight: bold; font-size: 1rem; display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .checkout-btn { display: block; width: 100%; text-align: center; background: var(--amazon-orange); color: #fff; border: none; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 0.95rem; }
 
-        /* Responsive Fixes for Mobile Viewports */
-        @media (max-width: 576px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .product-card { padding: 10px; }
-            .product-img-box { height: 130px; }
-            .product-name { font-size: 0.8rem; height: 32px; }
-            .curr-price { font-size: 1rem; }
-            .mrp { font-size: 0.75rem; }
-            .btn { padding: 6px; font-size: 0.75rem; }
-            .nav-list { display: none; } /* Hide heavy menu list in mobile navigation header for clean space */
+        /* Responsive View Grid */
+        @media (min-width: 768px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr); gap: 15px; }
+            .hero-slider { height: 280px; }
+            .slide h2 { font-size: 1.8rem; }
+            .slide p { font-size: 1.1rem; }
+            .product-img-box { height: 180px; }
+        }
+        @media (min-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
 <body>
     
-    <!-- Top Bar with Integrated Header Cart Button -->
+    <!-- Top Header -->
     <nav class="site-nav">
         <div class="nav-container">
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Mobiles.html" aria-current="page">Amazon</a></li>
-                <li><a href="Electronics.html">MaviGadget</a></li>
-                <li><a href="NikolaToy.html">🧸 NikolaToy</a></li>
-            </ul>
+            <a href="#" class="logo">SN <span>Deals</span></a>
             <button class="header-cart-btn" onclick="toggleCart(true)">
                 <span>🛒 Cart</span>
                 <span class="badge" id="cart-count">0</span>
@@ -112,36 +287,47 @@
         </div>
     </nav>
 
-    <header class="brand-header">
-        <h1>Live Mega Deals Dashboard</h1>
-    </header>
-
-    <!-- LIVE OFFERS AUTO-SLIDER (Double Track for Infinite Scroll Loop) -->
-    <div class="offers-slider">
-        <div class="slider-track">
-            <span class="slider-item"><span>MEGA OFFER</span> Redmi Note 13 Pro at Flat 30% Off!</span>
-            <span class="slider-item"><span>LIGHTNING DEAL</span> Boat Smartwatches from ₹1,499!</span>
-            <span class="slider-item"><span>PRICE DROP</span> Apple AirPods Pro at lowest price!</span>
-            <span class="slider-item"><span>LOOT DEAL</span> 20000mAh Power Banks starting ₹999!</span>
-            <!-- Duplicate for infinite looping smooth effect -->
-            <span class="slider-item"><span>MEGA OFFER</span> Redmi Note 13 Pro at Flat 30% Off!</span>
-            <span class="slider-item"><span>LIGHTNING DEAL</span> Boat Smartwatches from ₹1,499!</span>
-            <span class="slider-item"><span>PRICE DROP</span> Apple AirPods Pro at lowest price!</span>
-            <span class="slider-item"><span>LOOT DEAL</span> 20000mAh Power Banks starting ₹999!</span>
+    <!-- Auto Slider Banners -->
+    <div class="hero-slider">
+        <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800');">
+            <div class="slide-content">
+                <h2>MEGA MONSOON SALE</h2>
+                <p>Upto 50% discount on Best Selling Gadgets!</p>
+            </div>
         </div>
-    </div>
-
-    <div class="main-container">
-        <!-- Main Area for Products -->
-        <div class="content-area">
-            <div class="section-title">🔥 Live Auto-Listing Discount Offers</div>
-            <div class="products-grid" id="auto-products-container">
-                <!-- Injected via JavaScript -->
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800');">
+            <div class="slide-content">
+                <h2>PREMIUM AUDIO WORLD</h2>
+                <p>Experience pure sound starting from ₹999</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800');">
+            <div class="slide-content">
+                <h2>FESTIVAL DEALS LIVE</h2>
+                <p>Price Drops you cannot resist!</p>
             </div>
         </div>
     </div>
 
-    <!-- SLIDE-OUT CART PANEL (Drawer layout) -->
+    <!-- Category Filter Tabs -->
+    <div class="categories-container">
+        <div class="category-chip active" onclick="filterCategory('All', this)">⚡ All Deals</div>
+        <div class="category-chip" onclick="filterCategory('Mobiles', this)">📱 Mobiles</div>
+        <div class="category-chip" onclick="filterCategory('Audio', this)">🎧 Audio</div>
+        <div class="category-chip" onclick="filterCategory('Smartwatch', this)">⌚ Smartwatches</div>
+        <div class="category-chip" onclick="filterCategory('Accessories', this)">🔌 Accessories</div>
+    </div>
+
+    <div class="main-container">
+        <div class="section-title">🔥 Live Listing Discount Offers (<span id="items-count">0</span> Deals)</div>
+        
+        <!-- Large 2-Column Mobile Grid containing 20+ Products -->
+        <div class="products-grid" id="auto-products-container">
+            <!-- Dynamic Products Loading -->
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
     <div class="cart-overlay" id="cart-panel">
         <div class="cart-header">
             <h3>Your Shopping Cart</h3>
@@ -160,23 +346,65 @@
     </div>
 
     <script>
-        // High-Quality Global Premium Image Links (Resolved broken link issues)
+        // Mega Inventory: 20+ High Quality items with precise tags & working CDN Images
         const productsData = [
-            { id: 1, name: "Premium 5G Smartphone (8GB/128GB)", mrp: 19999, discount: 15, rating: 4, reviews: "12,450", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Loot Deal", link: "https://www.amazon.in" },
-            { id: 2, name: "Noise Cancelling Wireless Earbuds", mrp: 4499, discount: 60, rating: 5, reviews: "84,110", img: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400", tag: "Best Seller", link: "https://www.amazon.in" },
-            { id: 3, name: "Ultra Fast 20000mAh Power Bank", mrp: 2499, discount: 30, rating: 4, reviews: "15,200", img: "https://images.unsplash.com/photo-1609592424407-3026844ba9ec?w=400", tag: "Top Pick", link: "https://www.amazon.in" },
-            { id: 4, name: "Smart Fitness Watch with SpO2", mrp: 5999, discount: 55, rating: 4, reviews: "42,900", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400", tag: "Lightning Deal", link: "https://www.amazon.in" },
-            { id: 5, name: "High-Speed 64GB OTG Flash Drive", mrp: 1300, discount: 58, rating: 5, reviews: "21,150", img: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=400", tag: "Trending", link: "https://www.amazon.in" },
-            { id: 6, name: "Waterproof Portable Bluetooth Speaker", mrp: 3999, discount: 45, rating: 4, reviews: "9,830", img: "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=400", tag: "Price Drop", link: "https://www.amazon.in" }
+            // Mobiles
+            { id: 1, category: "Mobiles", name: "Premium 5G Smartphone (8GB/128GB)", mrp: 19999, discount: 15, rating: 4, reviews: "12,450", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Loot Deal", link: "https://www.amazon.in" },
+            { id: 2, category: "Mobiles", name: "Flagship 108MP Pro Camera Phone", mrp: 34999, discount: 20, rating: 5, reviews: "5,310", img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", tag: "Super Value", link: "https://www.amazon.in" },
+            { id: 3, category: "Mobiles", name: "Budget Smart 4G Mobile (4GB RAM)", mrp: 9999, discount: 25, rating: 4, reviews: "22,140", img: "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=400", tag: "Hot Deal", link: "https://www.amazon.in" },
+            { id: 4, category: "Mobiles", name: "Next-Gen Folding Smartphone", mrp: 89999, discount: 12, rating: 5, reviews: "980", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Premium Choice", link: "https://www.amazon.in" },
+            
+            // Audio (Earbuds/Headphones/Speakers)
+            { id: 5, category: "Audio", name: "Noise Cancelling Wireless Earbuds", mrp: 4499, discount: 60, rating: 5, reviews: "84,110", img: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400", tag: "Best Seller", link: "https://www.amazon.in" },
+            { id: 6, category: "Audio", name: "Waterproof Portable Bluetooth Speaker", mrp: 3999, discount: 45, rating: 4, reviews: "9,830", img: "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=400", tag: "Price Drop", link: "https://www.amazon.in" },
+            { id: 7, category: "Audio", name: "Over-Ear Deep Bass Headphones", mrp: 5999, discount: 50, rating: 4, reviews: "14,350", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400", tag: "Top Rated", link: "https://www.amazon.in" },
+            { id: 8, category: "Audio", name: "Neckband Wireless In-Ear Earphones", mrp: 1999, discount: 55, rating: 4, reviews: "38,200", img: "https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?w=400", tag: "Daily Deal", link: "https://www.amazon.in" },
+            { id: 9, category: "Audio", name: "Premium Party Speaker with RGB Lights", mrp: 12999, discount: 35, rating: 5, reviews: "2,190", img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400", tag: "Loot Deal", link: "https://www.amazon.in" },
+
+            // Smartwatches
+            { id: 10, category: "Smartwatch", name: "Smart Fitness Watch with SpO2", mrp: 5999, discount: 55, rating: 4, reviews: "42,900", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400", tag: "Lightning Deal", link: "https://www.amazon.in" },
+            { id: 11, category: "Smartwatch", name: "Active Sport Smartwatch (Amoled Display)", mrp: 7999, discount: 40, rating: 5, reviews: "12,140", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400", tag: "Trending", link: "https://www.amazon.in" },
+            { id: 12, category: "Smartwatch", name: "Kids Smart Track Watch with GPS", mrp: 3499, discount: 30, rating: 4, reviews: "1,540", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", tag: "New Launch", link: "https://www.amazon.in" },
+            { id: 13, category: "Smartwatch", name: "Classic Metal Strap Luxury Smartwatch", mrp: 14999, discount: 48, rating: 5, reviews: "4,680", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", tag: "Hot Seller", link: "https://www.amazon.in" },
+
+            // Accessories
+            { id: 14, category: "Accessories", name: "Ultra Fast 20000mAh Power Bank", mrp: 2499, discount: 30, rating: 4, reviews: "15,200", img: "https://images.unsplash.com/photo-1609592424407-3026844ba9ec?w=400", tag: "Top Pick", link: "https://www.amazon.in" },
+            { id: 15, category: "Accessories", name: "High-Speed 64GB OTG Flash Drive", mrp: 1300, discount: 58, rating: 5, reviews: "21,150", img: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=400", tag: "Trending", link: "https://www.amazon.in" },
+            { id: 16, category: "Accessories", name: "65W GaN Fast Charger Adapter", mrp: 3499, discount: 50, rating: 5, reviews: "8,920", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Essential", link: "https://www.amazon.in" },
+            { id: 17, category: "Accessories", name: "Rugged Braided Type-C Cable (2-Meter)", mrp: 699, discount: 40, rating: 4, reviews: "54,200", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Super Saver", link: "https://www.amazon.in" },
+            { id: 18, category: "Accessories", name: "Wireless Charging Pad 15W Qi", mrp: 2499, discount: 35, rating: 4, reviews: "3,110", img: "https://images.unsplash.com/photo-1622445262465-2481c4574875?w=400", tag: "Modern Tech", link: "https://www.amazon.in" },
+            { id: 19, category: "Accessories", name: "Multi-Port USB Desktop Hub Organizer", mrp: 1899, discount: 45, rating: 4, reviews: "2,710", img: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=400", tag: "Office Must", link: "https://www.amazon.in" },
+            { id: 20, category: "Accessories", name: "Premium Car Dashboard Charger Dock", mrp: 1499, discount: 30, rating: 4, reviews: "6,410", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Travel Kit", link: "https://www.amazon.in" }
         ];
 
         let cart = [];
+        let activeCategory = "All";
 
-        function autoListProducts() {
+        // Auto Sliding banner engine
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        function showSlides() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].classList.add('active');
+            setTimeout(showSlides, 4000); 
+        }
+        showSlides();
+
+        // Render dynamic grid
+        function renderProducts() {
             const container = document.getElementById('auto-products-container');
+            const counterSpan = document.getElementById('items-count');
             container.innerHTML = ""; 
 
-            productsData.forEach(product => {
+            const filtered = activeCategory === "All" 
+                ? productsData 
+                : productsData.filter(p => p.category === activeCategory);
+
+            counterSpan.innerText = filtered.length;
+
+            filtered.forEach(product => {
                 const calculatedPrice = Math.round(product.mrp - (product.mrp * (product.discount / 100)));
                 let starString = "★".repeat(product.rating) + "☆".repeat(5 - product.rating);
 
@@ -184,10 +412,10 @@
                     <div class="product-card">
                         <span class="tag-badge">${product.tag}</span>
                         <div class="product-img-box">
-                            <img src="${product.img}" alt="${product.name}" onerror="this.onerror=null; this.src='https://placehold.co/400x400/f3f3f3/333333?text=Amazon+Deal';">
+                            <img src="${product.img}" alt="${product.name}" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f3f3f3/333333?text=Device';">
                         </div>
                         <div class="product-name">${product.name}</div>
-                        <div class="stars">${starString} <span style="color:#565959; font-size:0.75rem;">(${product.reviews})</span></div>
+                        <div class="stars">${starString} <span style="color:#777; font-size:0.65rem;">(${product.reviews})</span></div>
                         <div class="price-box">
                             <div class="price-main">
                                 <span class="disc-percent">-${product.discount}%</span>
@@ -196,7 +424,7 @@
                             <span class="mrp">M.R.P.: ₹${product.mrp.toLocaleString('en-IN')}</span>
                         </div>
                         <div class="action-btns">
-                            <button class="btn btn-cart" onclick="addToCart(${product.id}, '${product.name}', ${calculatedPrice})">Add to Cart</button>
+                            <button class="btn btn-cart" onclick="addToCart(${product.id}, '${product.name}', ${calculatedPrice})">Add To Cart</button>
                             <a href="${product.link}" target="_blank" class="btn btn-buy">Buy Now</a>
                         </div>
                     </div>
@@ -205,7 +433,15 @@
             });
         }
 
-        // Toggle slide-out Cart
+        // Category trigger
+        function filterCategory(cat, element) {
+            activeCategory = cat;
+            document.querySelectorAll('.category-chip').forEach(chip => chip.classList.remove('active'));
+            element.classList.add('active');
+            renderProducts();
+        }
+
+        // Drawer slider
         function toggleCart(isOpen) {
             const panel = document.getElementById('cart-panel');
             if(isOpen) {
@@ -223,7 +459,7 @@
                 cart.push({ id, name, price, qty: 1 });
             }
             updateCartUI();
-            toggleCart(true); // Auto-open cart drawer when a product is added
+            toggleCart(true); 
         }
 
         function updateCartUI() {
@@ -262,13 +498,13 @@
 
         function checkoutCart() {
             if(cart.length === 0) {
-                alert("Aapka cart khali hai!");
+                alert("Cart khali hai!");
             } else {
-                alert("Proceeding to Secure Checkout system...");
+                alert("Redirecting to Amazon Secure checkout gate...");
             }
         }
 
-        window.onload = autoListProducts;
+        window.onload = renderProducts;
     </script>
 </body>
 </html>
