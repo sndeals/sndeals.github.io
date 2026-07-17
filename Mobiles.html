@@ -321,7 +321,7 @@
     <div class="main-container">
         <div class="section-title">🔥 Live Listing Discount Offers (<span id="items-count">0</span> Deals)</div>
         
-        <!-- Large 2-Column Mobile Grid containing 20+ Products -->
+        <!-- Large 2-Column Mobile Grid containing 50+ Products -->
         <div class="products-grid" id="auto-products-container">
             <!-- Dynamic Products Loading -->
         </div>
@@ -346,35 +346,70 @@
     </div>
 
     <script>
-        // Mega Inventory: 20+ High Quality items with precise tags & working CDN Images
+        // Updated Mega Inventory: 50+ Premium High Quality Selling Items
         const productsData = [
-            // Mobiles
+            // --- MOBILES (20 items) ---
             { id: 1, category: "Mobiles", name: "Premium 5G Smartphone (8GB/128GB)", mrp: 19999, discount: 15, rating: 4, reviews: "12,450", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Loot Deal", link: "https://www.amazon.in" },
             { id: 2, category: "Mobiles", name: "Flagship 108MP Pro Camera Phone", mrp: 34999, discount: 20, rating: 5, reviews: "5,310", img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", tag: "Super Value", link: "https://www.amazon.in" },
             { id: 3, category: "Mobiles", name: "Budget Smart 4G Mobile (4GB RAM)", mrp: 9999, discount: 25, rating: 4, reviews: "22,140", img: "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=400", tag: "Hot Deal", link: "https://www.amazon.in" },
             { id: 4, category: "Mobiles", name: "Next-Gen Folding Smartphone", mrp: 89999, discount: 12, rating: 5, reviews: "980", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Premium Choice", link: "https://www.amazon.in" },
-            
-            // Audio (Earbuds/Headphones/Speakers)
+            { id: 101, category: "Mobiles", name: "Pro-Max Ultra 5G (12GB/256GB)", mrp: 74999, discount: 10, rating: 5, reviews: "4,320", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "New Launch", link: "https://www.amazon.in" },
+            { id: 102, category: "Mobiles", name: "Super Lite Fluid-Display Phone", mrp: 15999, discount: 18, rating: 4, reviews: "9,150", img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", tag: "Best Seller", link: "https://www.amazon.in" },
+            { id: 103, category: "Mobiles", name: "Gaming Beast Edition (Dimensity 9000)", mrp: 29999, discount: 15, rating: 5, reviews: "3,440", img: "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=400", tag: "Pro Gamer", link: "https://www.amazon.in" },
+            { id: 104, category: "Mobiles", name: "Slim Fit AMOLED Smartphone", mrp: 22999, discount: 22, rating: 4, reviews: "6,780", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Top Pick", link: "https://www.amazon.in" },
+            { id: 105, category: "Mobiles", name: "Carbon Fiber Rugged Tough Phone", mrp: 18999, discount: 20, rating: 4, reviews: "2,110", img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", tag: "Tough Built", link: "https://www.amazon.in" },
+            { id: 106, category: "Mobiles", name: "Elite Zoom Edition (50x Hybrid)", mrp: 45999, discount: 16, rating: 5, reviews: "1,290", img: "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=400", tag: "Camera Pro", link: "https://www.amazon.in" },
+            { id: 107, category: "Mobiles", name: "Eco-Friendly Recycled Mobile 5G", mrp: 12999, discount: 25, rating: 4, reviews: "4,560", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Go Green", link: "https://www.amazon.in" },
+            { id: 108, category: "Mobiles", name: "Creator Pro Cine-Cam Phone", mrp: 54999, discount: 15, rating: 5, reviews: "890", img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", tag: "Vlogger Choice", link: "https://www.amazon.in" },
+            { id: 109, category: "Mobiles", name: "Ultra Battery 7000mAh Powerhouse", mrp: 14999, discount: 12, rating: 4, reviews: "15,840", img: "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=400", tag: "Mega Battery", link: "https://www.amazon.in" },
+            { id: 110, category: "Mobiles", name: "Pocket Premium Compact Phone", mrp: 25999, discount: 17, rating: 4, reviews: "3,210", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Pocket Friendly", link: "https://www.amazon.in" },
+            { id: 111, category: "Mobiles", name: "Prime Edition 5G Android", mrp: 11999, discount: 15, rating: 4, reviews: "18,490", img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", tag: "Amazon Special", link: "https://www.amazon.in" },
+            { id: 112, category: "Mobiles", name: "Super Curved Glass Phone", mrp: 31999, discount: 20, rating: 5, reviews: "2,730", img: "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=400", tag: "Premium Glass", link: "https://www.amazon.in" },
+            { id: 113, category: "Mobiles", name: "Nordic Pure UI Clean OS Phone", mrp: 21999, discount: 14, rating: 4, reviews: "5,620", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Clean OS", link: "https://www.amazon.in" },
+            { id: 114, category: "Mobiles", name: "Neon Glow Cyber Gaming Phone", mrp: 38999, discount: 18, rating: 5, reviews: "1,150", img: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", tag: "RGB Edition", link: "https://www.amazon.in" },
+            { id: 115, category: "Mobiles", name: "Titanium Fusion Safe Security Phone", mrp: 64999, discount: 10, rating: 5, reviews: "620", img: "https://images.unsplash.com/photo-1565630916779-e303be97b6f5?w=400", tag: "High Security", link: "https://www.amazon.in" },
+            { id: 116, category: "Mobiles", name: "Entry-Level Smart Phone (3GB RAM)", mrp: 7999, discount: 20, rating: 3, reviews: "14,560", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", tag: "Lowest Price", link: "https://www.amazon.in" },
+
+            // --- AUDIO (12 items) ---
             { id: 5, category: "Audio", name: "Noise Cancelling Wireless Earbuds", mrp: 4499, discount: 60, rating: 5, reviews: "84,110", img: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400", tag: "Best Seller", link: "https://www.amazon.in" },
             { id: 6, category: "Audio", name: "Waterproof Portable Bluetooth Speaker", mrp: 3999, discount: 45, rating: 4, reviews: "9,830", img: "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=400", tag: "Price Drop", link: "https://www.amazon.in" },
             { id: 7, category: "Audio", name: "Over-Ear Deep Bass Headphones", mrp: 5999, discount: 50, rating: 4, reviews: "14,350", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400", tag: "Top Rated", link: "https://www.amazon.in" },
             { id: 8, category: "Audio", name: "Neckband Wireless In-Ear Earphones", mrp: 1999, discount: 55, rating: 4, reviews: "38,200", img: "https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?w=400", tag: "Daily Deal", link: "https://www.amazon.in" },
             { id: 9, category: "Audio", name: "Premium Party Speaker with RGB Lights", mrp: 12999, discount: 35, rating: 5, reviews: "2,190", img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400", tag: "Loot Deal", link: "https://www.amazon.in" },
+            { id: 201, category: "Audio", name: "Studio Monitor Audiophile Headphones", mrp: 14999, discount: 40, rating: 5, reviews: "1,450", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400", tag: "Studio Choice", link: "https://www.amazon.in" },
+            { id: 202, category: "Audio", name: "TWS Earbuds with Wireless Charging Case", mrp: 4999, discount: 55, rating: 4, reviews: "18,910", img: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400", tag: "Popular", link: "https://www.amazon.in" },
+            { id: 203, category: "Audio", name: "Soundbar 120W with Subwoofer", mrp: 15999, discount: 50, rating: 5, reviews: "7,810", img: "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=400", tag: "Mega Sound", link: "https://www.amazon.in" },
+            { id: 204, category: "Audio", name: "Sports Fit Hook Wireless Buds", mrp: 2999, discount: 45, rating: 4, reviews: "3,110", img: "https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?w=400", tag: "Anti Slip", link: "https://www.amazon.in" },
+            { id: 205, category: "Audio", name: "Retro Style Desk Bluetooth Radio", mrp: 3499, discount: 35, rating: 4, reviews: "1,200", img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=400", tag: "Classic", link: "https://www.amazon.in" },
+            { id: 206, category: "Audio", name: "True HD ANC Headset Over-Ear", mrp: 8999, discount: 42, rating: 5, reviews: "3,110", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400", tag: "Best Bass", link: "https://www.amazon.in" },
+            { id: 207, category: "Audio", name: "Waterproof Shower Hanging Pod", mrp: 1299, discount: 40, rating: 4, reviews: "2,540", img: "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?w=400", tag: "Adventure", link: "https://www.amazon.in" },
 
-            // Smartwatches
+            // --- SMARTWATCHES (10 items) ---
             { id: 10, category: "Smartwatch", name: "Smart Fitness Watch with SpO2", mrp: 5999, discount: 55, rating: 4, reviews: "42,900", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400", tag: "Lightning Deal", link: "https://www.amazon.in" },
             { id: 11, category: "Smartwatch", name: "Active Sport Smartwatch (Amoled Display)", mrp: 7999, discount: 40, rating: 5, reviews: "12,140", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400", tag: "Trending", link: "https://www.amazon.in" },
             { id: 12, category: "Smartwatch", name: "Kids Smart Track Watch with GPS", mrp: 3499, discount: 30, rating: 4, reviews: "1,540", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", tag: "New Launch", link: "https://www.amazon.in" },
             { id: 13, category: "Smartwatch", name: "Classic Metal Strap Luxury Smartwatch", mrp: 14999, discount: 48, rating: 5, reviews: "4,680", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", tag: "Hot Seller", link: "https://www.amazon.in" },
+            { id: 301, category: "Smartwatch", name: "Rugged Outdoor Adventure Smartwatch", mrp: 9999, discount: 45, rating: 5, reviews: "5,410", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400", tag: "Military Grade", link: "https://www.amazon.in" },
+            { id: 302, category: "Smartwatch", name: "Elite Edition Slim Metal Smartwatch", mrp: 12999, discount: 50, rating: 4, reviews: "2,190", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400", tag: "Premium Feel", link: "https://www.amazon.in" },
+            { id: 303, category: "Smartwatch", name: "Minimalist Hybrid Smartwatch", mrp: 6999, discount: 35, rating: 4, reviews: "8,220", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", tag: "Formals Match", link: "https://www.amazon.in" },
+            { id: 304, category: "Smartwatch", name: "Super Curved Screen Smart Band", mrp: 3999, discount: 50, rating: 4, reviews: "14,560", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400", tag: "Lite Band", link: "https://www.amazon.in" },
+            { id: 305, category: "Smartwatch", name: "Amoled Always-On Pro Watch", mrp: 11999, discount: 40, rating: 5, reviews: "6,740", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400", tag: "Bright Screen", link: "https://www.amazon.in" },
+            { id: 306, category: "Smartwatch", name: "Active Blood Pressure Tracker Watch", mrp: 8499, discount: 50, rating: 4, reviews: "3,110", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", tag: "Health Pro", link: "https://www.amazon.in" },
 
-            // Accessories
+            // --- ACCESSORIES (13 items) ---
             { id: 14, category: "Accessories", name: "Ultra Fast 20000mAh Power Bank", mrp: 2499, discount: 30, rating: 4, reviews: "15,200", img: "https://images.unsplash.com/photo-1609592424407-3026844ba9ec?w=400", tag: "Top Pick", link: "https://www.amazon.in" },
             { id: 15, category: "Accessories", name: "High-Speed 64GB OTG Flash Drive", mrp: 1300, discount: 58, rating: 5, reviews: "21,150", img: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=400", tag: "Trending", link: "https://www.amazon.in" },
             { id: 16, category: "Accessories", name: "65W GaN Fast Charger Adapter", mrp: 3499, discount: 50, rating: 5, reviews: "8,920", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Essential", link: "https://www.amazon.in" },
             { id: 17, category: "Accessories", name: "Rugged Braided Type-C Cable (2-Meter)", mrp: 699, discount: 40, rating: 4, reviews: "54,200", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Super Saver", link: "https://www.amazon.in" },
             { id: 18, category: "Accessories", name: "Wireless Charging Pad 15W Qi", mrp: 2499, discount: 35, rating: 4, reviews: "3,110", img: "https://images.unsplash.com/photo-1622445262465-2481c4574875?w=400", tag: "Modern Tech", link: "https://www.amazon.in" },
             { id: 19, category: "Accessories", name: "Multi-Port USB Desktop Hub Organizer", mrp: 1899, discount: 45, rating: 4, reviews: "2,710", img: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=400", tag: "Office Must", link: "https://www.amazon.in" },
-            { id: 20, category: "Accessories", name: "Premium Car Dashboard Charger Dock", mrp: 1499, discount: 30, rating: 4, reviews: "6,410", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Travel Kit", link: "https://www.amazon.in" }
+            { id: 20, category: "Accessories", name: "Premium Car Dashboard Charger Dock", mrp: 1499, discount: 30, rating: 4, reviews: "6,410", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Travel Kit", link: "https://www.amazon.in" },
+            { id: 401, category: "Accessories", name: "Ultra Compact 10000mAh Power Bank", mrp: 1499, discount: 25, rating: 4, reviews: "12,190", img: "https://images.unsplash.com/photo-1609592424407-3026844ba9ec?w=400", tag: "Pocket Size", link: "https://www.amazon.in" },
+            { id: 402, category: "Accessories", name: "Bluetooth Selfie Stick Tripod", mrp: 1999, discount: 60, rating: 4, reviews: "9,850", img: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=400", tag: "Creator Tool", link: "https://www.amazon.in" },
+            { id: 403, category: "Accessories", name: "MagSafe Magnetic Wallet Holder", mrp: 1299, discount: 40, rating: 4, reviews: "4,110", img: "https://images.unsplash.com/photo-1622445262465-2481c4574875?w=400", tag: "Magnetic", link: "https://www.amazon.in" },
+            { id: 404, category: "Accessories", name: "Flexible Phone Desk Mount Stand", mrp: 999, discount: 50, rating: 4, reviews: "22,140", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400", tag: "Comfort Stand", link: "https://www.amazon.in" },
+            { id: 405, category: "Accessories", name: "Waterproof Mobile Pouch Pack of 2", mrp: 499, discount: 30, rating: 4, reviews: "33,140", img: "https://images.unsplash.com/photo-1601524909162-be87252be298?w=400", tag: "Monsoon Pack", link: "https://www.amazon.in" },
+            { id: 406, category: "Accessories", name: "Heavy Duty Phone Ring Socket Grip", mrp: 299, discount: 33, rating: 4, reviews: "11,200", img: "https://images.unsplash.com/photo-1622445262465-2481c4574875?w=400", tag: "Must Have", link: "https://www.amazon.in" }
         ];
 
         let cart = [];
