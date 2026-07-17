@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Deals | Official Store</title>
+    <title>Electronics | SN Deals</title>
     <style>
-        body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f6f7fb;color:#1f2937}
-        .site-header{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:30px 16px;text-align:center;}
-        .site-nav{background:#0f172a;padding:.75rem 1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-        .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
-        .nav-list a{text-decoration:none;color:#fff;padding:.6rem .95rem;border-radius:.55rem;font-weight:600;font-size:0.9rem;}
-        .nav-list a:hover{background:#334155;}
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f6f7fb; color: #1f2937; }
+        .site-header { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; padding: 30px 16px; text-align: center; }
+        .site-nav { background: #0f172a; padding: .75rem 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+        .nav-list a { text-decoration: none; color: #fff; padding: .6rem .95rem; border-radius: .55rem; font-weight: 600; font-size: 0.9rem; }
+        .nav-list a:hover { background: #334155; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; padding: 20px; max-width: 1000px; margin: auto; }
-        .card { background: white; padding: 15px; border-radius: 12px; border: 1px solid #e5e7eb; text-align: center; }
+        .card { background: white; padding: 15px; border-radius: 12px; border: 1px solid #e5e7eb; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .buy-btn { display: block; margin-top: 10px; padding: 10px; background: #ff9900; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; }
     </style>
 </head>
 <body>
     <header class="site-header">
-        <h1>SN Deals Official</h1>
+        <h1>Electronics Store</h1>
     </header>
     
     <nav class="site-nav">
         <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="Mobiles.html">Mobiles</a></li>
-            <li><a href="Electronics.html">MaviGadget</a></li>
+            <li><a href="Electronics.html">Electronics</a></li>
             <li><a href="StoreOffers.html">Offers</a></li>
         </ul>
     </nav>
@@ -35,19 +36,19 @@
 
     <script>
         const products = [
-            { name: "Premium Item 1", link: "https://link.amazon/B07H74QzY" },
-            { name: "Premium Item 2", link: "https://link.amazon/B0cTtjMIQ" },
-            { name: "Premium Item 3", link: "https://link.amazon/B0exj1QWj" },
-            { name: "Premium Item 4", link: "https://link.amazon/B0fzmITPn" },
-            { name: "Premium Item 5", link: "https://link.amazon/B0fErdMH4" }
+            { name: "Electronics 1", link: "https://link.amazon/B07H74QzY" },
+            { name: "Electronics 2", link: "https://link.amazon/B0cTtjMIQ" },
+            { name: "Electronics 3", link: "https://link.amazon/B0exj1QWj" },
+            { name: "Electronics 4", link: "https://link.amazon/B0a2aJltm" },
+            { name: "Electronics 5", link: "https://link.amazon/B00vibqw8" }
         ];
 
         const grid = document.getElementById('product-grid');
         products.forEach(p => {
             grid.innerHTML += `
                 <div class="card">
-                    <div style="font-size:2rem;">⚡</div>
-                    <div style="font-size:0.85rem; font-weight:bold; height:40px;">${p.name}</div>
+                    <div style="font-size:2rem; margin-bottom:5px;">⚡</div>
+                    <div style="font-size:0.85rem; font-weight:bold; height:35px;">${p.name}</div>
                     <a href="${p.link}" class="buy-btn" target="_blank">Buy Now</a>
                 </div>
             `;
