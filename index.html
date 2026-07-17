@@ -2,45 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Deals | 1000+ Live Offers</title>
+    <title>SN Deals - Live Store</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f1f3f6; }
-        .nav { background: #232f3e; color: white; padding: 15px; text-align: center; position: sticky; top: 0; }
-        .slider { background: #ff9900; color: white; padding: 30px; text-align: center; font-size: 1.5rem; font-weight: bold; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; padding: 20px; }
-        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-        .card img { width: 100%; height: 180px; object-fit: contain; }
-        .price { color: #b12704; font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
-        .btn { display: block; width: 100%; padding: 10px; margin-top: 5px; border: none; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        body { font-family: sans-serif; margin: 0; background: #f1f3f6; }
+        .header { background: #232f3e; color: white; padding: 15px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; padding: 10px; }
+        .card { background: white; padding: 10px; border-radius: 5px; text-align: center; border: 1px solid #ccc; }
+        .card img { width: 100%; height: 120px; object-fit: contain; }
+        .btn { display: block; width: 100%; padding: 8px; margin-top: 5px; cursor: pointer; font-weight: bold; border: none; }
         .cart { background: #ffd814; }
         .buy { background: #fa8900; color: white; }
     </style>
 </head>
 <body>
 
-<div class="nav">SN Deals - Premium Live Deals Hub</div>
-<div class="slider">🔥 MEGA MONSOON SALE - LIVE NOW!</div>
+<div class="header"><h1>SN Deals | 1000+ Offers</h1></div>
 
-<div class="grid" id="product-container"></div>
+<div class="grid" id="main"></div>
 
 <script>
-    const categories = ["Laptop", "Smart TV", "Washing Machine", "Fridge", "Mobile", "Gadgets", "Tools"];
-    const container = document.getElementById('product-container');
-
-    // 1000+ products loop
+    // आपके लिंक्स यहाँ फिक्स हैं
+    const links = [
+        "https://bitli.in/cAEMfDZ", "https://bitli.in/VgtP4S9", "https://bitli.in/Na3HLul",
+        "https://link.amazon/B04n3JKLX", "https://link.amazon/B0jfKbzZw", "https://link.amazon/B0fis2wy4"
+    ];
+    
+    const container = document.getElementById('main');
+    
+    // 1000 प्रोडक्ट्स जनरेट होंगे
     for (let i = 1; i <= 1000; i++) {
-        let cat = categories[i % categories.length];
+        let link = links[i % links.length];
         container.innerHTML += `
             <div class="card">
-                <img src="https://picsum.photos/seed/${i}/300/300" onerror="this.src='https://placehold.co/300x300?text=Deal+Live'">
-                <div style="font-weight:bold">${cat} Pro Model V${i}</div>
-                <div class="price">₹${Math.floor(Math.random() * 40000) + 1000}</div>
-                <button class="btn cart" onclick="alert('Item Added to Cart!')">Add to Cart</button>
-                <button class="btn buy" onclick="window.location.href='https://amzn.to/450K47r'">Buy Now</button>
+                <img src="https://placehold.co/200x200?text=Product+${i}" alt="Product">
+                <div style="font-size:0.8rem; font-weight:bold;">Premium Deal ${i}</div>
+                <div style="color:red; font-weight:bold;">₹${Math.floor(Math.random() * 20000) + 500}</div>
+                <button class="btn cart" onclick="alert('Added!')">Add To Cart</button>
+                <button class="btn buy" onclick="window.open('${link}', '_blank')">Buy Now</button>
             </div>
         `;
     }
 </script>
+
 </body>
 </html>
