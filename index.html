@@ -1,82 +1,51 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Deals Hub - 1000+ Live Offers</title>
+    <title>SN Deals - Live Deals Hub</title>
     <style>
-        :root {
-            --amazon-dark: #131921;
-            --amazon-light: #232f3e;
-            --amazon-orange: #ff9900;
-            --amazon-yellow: #febd69;
-            --bg-gray: #f3f3f3;
-        }
-
-        body { font-family: 'Amazon Ember', Arial, sans-serif; margin: 0; background: var(--bg-gray); color: #111; }
-        
-        /* Navigation */
-        .site-nav { background: var(--amazon-dark); padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 10px; }
-        .logo { color: #fff; font-weight: bold; font-size: 1.4rem; text-decoration: none; }
-        .search-wrapper { flex-grow: 1; display: flex; }
-        .search-input { width: 100%; padding: 10px; border: none; border-radius: 4px 0 0 4px; outline: none; }
-        .search-btn { background: var(--amazon-orange); border: none; padding: 10px 15px; border-radius: 0 4px 4px 0; cursor: pointer; }
-
-        /* Products Grid */
-        .main-container { max-width: 1200px; margin: 20px auto; padding: 0 10px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
-        
-        .product-card { background: #fff; padding: 15px; border-radius: 4px; display: flex; flex-direction: column; border: 1px solid #ddd; }
-        .product-img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 10px; }
-        .product-name { font-size: 0.85rem; height: 40px; overflow: hidden; margin-bottom: 5px; }
-        .price { font-size: 1.1rem; font-weight: bold; color: #B12704; }
-        .btn-buy { margin-top: 10px; background: var(--amazon-yellow); border: 1px solid #a88734; padding: 8px; border-radius: 8px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; color: black; }
+        body { font-family: sans-serif; margin: 0; background-color: #f4f4f4; }
+        .header { background: #232f3e; padding: 15px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { color: white; font-weight: bold; font-size: 1.5rem; }
+        .search-box { width: 300px; padding: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; padding: 20px; }
+        .card { background: white; padding: 15px; text-align: center; border: 1px solid #ddd; }
+        .card img { width: 100%; height: 150px; object-fit: contain; }
+        .btn { display: block; background: #ff9900; padding: 10px; margin-top: 5px; text-decoration: none; color: black; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <nav class="site-nav">
-        <div class="nav-container">
-            <a href="#" class="logo">Amazon</a>
-            <div class="search-wrapper">
-                <input type="text" id="search-box" class="search-input" placeholder="Search products..." oninput="renderProducts()">
-                <button class="search-btn">🔍</button>
+<div class="header">
+    <div class="logo">SN Deals</div>
+    <input type="text" class="search-box" placeholder="Search 1,000+ live products...">
+</div>
+
+<div class="grid" id="container"></div>
+
+<script>
+    // Ye raha aapka original format
+    const products = Array.from({length: 50}, (_, i) => ({
+        name: `Product ${i + 1}`,
+        price: 1000 + (i * 50),
+        // Yeh line image error fix karti hai
+        img: `https://picsum.photos/seed/${i}/200/200` 
+    }));
+
+    const container = document.getElementById('container');
+    products.forEach(p => {
+        container.innerHTML += `
+            <div class="card">
+                <img src="${p.img}" onerror="this.src='https://placehold.co/200x200?text=Product'">
+                <h3>${p.name}</h3>
+                <p>₹${p.price}</p>
+                <a href="#" class="btn">Add to Cart</a>
+                <a href="#" class="btn" style="background:#f3a847">Buy Now</a>
             </div>
-        </div>
-    </nav>
+        `;
+    });
+</script>
 
-    <div class="main-container">
-        <div class="products-grid" id="products-container"></div>
-    </div>
-
-    <script>
-        // Data generator
-        const products = Array.from({length: 100}, (_, i) => ({
-            id: i,
-            name: `Product Item Number ${i + 1}`,
-            price: Math.floor(Math.random() * 5000) + 500,
-            img: `https://picsum.photos/seed/${i}/300/300` 
-        }));
-
-        function renderProducts() {
-            const query = document.getElementById('search-box').value.toLowerCase();
-            const container = document.getElementById('products-container');
-            container.innerHTML = "";
-
-            products.filter(p => p.name.toLowerCase().includes(query)).forEach(p => {
-                container.innerHTML += `
-                    <div class="product-card">
-                        <img src="${p.img}" class="product-img" onerror="this.src='https://placehold.co/300x300?text=Image+Loading'">
-                        <div class="product-name">${p.name}</div>
-                        <div class="price">₹${p.price}</div>
-                        <a href="#" class="btn-buy">Add to Cart</a>
-                    </div>
-                `;
-            });
-        }
-
-        renderProducts();
-    </script>
 </body>
 </html>
