@@ -3,602 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Deals Hub - 1000+ Live Offers | SN Deals</title>
+    <title>Amazon Deals Hub - 1000+ Live Offers</title>
     <style>
         :root {
             --amazon-dark: #131921;
             --amazon-light: #232f3e;
             --amazon-orange: #ff9900;
             --amazon-yellow: #febd69;
-            --deal-red: #cc0c39;
             --bg-gray: #f3f3f3;
         }
 
-        body { 
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
-            margin: 0; 
-            background: var(--bg-gray); 
-            color: #111; 
-            padding-bottom: 20px; 
-        }
+        body { font-family: 'Amazon Ember', Arial, sans-serif; margin: 0; background: var(--bg-gray); color: #111; }
         
-        /* Navigation Bar */
-        .site-nav { 
-            background: var(--amazon-dark); 
-            padding: 12px 16px; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
-        }
-        .nav-container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .logo {
-            font-weight: 800;
-            color: #fff;
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
-        .logo span { color: var(--amazon-orange); }
+        /* Navigation */
+        .site-nav { background: var(--amazon-dark); padding: 10px; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 10px; }
+        .logo { color: #fff; font-weight: bold; font-size: 1.4rem; text-decoration: none; }
+        .search-wrapper { flex-grow: 1; display: flex; }
+        .search-input { width: 100%; padding: 10px; border: none; border-radius: 4px 0 0 4px; outline: none; }
+        .search-btn { background: var(--amazon-orange); border: none; padding: 10px 15px; border-radius: 0 4px 4px 0; cursor: pointer; }
 
-        /* Search Bar */
-        .search-wrapper {
-            flex-grow: 0.6;
-            margin: 0 15px;
-            display: flex;
-        }
-        .search-input {
-            width: 100%;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 4px 0 0 4px;
-            outline: none;
-            font-size: 0.9rem;
-        }
-        .search-btn {
-            background: var(--amazon-orange);
-            border: none;
-            padding: 8px 15px;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* Cart Icon */
-        .header-cart-btn { 
-            background: none; 
-            border: none; 
-            color: #fff; 
-            display: flex; 
-            align-items: center; 
-            gap: 6px; 
-            font-size: 1rem; 
-            font-weight: bold; 
-            cursor: pointer; 
-        }
-        .header-cart-btn .badge { 
-            background: var(--deal-red); 
-            color: #fff; 
-            border-radius: 50%; 
-            padding: 2px 6px; 
-            font-size: 0.75rem; 
-            min-width: 14px; 
-            text-align: center; 
-        }
-
-        /* Crystal Clear Hero Slider */
-        .hero-slider {
-            width: 100%;
-            height: 180px;
-            position: relative;
-            overflow: hidden;
-            background: #000;
-        }
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            display: flex;
-            align-items: center;
-            background-size: cover;
-            background-position: center;
-        }
-        .slide.active { opacity: 1; }
+        /* Products Grid */
+        .main-container { max-width: 1200px; margin: 20px auto; padding: 0 10px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
         
-        /* Updated clear content with light-overlay for perfect contrast and image visibility */
-        .slide-content {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start; 
-            padding: 20px 40px;
-            box-sizing: border-box;
-        }
-        .slide h2 { margin: 0 0 5px 0; font-size: 1.3rem; color: var(--amazon-yellow); text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
-        .slide p { margin: 0; font-size: 0.9rem; font-weight: bold; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
-
-        /* Category Chips */
-        .categories-container {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding: 12px 15px;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .categories-container::-webkit-scrollbar {
-            display: none;
-        }
-        .category-chip {
-            background: #f0f2f2;
-            border: 1px solid #d5d9d9;
-            border-radius: 20px;
-            padding: 8px 14px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .category-chip.active {
-            background: var(--amazon-dark);
-            color: white;
-            border-color: var(--amazon-dark);
-        }
-
-        /* Main Container & Grid */
-        .main-container { max-width: 1200px; margin: 15px auto; padding: 0 10px; }
-        .section-title { 
-            font-size: 1.1rem; 
-            font-weight: 800; 
-            margin-bottom: 15px; 
-            padding-left: 5px; 
-            border-left: 4px solid var(--amazon-orange);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .products-grid { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 10px; 
-        }
-        
-        /* Product Cards */
-        .product-card { 
-            background: #fff; 
-            border-radius: 8px; 
-            padding: 10px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-            position: relative; 
-            border: 1px solid #e0e0e0;
-        }
-        .tag-badge { 
-            position: absolute; 
-            top: 8px; 
-            left: 8px; 
-            background: var(--deal-red); 
-            color: #fff; 
-            font-size: 0.65rem; 
-            font-weight: 700; 
-            padding: 3px 6px; 
-            border-radius: 3px; 
-            z-index: 5; 
-        }
-        
-        .product-img-box { 
-            width: 100%; 
-            height: 120px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-bottom: 8px; 
-            background: #fff; 
-        }
-        .product-img-box img { 
-            max-width: 90%; 
-            max-height: 90%; 
-            object-fit: contain; 
-        }
-        
-        .product-name { 
-            font-size: 0.78rem; 
-            font-weight: 600; 
-            line-height: 1.3; 
-            height: 32px; 
-            overflow: hidden; 
-            margin-bottom: 6px; 
-            color: #0f1111; 
-            display: -webkit-box; 
-            -webkit-line-clamp: 2; 
-            -webkit-box-orient: vertical; 
-        }
-        .stars { color: #ffa41c; font-size: 0.75rem; margin-bottom: 4px; }
-        
-        .price-box { margin-bottom: 10px; }
-        .price-main { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
-        .curr-price { font-size: 1rem; font-weight: 800; color: #111; }
-        .disc-percent { color: var(--deal-red); font-weight: 800; font-size: 0.8rem; }
-        .mrp { color: #565959; text-decoration: line-through; font-size: 0.7rem; display: block; }
-
-        /* Buttons */
-        .action-btns { display: flex; flex-direction: column; gap: 4px; }
-        .btn { 
-            display: block; 
-            text-align: center; 
-            padding: 6px 4px; 
-            border-radius: 4px; 
-            text-decoration: none; 
-            font-size: 0.72rem; 
-            font-weight: bold; 
-            border: 1px solid; 
-            cursor: pointer; 
-        }
-        .btn-cart { background: var(--amazon-yellow); border-color: #a88734; color: #111; }
-        .btn-buy { background: var(--amazon-orange); border-color: #944d06; color: #fff; }
-
-        /* Pagination Controls */
-        .pagination-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin: 25px 0;
-        }
-        .page-btn {
-            background: white;
-            border: 1px solid #ccc;
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .page-btn:disabled {
-            background: #e0e0e0;
-            cursor: not-allowed;
-        }
-
-        /* Shopping Cart Drawer */
-        .cart-overlay { 
-            position: fixed; 
-            top: 0; 
-            right: -100%; 
-            width: 100%; 
-            max-width: 380px; 
-            height: 100%; 
-            background: white; 
-            box-shadow: -5px 0 15px rgba(0,0,0,0.15); 
-            transition: 0.3s ease-in-out; 
-            z-index: 300; 
-            display: flex; 
-            flex-direction: column; 
-        }
-        .cart-overlay.active { right: 0; }
-        .cart-header { background: var(--amazon-light); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
-        .cart-header h3 { margin: 0; font-size: 1.1rem; }
-        .close-cart { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
-        .cart-items { list-style: none; padding: 15px; margin: 0; overflow-y: auto; flex-grow: 1; }
-        .cart-item { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 10px 0; border-bottom: 1px solid #eee; align-items: center; }
-        .cart-footer { padding: 15px; background: #f9f9f9; border-top: 1px solid #ddd; }
-        .cart-total { font-weight: bold; font-size: 1rem; display: flex; justify-content: space-between; margin-bottom: 15px; }
-        .checkout-btn { display: block; width: 100%; text-align: center; background: var(--amazon-orange); color: #fff; border: none; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; }
-
-        @media (min-width: 768px) {
-            .products-grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
-            .hero-slider { height: 260px; }
-            .slide h2 { font-size: 1.8rem; }
-            .slide p { font-size: 1.2rem; }
-            .product-img-box { height: 160px; }
-        }
+        .product-card { background: #fff; padding: 15px; border-radius: 4px; display: flex; flex-direction: column; border: 1px solid #ddd; }
+        .product-img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 10px; }
+        .product-name { font-size: 0.85rem; height: 40px; overflow: hidden; margin-bottom: 5px; }
+        .price { font-size: 1.1rem; font-weight: bold; color: #B12704; }
+        .btn-buy { margin-top: 10px; background: var(--amazon-yellow); border: 1px solid #a88734; padding: 8px; border-radius: 8px; cursor: pointer; font-weight: bold; text-align: center; text-decoration: none; color: black; }
     </style>
 </head>
 <body>
-    
-    <!-- Header Area -->
+
     <nav class="site-nav">
         <div class="nav-container">
-            <a href="#" class="logo">SN <span>Deals</span></a>
-            
-            <!-- Search system -->
+            <a href="#" class="logo">Amazon</a>
             <div class="search-wrapper">
-                <input type="text" id="search-box" class="search-input" placeholder="Search 1,000+ live products..." oninput="handleSearch()">
+                <input type="text" id="search-box" class="search-input" placeholder="Search products..." oninput="renderProducts()">
                 <button class="search-btn">🔍</button>
             </div>
-
-            <!-- Cart Toggle -->
-            <button class="header-cart-btn" onclick="toggleCart(true)">
-                <span>🛒 Cart</span>
-                <span class="badge" id="cart-count">0</span>
-            </button>
         </div>
     </nav>
 
-    <!-- Crystal Clear Banner Slider (Updated Gradients & Clean Images) -->
-    <div class="hero-slider">
-        <!-- Slide 1: Electronics & Smart Gadgets -->
-        <div class="slide active" style="background-image: linear-gradient(90deg, rgba(19,25,33,0.9) 30%, rgba(19,25,33,0.2) 100%), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop');">
-            <div class="slide-content">
-                <h2>⚡ MEGA STORE LIVE</h2>
-                <p>Up to 60% OFF on Laptops, Mobiles & Smart Tools</p>
-            </div>
-        </div>
-        <!-- Slide 2: TV & Home Appliances -->
-        <div class="slide" style="background-image: linear-gradient(90deg, rgba(19,25,33,0.9) 30%, rgba(19,25,33,0.2) 100%), url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1200&auto=format&fit=crop');">
-            <div class="slide-content">
-                <h2>📺 SMART HOME UPGRADE</h2>
-                <p>Deals on 4K Ultra HD TVs, Fridges & Washing Machines</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Category Filter Menu -->
-    <div class="categories-container">
-        <div class="category-chip active" onclick="filterCategory('All', this)">⚡ All (1000+)</div>
-        <div class="category-chip" onclick="filterCategory('Mobiles', this)">📱 Mobiles</div>
-        <div class="category-chip" onclick="filterCategory('Laptops', this)">💻 Laptops</div>
-        <div class="category-chip" onclick="filterCategory('TV', this)">📺 Smart TV</div>
-        <div class="category-chip" onclick="filterCategory('Fridge', this)">❄️ Refrigerator</div>
-        <div class="category-chip" onclick="filterCategory('Washing Machine', this)">🧼 Washing Machine</div>
-        <div class="category-chip" onclick="filterCategory('Tools', this)">🛠️ Smart Tools</div>
-        <div class="category-chip" onclick="filterCategory('Audio', this)">🎧 Audio & Sound</div>
-    </div>
-
-    <!-- Main Content Grid -->
     <div class="main-container">
-        <div class="section-title">
-            <span>🔥 Live Deals Hub (<span id="items-count">1000+</span> Offers Active)</span>
-            <span style="font-size: 0.8rem; color:#666;" id="page-indicator">Page 1 of 50</span>
-        </div>
-        
-        <!-- Grid Items -->
-        <div class="products-grid" id="auto-products-container">
-            <!-- Dynamically populated via JavaScript -->
-        </div>
-
-        <!-- Pagination -->
-        <div class="pagination-container">
-            <button class="page-btn" id="prev-btn" onclick="changePage(-1)">◀ Previous</button>
-            <button class="page-btn" id="next-btn" onclick="changePage(1)">Next ▶</button>
-        </div>
+        <div class="products-grid" id="products-container"></div>
     </div>
 
-    <!-- Cart Sidebar -->
-    <div class="cart-overlay" id="cart-panel">
-        <div class="cart-header">
-            <h3>Your Shopping Cart</h3>
-            <button class="close-cart" onclick="toggleCart(false)">×</button>
-        </div>
-        <ul class="cart-items" id="cart-list">
-            <li style="color:#777; text-align:center; padding: 40px 0;">Your cart is empty.</li>
-        </ul>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Subtotal:</span>
-                <span id="cart-subtotal">₹0</span>
-            </div>
-            <button class="checkout-btn" onclick="checkoutCart()">Proceed to Checkout</button>
-        </div>
-    </div>
-
-    <!-- JavaScript Engine (Generates 1,000+ Items Smoothly) -->
     <script>
-        const brands = ["Samsung", "Sony", "LG", "HP", "Asus", "OnePlus", "Bosch", "Whirlpool", "Apple", "Mi", "Realme", "Lenovo", "Dyson", "DeWalt", "Stanley"];
-        const categories = ["Mobiles", "Laptops", "TV", "Fridge", "Washing Machine", "Tools", "Audio"];
-        
-        const catDetails = {
-            "Mobiles": { img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400", suffix: "5G Smartphone (AMOLED Display)" },
-            "Laptops": { img: "https://images.unsplash.com/photo-1496181130204-755241524eab?w=400", suffix: "High Speed Creator Laptop" },
-            "TV": { img: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=400", suffix: "Ultra HD 4K Smart TV" },
-            "Fridge": { img: "https://images.unsplash.com/photo-1571175432247-5c38685c351a?w=400", suffix: "Double Door Frost Free Refrigerator" },
-            "Washing Machine": { img: "https://images.unsplash.com/photo-1610557892470-76d747eed0f3?w=400", suffix: "Fully Automatic Front Load Washing Machine" },
-            "Tools": { img: "https://images.unsplash.com/photo-1581582801904-099169c452f1?w=400", suffix: "Professional Heavy Duty Power Drill" },
-            "Audio": { img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400", suffix: "Wireless Deep Bass Soundbar Earbuds" }
-        };
+        // Data generator
+        const products = Array.from({length: 100}, (_, i) => ({
+            id: i,
+            name: `Product Item Number ${i + 1}`,
+            price: Math.floor(Math.random() * 5000) + 500,
+            img: `https://picsum.photos/seed/${i}/300/300` 
+        }));
 
-        // Automatic Dynamic Product Database Generator
-        const productsData = [];
-        let idCounter = 1;
-
-        // Generates precisely 1,050 high quality deals
-        for (let i = 1; i <= 150; i++) {
-            categories.forEach(cat => {
-                const brand = brands[Math.floor(Math.random() * brands.length)];
-                const mrp = Math.floor(Math.random() * (90000 - 1500) + 1500);
-                const discount = Math.floor(Math.random() * (60 - 10) + 10);
-                const rating = Math.floor(Math.random() * (5 - 3) + 3);
-                const reviews = Math.floor(Math.random() * 25000 + 100).toLocaleString();
-                
-                productsData.push({
-                    id: idCounter++,
-                    category: cat,
-                    name: `${brand} ${catDetails[cat].suffix} - V${i}`,
-                    mrp: mrp,
-                    discount: discount,
-                    rating: rating,
-                    reviews: reviews,
-                    img: catDetails[cat].img,
-                    tag: discount > 45 ? "Mega Deal" : "Live Offer",
-                    link: "https://www.amazon.in"
-                });
-            });
-        }
-
-        let cart = [];
-        let activeCategory = "All";
-        let searchQuery = "";
-        let currentPage = 1;
-        const itemsPerPage = 20; // 20 items per view for super fast browsing
-
-        // Slider logic
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlides() {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            slides[slideIndex - 1].classList.add('active');
-            setTimeout(showSlides, 4000); 
-        }
-        showSlides();
-
-        // Filtration & Search Engine
-        function getFilteredProducts() {
-            return productsData.filter(p => {
-                const matchCategory = (activeCategory === "All" || p.category === activeCategory);
-                const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchCategory && matchSearch;
-            });
-        }
-
-        // Render System
         function renderProducts() {
-            const container = document.getElementById('auto-products-container');
-            const counterSpan = document.getElementById('items-count');
-            const pageIndicator = document.getElementById('page-indicator');
-            
-            container.innerHTML = ""; 
-            const filtered = getFilteredProducts();
-            counterSpan.innerText = filtered.length;
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const container = document.getElementById('products-container');
+            container.innerHTML = "";
 
-            const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
-            if (currentPage > totalPages) currentPage = totalPages;
-
-            pageIndicator.innerText = `Page ${currentPage} of ${totalPages}`;
-
-            document.getElementById('prev-btn').disabled = (currentPage === 1);
-            document.getElementById('next-btn').disabled = (currentPage === totalPages);
-
-            const start = (currentPage - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-            const paginatedItems = filtered.slice(start, end);
-
-            paginatedItems.forEach(product => {
-                const calculatedPrice = Math.round(product.mrp - (product.mrp * (product.discount / 100)));
-                let starString = "★".repeat(product.rating) + "☆".repeat(5 - product.rating);
-
-                const productHTML = `
+            products.filter(p => p.name.toLowerCase().includes(query)).forEach(p => {
+                container.innerHTML += `
                     <div class="product-card">
-                        <span class="tag-badge">${product.tag}</span>
-                        <div class="product-img-box">
-                            <img src="${product.img}" alt="${product.name}" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f3f3f3/333333?text=Product';">
-                        </div>
-                        <div class="product-name">${product.name}</div>
-                        <div class="stars">${starString} <span style="color:#777; font-size:0.65rem;">(${product.reviews})</span></div>
-                        <div class="price-box">
-                            <div class="price-main">
-                                <span class="disc-percent">-${product.discount}%</span>
-                                <span class="curr-price">₹${calculatedPrice.toLocaleString('en-IN')}</span>
-                            </div>
-                            <span class="mrp">M.R.P.: ₹${product.mrp.toLocaleString('en-IN')}</span>
-                        </div>
-                        <div class="action-btns">
-                            <button class="btn btn-cart" onclick="addToCart(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${calculatedPrice})">Add To Cart</button>
-                            <a href="${product.link}" target="_blank" class="btn btn-buy">Buy Now</a>
-                        </div>
+                        <img src="${p.img}" class="product-img" onerror="this.src='https://placehold.co/300x300?text=Image+Loading'">
+                        <div class="product-name">${p.name}</div>
+                        <div class="price">₹${p.price}</div>
+                        <a href="#" class="btn-buy">Add to Cart</a>
                     </div>
                 `;
-                container.innerHTML += productHTML;
             });
         }
 
-        // Live Event Handlers
-        function handleSearch() {
-            searchQuery = document.getElementById('search-box').value;
-            currentPage = 1; 
-            renderProducts();
-        }
-
-        function filterCategory(cat, element) {
-            activeCategory = cat;
-            currentPage = 1;
-            document.querySelectorAll('.category-chip').forEach(chip => chip.classList.remove('active'));
-            element.classList.add('active');
-            renderProducts();
-        }
-
-        function changePage(direction) {
-            currentPage += direction;
-            renderProducts();
-            window.scrollTo({ top: 180, behavior: 'smooth' }); 
-        }
-
-        // Cart Slide Actions
-        function toggleCart(isOpen) {
-            const panel = document.getElementById('cart-panel');
-            if(isOpen) {
-                panel.classList.add('active');
-            } else {
-                panel.classList.remove('active');
-            }
-        }
-
-        function addToCart(id, name, price) {
-            const existingItem = cart.find(item => item.id === id);
-            if (existingItem) {
-                existingItem.qty += 1;
-            } else {
-                cart.push({ id, name, price, qty: 1 });
-            }
-            updateCartUI();
-            toggleCart(true); 
-        }
-
-        function updateCartUI() {
-            const cartList = document.getElementById('cart-list');
-            const cartCount = document.getElementById('cart-count');
-            const cartSubtotal = document.getElementById('cart-subtotal');
-
-            if (cart.length === 0) {
-                cartList.innerHTML = `<li style="color:#777; text-align:center; padding: 40px 0;">Your cart is empty.</li>`;
-                cartCount.innerText = "0";
-                cartSubtotal.innerText = "₹0";
-                return;
-            }
-
-            cartList.innerHTML = "";
-            let totalItems = 0;
-            let totalPrice = 0;
-
-            cart.forEach(item => {
-                totalItems += item.qty;
-                totalPrice += (item.price * item.qty);
-
-                cartList.innerHTML += `
-                    <li class="cart-item">
-                        <div style="max-width: 65%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
-                            <strong>${item.qty}x</strong> ${item.name}
-                        </div>
-                        <div>₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
-                    </li>
-                `;
-            });
-
-            cartCount.innerText = totalItems;
-            cartSubtotal.innerText = "₹" + totalPrice.toLocaleString('en-IN');
-        }
-
-        function checkoutCart() {
-            if(cart.length === 0) {
-                alert("Cart is empty!");
-            } else {
-                alert("Redirecting to Secure checkout page...");
-            }
-        }
-
-        window.onload = renderProducts;
+        renderProducts();
     </script>
 </body>
 </html>
