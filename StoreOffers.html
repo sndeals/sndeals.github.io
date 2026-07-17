@@ -16,27 +16,33 @@
         .nav-list a[aria-current="page"]{background:#fff;color:#0f172a;font-weight:700}
         
         .main{max-width:1200px;margin:0 auto;padding:40px 16px 50px}
-        .section-title { color: #0f172a; font-size: 1.6rem; margin-bottom: 25px; font-weight: 700; text-align: center; }
+        .section-title { color: #0f172a; font-size: 1.6rem; margin: 40px 0 20px; font-weight: 700; border-left: 5px solid #10b981; padding-left: 12px; }
+        .section-title.first { margin-top: 10px; }
         
-        .deals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .deal-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
-        .deal-card:hover { transform: translateY(-4px); }
+        .deals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+        .deal-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; justify-content: space-between; height: 160px; text-align: center; }
+        .deal-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); border-color: #10b981; }
         
         .tag { position: absolute; top: 12px; right: 12px; font-size: 0.75rem; font-weight: 800; padding: 4px 8px; border-radius: 6px; text-transform: uppercase; }
         .tag.flipkart { background: #fee2e2; color: #dc2626; }
-        .tag.myntra { background: #fef3c7; color: #d97706; }
+        .tag.myntra { background: #ffe4e6; color: #e11d48; }
         .tag.ajio { background: #e0f2fe; color: #0284c7; }
         .tag.meesho { background: #fce7f3; color: #db2777; }
         .tag.mall { background: #fef3c7; color: #b45309; }
         
-        .brand-emoji { font-size: 2.2rem; margin-bottom: 10px; }
-        .deal-card h3 { margin: 8px 0 5px 0; color: #0f172a; font-size: 1.2rem; font-weight: 700; }
-        .deal-card p { color: #6b7280; font-size: 0.9rem; margin: 0 0 20px 0; line-height: 1.5; }
+        .brand-emoji { font-size: 2rem; margin-bottom: 5px; }
+        .deal-card h3 { margin: 5px 0; color: #0f172a; font-size: 1.1rem; font-weight: 700; }
+        .deal-card p { color: #6b7280; font-size: 0.85rem; margin: 0 0 15px 0; line-height: 1.4; }
         
-        .deal-btn { display: block; text-align: center; padding: 12px; background: #10b981; color: white; text-decoration: none; border-radius: 8px; font-size: 0.95rem; font-weight: 700; transition: background 0.2s; }
-        .deal-btn:hover { background: #059669; }
+        .deal-btn { display: block; text-align: center; padding: 10px; background: #0f172a; color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 700; transition: background 0.2s; }
+        .deal-btn:hover { background: #10b981; }
         
-        @media (max-width:640px){.nav-list a{width:100%;text-align:center}}
+        @media (max-width:640px){
+            .nav-list a{width:100%;text-align:center}
+            .deals-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .deal-card { padding: 15px; height: 150px; }
+            .deal-card h3 { font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
@@ -50,65 +56,87 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="Mobiles.html">Amazon</a></li>
             <li><a href="Electronics.html">MaviGadget</a></li>
-            <li><a href="Fashion.html">Fashion Deals</a></li>
             <li><a href="NikolaToy.html">🧸 NikolaToy</a></li>
             <li><a href="StoreOffers.html" aria-current="page" style="background: #ffffff; color: #0f172a; border-radius: 8px;">🔥 All Store Offers</a></li>
         </ul>
     </nav>
     
     <main class="main">
-        <h2 class="section-title">🎁 Handpicked Stores & Secret Discounts</h2>
+        <h2 class="section-title first">🎁 Main Mega Stores</h2>
         <div class="deals-grid">
-            
             <!-- Flipkart -->
             <div class="deal-card">
                 <span class="tag flipkart">Up to 80% Off</span>
                 <div class="brand-emoji">🛍️</div>
                 <h3>Flipkart Mega Store</h3>
-                <p>Shop electronic gadgets, fashion styles, and home appliances at official loot prices.</p>
-                <a href="https://fktr.in/HhQbd65" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Flipkart Deal</a>
+                <p>Shop electronic gadgets and home appliances.</p>
+                <a href="https://fktr.in/HhQbd65" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Deal</a>
             </div>
-
-            <!-- Myntra -->
+            <!-- Myntra Main -->
             <div class="deal-card">
                 <span class="tag myntra">Min 60% Off</span>
                 <div class="brand-emoji">👗</div>
-                <h3>Myntra Fashion Deals</h3>
-                <p>Upgrade your wardrobe with ultimate premium fashion, sneakers, and cosmetic collections.</p>
-                <a href="https://myntr.it/lc2Qacn" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Myntra Deal</a>
+                <h3>Myntra Main Store</h3>
+                <p>Premium fashion and cosmetic collections.</p>
+                <a href="https://myntr.it/lc2Qacn" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Deal</a>
             </div>
-
-            <!-- Ajio -->
+            <!-- Ajio Main -->
             <div class="deal-card">
                 <span class="tag ajio">Up to 70% Off</span>
                 <div class="brand-emoji">👕</div>
-                <h3>Ajio Premium Trends</h3>
-                <p>Trending daily streetwear and premium brand apparel with instant coupons applied.</p>
-                <a href="https://ajio.in/A6R4ac6" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Ajio Deal</a>
+                <h3>Ajio Main Store</h3>
+                <p>Trending daily streetwear and brands.</p>
+                <a href="https://ajio.in/A6R4ac6" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Deal</a>
             </div>
-
             <!-- Hamara Mall -->
             <div class="deal-card">
                 <span class="tag mall">Special Loot</span>
                 <div class="brand-emoji">🏬</div>
                 <h3>Hamara Mall Deals</h3>
-                <p>Access exclusive local and viral internet products directly with massive discount offers.</p>
-                <a href="https://bitli.in/ECUfnvo" class="deal-btn" target="_blank" rel="noopener noreferrer">Shop Hamara Mall</a>
+                <p>Access exclusive local and viral viral products.</p>
+                <a href="https://bitli.in/ECUfnvo" class="deal-btn" target="_blank" rel="noopener noreferrer">Shop Now</a>
             </div>
-
             <!-- Meesho -->
             <div class="deal-card">
                 <span class="tag meesho">Loot Price</span>
                 <div class="brand-emoji">💖</div>
                 <h3>Meesho Store Offers</h3>
-                <p>Get unbeatable factory prices on clothing, accessories, and home kitchen utilities.</p>
-                <a href="https://bitli.in/kk4kqbD" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Meesho Deals</a>
+                <p>Unbeatable factory prices on clothing.</p>
+                <a href="https://bitli.in/kk4kqbD" class="deal-btn" target="_blank" rel="noopener noreferrer">Unlock Deal</a>
             </div>
+        </div>
 
+        <!-- MYNTRA SPECIFIC DEALS -->
+        <h2 class="section-title">🛍️ Myntra Live Offers</h2>
+        <div class="deals-grid">
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Trending Wear 1</h3><a href="https://myntr.it/u1u5yNj" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Fashion Deal 2</h3><a href="https://myntr.it/jdCvisD" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Premium Wear 3</h3><a href="https://myntr.it/0LGj1hr" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Style Special 4</h3><a href="https://myntr.it/4M7Wbwp" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Exclusive Deal 5</h3><a href="https://myntr.it/8nPNxSw" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Best Seller 6</h3><a href="https://myntr.it/66oWTo8" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Latest Fashion 7</h3><a href="https://myntr.it/B62vExC" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag myntra">Myntra</span><h3>Super Discount 8</h3><a href="https://myntr.it/JRr6pJv" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+        </div>
+
+        <!-- AJIO SPECIFIC DEALS -->
+        <h2 class="section-title">👔 Ajio Hot Trends</h2>
+        <div class="deals-grid">
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Trending Wear 1</h3><a href="https://ajiio.in/lLsookW" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Modern Style 2</h3><a href="https://ajiio.in/8N0d6nl" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Classic Fit 3</h3><a href="https://ajiio.in/EtV074w" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Casual Trend 4</h3><a href="https://ajiio.in/QlLqg1w" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Hot Choice 5</h3><a href="https://ajiio.in/xtwrj61" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>New Arrivals 6</h3><a href="https://ajiio.in/KHO7Ubi" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Smart Casuals 7</h3><a href="https://ajiio.in/K5zBtGz" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Premium Collection 8</h3><a href="https://ajiio.in/Mwf8i4e" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Super Saver 9</h3><a href="https://ajiio.in/dkNJXb9" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Popular Style 10</h3><a href="https://ajiio.in/TZx89Uv" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
+            <div class="deal-card"><span class="tag ajio">Ajio</span><h3>Ethnic & Modern 11</h3><a href="https://ajiio.in/xNn7t00" class="deal-btn" target="_blank" rel="noopener noreferrer">Grab Deal</a></div>
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 30px; color: #6b7280; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #e5e7eb;">
+    <footer style="text-align: center; padding: 25px; color: #6b7280; font-size: 0.9rem; margin-top: 50px;">
         &copy; SN Deals. All rights reserved.
     </footer>
 </body>
