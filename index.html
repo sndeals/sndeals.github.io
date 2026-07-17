@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Deals | Official Store</title>
+    <title>SN Deals | Premium Store</title>
     <style>
         body { font-family: sans-serif; background: #f3f3f3; margin: 0; }
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
@@ -19,7 +19,14 @@
     const products = [
         { name: "Premium Gadget 1", link: "https://link.amazon/B07H74QzY" },
         { name: "Premium Gadget 2", link: "https://link.amazon/B0cTtjMIQ" },
-        { name: "Premium Gadget 3", link: "https://link.amazon/B0exj1QWj" }
+        { name: "Premium Gadget 3", link: "https://link.amazon/B0exj1QWj" },
+        { name: "Premium Gadget 4", link: "https://link.amazon/B0fzmITPn" },
+        { name: "Premium Gadget 5", link: "https://link.amazon/B0fErdMH4" },
+        { name: "Premium Gadget 6", link: "https://link.amazon/B0ee5wLEN" },
+        { name: "Premium Gadget 7", link: "https://link.amazon/B00QhruoH" },
+        { name: "Premium Gadget 8", link: "https://link.amazon/B0cHfSnGB" },
+        { name: "Premium Gadget 9", link: "https://link.amazon/B06386bZI" },
+        { name: "Premium Gadget 10", link: "https://link.amazon/B0eT4RWLp" }
     ];
 
     const grid = document.getElementById('product-grid');
@@ -27,8 +34,8 @@
     products.forEach(p => {
         grid.innerHTML += `
             <div class="card">
-                <div style="font-size:2.5rem; margin-bottom:10px;">⚡</div>
-                <div style="font-size:0.9rem; font-weight:bold;">${p.name}</div>
+                <div style="font-size:2rem; margin-bottom:10px;">⚡</div>
+                <div style="font-size:0.85rem; font-weight:bold;">${p.name}</div>
                 <a href="${p.link}" target="_blank" class="btn-buy">Buy Now</a>
             </div>
         `;
