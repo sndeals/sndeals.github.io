@@ -3,56 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SN Deals | Amazon Store</title>
+    <title>Amazon India Deals - Best Mobile & Gadget Offers | SN Deals</title>
     <style>
-        body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f6f7fb;color:#1f2937}
-        .site-header{background:linear-gradient(135deg,#ff9900,#e68a00);color:#111;padding:30px 16px;text-align:center;box-shadow:0 4px 15px rgba(255,153,0,0.15)}
-        .site-header h1 { margin: 0; font-size: 2.4rem; font-weight: 800; }
-        .site-header p { margin: 8px 0 0 0; opacity: 0.9; font-size: 1.1rem; font-weight: 600; }
-        .site-nav{background:#0f172a;padding:.75rem 1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-        .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
-        .nav-list a{display:inline-block;text-decoration:none;color:#fff;padding:.6rem .95rem;border-radius:.55rem;font-weight: 600;font-size:0.95rem;transition:all 0.2s;}
-        .nav-list a:hover{background:rgba(255,255,255,.16)}
-        .nav-list a[aria-current="page"]{background:#fff;color:#0f172a;font-weight:700}
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #eaeded; color: #111; }
         
-        .main{max-width:800px;margin:0 auto;padding:50px 16px}
-        .brand-hub { background: #fff; border: 1px solid #e5e7eb; border-radius: 20px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .brand-logo { font-size: 5rem; margin-bottom: 20px; }
-        .brand-hub h2 { color: #0f172a; font-size: 2rem; margin: 0 0 15px; }
-        .brand-hub p { color: #4b5563; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        /* Navigation Style */
+        .site-nav { background: #131921; padding: 12px 16px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .nav-list a { display: inline-block; text-decoration: none; color: #fff; padding: 8px 14px; border-radius: 4px; font-weight: 600; font-size: 0.95rem; }
+        .nav-list a:hover { border: 1px solid #fff; padding: 7px 13px; }
+        .nav-list a[aria-current="page"] { background: #febd69; color: #111; font-weight: 700; }
         
-        .buy-btn { display: inline-block; padding: 16px 40px; background: #ff9900; color: #111; text-decoration: none; border-radius: 30px; font-weight: 800; font-size: 1.1rem; transition: transform 0.2s, background 0.2s; box-shadow: 0 4px 15px rgba(255,153,0,0.3); }
-        .buy-btn:hover { background: #e68a00; transform: scale(1.03); }
-        @media (max-width:640px){.nav-list a{width:100%;text-align:center}}
+        /* Amazon Brand Sub-Header */
+        .brand-header { background: #232f3e; color: #fff; padding: 15px 20px; text-align: center; border-top: 1px solid #3a4553; }
+        .brand-header h1 { margin: 0; font-size: 1.6rem; color: #febd69; }
+        .brand-header p { margin: 5px 0 0; font-size: 0.9rem; color: #ccc; }
+
+        .main { max-width: 1500px; margin: 0 auto; padding: 0 0 50px; position: relative; }
+
+        /* --- 1. BANNER SLIDER --- */
+        .slider-container { width: 100%; height: 350px; position: relative; overflow: hidden; background: #eaeded; }
+        .slides { display: flex; width: 300%; height: 100%; transition: transform 0.5s ease-in-out; }
+        .slide { width: 33.333%; height: 100%; position: relative; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Slider Shadow Overlay */
+        .slider-container::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 120px; background: linear-gradient(to bottom, transparent, #eaeded); pointer-events: none; }
+        
+        /* Slider Arrows */
+        .arrow { position: absolute; top: 40%; transform: translateY(-50%); font-size: 2.5rem; color: #333; background: rgba(255, 255, 255, 0.6); border: none; cursor: pointer; padding: 15px; z-index: 10; font-weight: bold; border-radius: 4px; }
+        .arrow:focus { outline: none; }
+        .prev-arrow { left: 10px; }
+        .next-arrow { right: 10px; }
+
+        /* --- 2. DEALS SECTION --- */
+        .deals-section { padding: 0 20px; margin-top: -80px; position: relative; z-index: 5; }
+        .section-title { background: #fff; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-left: 5px solid #e47911; font-size: 1.25rem; font-weight: 700; }
+
+        /* Product Grid */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+        
+        /* Product Card */
+        .product-card { background: #fff; border-radius: 4px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: relative; transition: transform 0.2s; }
+        .product-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        
+        /* Ribbon/Badge */
+        .badge { position: absolute; top: 10px; left: 10px; background: #cc0c39; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 8px; border-radius: 2px; z-index: 2; }
+
+        /* Product Image */
+        .product-img-box { width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; background: #fff; margin-bottom: 12px; }
+        .product-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        /* Product Details */
+        .product-info { flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-name { font-size: 0.95rem; font-weight: 600; line-height: 1.3; height: 40px; overflow: hidden; margin-bottom: 8px; color: #111; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        
+        /* Ratings */
+        .stars { color: #ffa41c; font-size: 0.85rem; margin-bottom: 8px; }
+        
+        /* Pricing */
+        .price-box { margin-bottom: 12px; }
+        .price-main { display: flex; align-items: baseline; gap: 6px; }
+        .curr-price { font-size: 1.4rem; font-weight: 700; color: #111; }
+        .disc-percent { color: #cc0c39; font-weight: 700; font-size: 0.95rem; }
+        .mrp { color: #565959; text-decoration: line-through; font-size: 0.85rem; margin-top: 2px; display: block; }
+
+        /* CTA Button */
+        .buy-btn { display: block; text-align: center; background: linear-gradient(to bottom, #f7dfa5, #f0c14b); border: 1px solid #a88734; color: #111; padding: 10px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; }
+        .buy-btn:hover { background: linear-gradient(to bottom, #f5d78e, #eeb933); border-color: #846a29; }
+
+        /* Footer */
+        footer { background: #131921; color: #ddd; text-align: center; padding: 25px; margin-top: 50px; font-size: 0.85rem; border-top: 1px solid #3a4553; }
+
+        /* Mobile View Optimization */
+        @media (max-width: 768px) {
+            .brand-header { padding: 10px; }
+            .brand-header h1 { font-size: 1.3rem; }
+            .slider-container { height: 180px; }
+            .slider-container::after { height: 50px; }
+            .deals-section { margin-top: -10px; padding: 0 10px; }
+            .section-title { font-size: 1rem; padding: 10px; margin-bottom: 10px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .product-card { padding: 10px; }
+            .product-img-box { height: 120px; }
+            .product-name { font-size: 0.8rem; height: 32px; }
+            .curr-price { font-size: 1.1rem; }
+            .disc-percent { font-size: 0.8rem; }
+            .mrp { font-size: 0.75rem; }
+            .buy-btn { padding: 7px; font-size: 0.8rem; }
+            .arrow { display: none; }
+        }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <h1>Amazon Store</h1>
-        <p>Your Portal to Amazon Great Indian Deals & Offers</p>
-    </header>
     
+    <!-- Navigation Bar -->
     <nav class="site-nav">
         <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="Mobiles.html" aria-current="page">Amazon</a></li>
             <li><a href="Electronics.html">MaviGadget</a></li>
-            <li><a href="Fashion.html">NikolaToy</a></li>
-            <li><a href="StoreOffers.html" style="background: #10b981; color: white; border-radius: 8px;">🔥 All Store Offers</a></li>
+            <li><a href="NikolaToy.html">🧸 NikolaToy</a></li>
+            <li><a href="StoreOffers.html" style="background: #febd69; color: #111; border-radius: 4px;">🔥 All Store Offers</a></li>
         </ul>
     </nav>
 
+    <!-- Amazon Subheader -->
+    <header class="brand-header">
+        <h1>Amazon India Great Deals</h1>
+        <p>Grab up to 80% Off on Smartphones, Electronics & Gadgets</p>
+    </header>
+
     <main class="main">
-        <div class="brand-hub">
-            <div class="brand-logo">📦</div>
-            <h2>Amazon India Deals</h2>
-            <p>Shop trending smartphones, electronics, home essentials, and fashion directly on Amazon with pre-applied maximum discount benefits.</p>
-            <a href="https://amzn.to/446v3Rj" class="buy-btn" target="_blank" rel="noopener noreferrer">Shop Live Amazon Deals ➔</a>
+        
+        <!-- --- 1. BANNER SLIDER --- -->
+        <div class="slider-container">
+            <button class="arrow prev-arrow" onclick="moveSlide(-1)">❮</button>
+            <div class="slides" id="slider">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&auto=format&fit=crop" alt="Big Amazon Sale Banner">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=1200&auto=format&fit=crop" alt="Smartwatch Special Offers">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&auto=format&fit=crop" alt="Electronics Store Banner">
+                </div>
+            </div>
+            <button class="arrow next-arrow" onclick="moveSlide(1)">❯</button>
         </div>
+
+        <!-- --- 2. AMAZON OFFERS LIST --- -->
+        <section class="deals-section">
+            <div class="section-title">🔥 Live Loot Deals on Tech & Mobiles</div>
+            
+            <div class="products-grid">
+                
+                <!-- Product 1: Smartphone -->
+                <div class="product-card">
+                    <span class="badge">Loot Deal</span>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&auto=format&fit=crop" alt="Smartphone">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">5G Premium Smartphone (8GB RAM | 128GB Storage)</div>
+                        <div class="stars">★★★★☆ <span style="color:#565959; font-size:0.75rem;">(4,210)</span></div>
+                        <div class="price-box">
+                            <div class="price-main">
+                                <span class="disc-percent">-40%</span>
+                                <span class="curr-price">₹11,999</span>
+                            </div>
+                            <span class="mrp">M.R.P.: ₹19,999</span>
+                        </div>
+                        <a href="https://amazon.in" target="_blank" class="buy-btn">Get Deal on Amazon ➔</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Smartwatch -->
+                <div class="product-card">
+                    <span class="badge">70% OFF</span>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&auto=format&fit=crop" alt="Smartwatch">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Smart Fitness Watch with Bluetooth Calling & SpO2</div>
+                        <div class="stars">★★★★☆ <span style="color:#565959; font-size:0.75rem;">(1,894)</span></div>
+                        <div class="price-box">
+                            <div class="price-main">
+                                <span class="disc-percent">-70%</span>
+                                <span class="curr-price">₹1,499</span>
+                            </div>
+                            <span class="mrp">M.R.P.: ₹4,999</span>
+                        </div>
+                        <a href="https://amazon.in" target="_blank" class="buy-btn">Get Deal on Amazon ➔</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Earbuds -->
+                <div class="product-card">
+                    <span class="badge">Best Seller</span>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&auto=format&fit=crop" alt="Earbuds">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">True Wireless Earbuds with Active Noise Cancellation (ANC)</div>
+                        <div class="stars">★★★★★ <span style="color:#565959; font-size:0.75rem;">(9,310)</span></div>
+                        <div class="price-box">
+                            <div class="price-main">
+                                <span class="disc-percent">-66%</span>
+                                <span class="curr-price">₹999</span>
+                            </div>
+                            <span class="mrp">M.R.P.: ₹2,999</span>
+                        </div>
+                        <a href="https://amazon.in" target="_blank" class="buy-btn">Get Deal on Amazon ➔</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Powerbank -->
+                <div class="product-card">
+                    <span class="badge">Limited Deal</span>
+                    <div class="product-img-box">
+                        <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=300&auto=format&fit=crop" alt="Powerbank">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">20000mAh Fast Charging Power Bank (22.5W Quick Charge)</div>
+                        <div class="stars">★★★★☆ <span style="color:#565959; font-size:0.75rem;">(2,450)</span></div>
+                        <div class="price-box">
+                            <div class="price-main">
+                                <span class="disc-percent">-55%</span>
+                                <span class="curr-price">₹899</span>
+                            </div>
+                            <span class="mrp">M.R.P.: ₹1,999</span>
+                        </div>
+                        <a href="https://amazon.in" target="_blank" class="buy-btn">Get Deal on Amazon ➔</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <footer style="text-align: center; padding: 25px; color: #6b7280; font-size: 0.9rem; margin-top: 50px;">
-        &copy; SN Deals. All rights reserved.
+    <!-- Footer -->
+    <footer>
+        © 2026 SN Deals. All rights reserved. Amazon and all related logos are trademarks of Amazon.com, Inc. or its affiliates.
     </footer>
+
+    <!-- Slider Javascript Code -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slider = document.getElementById('slider');
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            slider.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+        }
+
+        // Auto slide change in 4 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 4000);
+    </script>
 </body>
 </html>
