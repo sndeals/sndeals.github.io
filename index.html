@@ -2,46 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SN Deals - Live Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SN Deals | 1000+ Offers</title>
     <style>
-        body { font-family: sans-serif; margin: 0; background: #f1f3f6; }
-        .header { background: #232f3e; color: white; padding: 15px; text-align: center; }
+        body { font-family: sans-serif; background: #f3f3f3; margin: 0; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; padding: 10px; }
-        .card { background: white; padding: 10px; border-radius: 5px; text-align: center; border: 1px solid #ccc; }
+        .card { background: white; padding: 10px; border-radius: 8px; text-align: center; border: 1px solid #ddd; }
         .card img { width: 100%; height: 120px; object-fit: contain; }
-        .btn { display: block; width: 100%; padding: 8px; margin-top: 5px; cursor: pointer; font-weight: bold; border: none; }
-        .cart { background: #ffd814; }
-        .buy { background: #fa8900; color: white; }
+        .btn-buy { display: block; background: #ff9900; padding: 10px; margin-top: 10px; text-decoration: none; color: black; font-weight: bold; border-radius: 5px; }
+        #load-more { display: block; width: 90%; margin: 20px auto; padding: 15px; background: #232f3e; color: white; border: none; border-radius: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-<div class="header"><h1>SN Deals | 1000+ Offers</h1></div>
-
-<div class="grid" id="main"></div>
+<div class="grid" id="product-grid"></div>
+<button id="load-more">Load More Deals</button>
 
 <script>
-    // आपके लिंक्स यहाँ फिक्स हैं
-    const links = [
-        "https://bitli.in/cAEMfDZ", "https://bitli.in/VgtP4S9", "https://bitli.in/Na3HLul",
-        "https://link.amazon/B04n3JKLX", "https://link.amazon/B0jfKbzZw", "https://link.amazon/B0fis2wy4"
-    ];
-    
-    const container = document.getElementById('main');
-    
-    // 1000 प्रोडक्ट्स जनरेट होंगे
-    for (let i = 1; i <= 1000; i++) {
-        let link = links[i % links.length];
-        container.innerHTML += `
-            <div class="card">
-                <img src="https://placehold.co/200x200?text=Product+${i}" alt="Product">
-                <div style="font-size:0.8rem; font-weight:bold;">Premium Deal ${i}</div>
-                <div style="color:red; font-weight:bold;">₹${Math.floor(Math.random() * 20000) + 500}</div>
-                <button class="btn cart" onclick="alert('Added!')">Add To Cart</button>
-                <button class="btn buy" onclick="window.open('${link}', '_blank')">Buy Now</button>
-            </div>
-        `;
+    // आपका अफ़िलिएट लिंक
+    const affLink = "https://link.amazon/B0b7nGmCk";
+    const grid = document.getElementById('product-grid');
+    const loadMoreBtn = document.getElementById('load-more');
+    let loadedCount = 0;
+    const totalProducts = 1000;
+
+    function loadProducts(count) {
+        for (let i = 0; i < count; i++) {
+            if (loadedCount >= totalProducts) break;
+            loadedCount++;
+            grid.innerHTML += `
+                <div class="card">
+                    <img src="https://placehold.co/200x200?text=Product+${loadedCount}" alt="Product">
+                    <div style="font-size:0.8rem; margin:10px 0;">Premium Gadget ${loadedCount}</div>
+                    <div style="color:red; font-weight:bold;">₹${Math.floor(Math.random() * 20000) + 500}</div>
+                    <a href="${affLink}" target="_blank" class="btn-buy">Buy Now</a>
+                </div>
+            `;
+        }
     }
+
+    // पहली बार 20 प्रोडक्ट्स लोड करें
+    loadProducts(20);
+
+    // बटन दबाने पर अगले 20 लोड करें
+    loadMoreBtn.onclick = () => loadProducts(20);
 </script>
 
 </body>
