@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deals Page</title>
+    <style>
+        .banner { background: #ff4500; color: white; padding: 20px; text-align: center; border-radius: 10px; }
+        .product-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 200px; }
+        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="banner"><h2 id="page-title">Loading...</h2></div>
+    <div id="product-container"></div>
+
+    <script>
+        // बस यहाँ अपनी कैटेगरी का नाम बदलें (जैसे: 'amazon', 'flipkart', 'myntra', 'hamaramall')
+        const myCategory = 'mavigadget; 
+        document.getElementById('page-title').innerText = myCategory.toUpperCase() + " DEALS";
+
+        fetch('products.json')
+        .then(r => r.json())
+        .then(data => {
+            const container = document.getElementById('product-container');
+            // यह कोड अपने आप फिल्टर कर लेगा
+            data.filter(p => p.category.toLowerCase() === myCategory.toLowerCase()).forEach(p => {
+                container.innerHTML += `
+                    <div class="product-card">
+                        <h3>${p.name}</h3>
+                        <p style="color:red; font-weight:bold;">${p.price}</p>
+                        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+                    </div>`;
+            });
+        });
+    </script>
+</body>
+</html>
