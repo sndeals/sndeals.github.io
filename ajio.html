@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Live Deals</title>
+    <title>Deals Page</title>
     <style>
-        .banner { background: #ff4500; color: white; padding: 20px; text-align: center; border-radius: 10px; margin-bottom: 20px; }
-        .product-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 250px; vertical-align: top; }
-        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
-        .slider-box { overflow-x: auto; white-space: nowrap; padding: 10px; background: #f9f9f9; }
+        .banner { background: #ff4500; color: white; padding: 20px; text-align: center; border-radius: 10px; }
+        .product-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 200px; }
+        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <div class="banner"><h2>🔥 LIVE DISCOUNT OFFERS 🔥</h2></div>
-    <div class="slider-box" id="product-container"></div>
+    <div class="banner"><h2 id="page-title">Loading...</h2></div>
+    <div id="product-container"></div>
 
     <script>
-        // अपनी फाइल के हिसाब से यहाँ नाम बदलें: 'amazon', 'mavigadget', 'nikolatoy'
-        const myCategory = 'amazon'; 
+        // बस यहाँ अपनी कैटेगरी का नाम बदलें (जैसे: 'amazon', 'flipkart', 'myntra', 'hamaramall')
+        const myCategory = 'ajio'; 
+        document.getElementById('page-title').innerText = myCategory.toUpperCase() + " DEALS";
 
         fetch('products.json')
         .then(r => r.json())
         .then(data => {
             const container = document.getElementById('product-container');
-            data.filter(p => p.category === myCategory).forEach(p => {
+            // यह कोड अपने आप फिल्टर कर लेगा
+            data.filter(p => p.category.toLowerCase() === myCategory.toLowerCase()).forEach(p => {
                 container.innerHTML += `
                     <div class="product-card">
                         <h3>${p.name}</h3>
                         <p style="color:red; font-weight:bold;">${p.price}</p>
-                        <a href="${p.link}" target="_blank" class="btn">Grab Deal / Buy Now</a>
+                        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
                     </div>`;
             });
         });
