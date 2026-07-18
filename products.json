@@ -1,50 +1,143 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deals</title>
-    <style>
-        .banner { background: #ff4500; color: white; padding: 20px; text-align: center; border-radius: 10px; margin-bottom: 15px; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
-        .card { background: white; padding: 15px; border-radius: 10px; border: 1px solid #ddd; text-align: center; }
-        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
-    </style>
-</head>
-<body>
-
-    <div class="banner"><h2 id="page-title">Loading...</h2></div>
-    <div class="grid" id="product-container"></div>
-
-    <script>
-        // 1. यहाँ अपनी कैटेगरी का नाम सही लिखें (जैसे: 'amazon', 'ajio', 'bitli', 'hamaramall')
-        const myCategory = 'amazon'; 
-        
-        document.getElementById('page-title').innerText = myCategory.toUpperCase() + " DEALS";
-
-        fetch('products.json')
-        .then(r => r.json())
-        .then(data => {
-            const container = document.getElementById('product-container');
-            // डेटा को फिल्टर करें
-            const items = data.filter(p => p.category.toLowerCase() === myCategory.toLowerCase());
-            
-            if (items.length === 0) {
-                container.innerHTML = "<p>कोई प्रोडक्ट नहीं मिला।</p>";
-            } else {
-                container.innerHTML = items.map(p => `
-                    <div class="card">
-                        <div style="font-weight:bold; margin-bottom:5px;">${p.name}</div>
-                        <div style="color:red; font-weight:bold;">${p.price}</div>
-                        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
-                    </div>
-                `).join('');
-            }
-        })
-        .catch(err => {
-            document.getElementById('page-title').innerText = "Error";
-            console.error(err);
-        });
-    </script>
-</body>
-</html>
+Ye lo Links 
+[
+  { "category": "mavigadget", "name": "Mavi Gadget Tool", "price": "🔥 Best Deal", "link": "https://mavigadget.com/?ref=3rqtosfk" },
+  { "category": "nikolatoy", "name": "Nikola Toy Car", "price": "🔥 Best Deal", "link": "https://nikolatoy.com/?ref=exttozbk" },
+  { "category": "hamaramall", "name": "HamaraMall Item", "price": "Exclusive", "link": "https://hamaramall.com/" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B028bTd9T" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B006GJuRS" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B0e73WXXa" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B0aYmyw6a" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B07LLYb17" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B05qqJj37" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B0dlrj8Jt" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B00aY7wk9" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B086m5lMP" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B08VwC1Sg" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B0hA45ZHv" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B0g7qGn2i" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B00pF5J5l" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B08D3zANS" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B0bmRHJtx" },
+  { "category": "amazon", "name": "Amazon Deal", "price": "⚡ Grab Now", "link": "https://link.amazon/B091fQE3s" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/lbA1Mm7" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/UjQ4FMk" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/z5P8T1w" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/ulliF76" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/K6B228t" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/m168tXq" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/Cx056tF" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/5bxcVA2" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/zOdXgQi" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/ZHwlfL8" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/jfkR37D" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/km8dKm2" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/SsHTaTp" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/f35nc0b" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/liJphK8" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/0UtY2fo" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/7n4wgNr" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/NasQcd9" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/j3sgvEe" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/NOVdGfV" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/T0iLkks" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/oaD4zoq" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/HLdwhyb" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/SvX9iic" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/MIXiy87" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/tmCnYqc" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/FNp0apV" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/iCeZDq4" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/j1nLSq4" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/216H2N1" },
+  { "category": "flipkart", "name": "Flipkart Offer", "price": "🚀 Low Price", "link": "https://fktr.in/qFMCnuF" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/cCC8S9X" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/Rhr6Ial" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/zq1Pwo3" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/nzR6b28" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/SRrr1ZS" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/5JNooas" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/BFkjk4A" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/vya2tin" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/THhgDKk" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/aknjzAK" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/jMZe9P8" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/gyd1Pw9" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/fgTxI4a" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/m0aYT0o" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/6el7Hbb" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/e0bh4uS" },
+  { "category": "myntra", "name": "Myntra Fashion", "price": "👗 Sale!", "link": "https://myntr.it/kHSSDl5" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/CrDlpVZ" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/3R1Kpz4" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/ay9upcW" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/tQcAOch" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/8wWlt5w" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/DyVoe3d" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/RIxgGpt" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/Vx5EASL" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/84YpQuv" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/2RzbtWx" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/XfWvhPu" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/sjePJTU" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/2ny70D0" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/uvQ934G" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/09MBq81" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/4Whq5V1" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/xgDL480" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/6R75XV4" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/wINNNgP" },
+  { "category": "ajio", "name": "Ajio Trends", "price": "🏷️ Deal", "link": "https://ajiio.in/s2p0YcV" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/5Op1vOx" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/vyk9gBk" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/e12vewD" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/uw10G0H" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/0axdiEo" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/J08RoM4" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/bPt7zJZ" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/hYEYnP0" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/Na0n5tV" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/X2zLzz8" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/GpvCCBx" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/1GfaBKz" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/jyxff6l" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/9ldyz3N" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/ZceQQdx" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/sjzhXTb" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/Dt0o6yI" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/z31c4f5" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/7FbobuQ" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/gulNQQx" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/33Iz6JG" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/et2S0BG" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/vDm53qm" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/nlyxl9Z" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/rnm5Wnf" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/T5qJxnQ" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/fh5b4Lj" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/Ek7fZ6S" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/0BxnCh2" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/a5z9V9h" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/o4n9jI6" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/mWUg8za" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/G5I1k7t" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/n8eWF2Y" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/sOpjNFe" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/0ImQvg6" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/HgsIaga" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/kS7unom" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/RXmL6k5" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/AgNhce5" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/NvsIw0s" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/ijcb4Yt" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/oVWhq4E" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/yli9Oz8" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/CQuLh3z" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/ZuDb4GQ" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/yEVY7xP" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/zQphVwi" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/J6DT9Ep" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/npVrhQJ" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/cNZ37C2" },
+  { "category": "bitli", "name": "Hot Deal", "price": "🎁 Grab Now", "link": "https://bitli.in/TQiAw44" }
+]
+ Live version chahiye slide clipboard buy now har section ka ek discount offers aur price ka slide page chahiye
