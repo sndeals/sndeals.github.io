@@ -3,7 +3,7 @@
 <div class="banner"><h2>🔥 Amazon Mega Sale: Up to 80% OFF! 🔥</h2></div>
 <div id="product-container"></div>
 <script>
-const myCategory = 'HamaraMall;
+const myCategory = 'hamaramall;
 fetch('products.json').then(r=>r.json()).then(data=>{
 const container = document.getElementById('product-container');
 data.filter(p=>p.category === myCategory).forEach(p=>{
