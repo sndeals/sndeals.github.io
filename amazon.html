@@ -1,31 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Amazon Deals</title>
-    <style>
-        .product-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; }
-        .btn { padding: 10px 20px; background: orange; color: white; text-decoration: none; border-radius: 5px; display: inline-block; }
-    </style>
-</head>
-<body>
-    <h1>Amazon Deals</h1>
-    <div id="product-container"></div>
-
-    <script>
-        fetch('products.json')
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById('product-container');
-            // यहाँ 'amazon' लिखा है, यह JSON से सिर्फ amazon के प्रोडक्ट्स उठाएगा
-            const filtered = data.filter(p => p.category === 'amazon');
-            filtered.forEach(p => {
-                container.innerHTML += `
-                    <div class="product-card">
-                        <h3>${p.name}</h3>
-                        <a href="${p.link}" target="_blank" class="btn">Grab Deal</a>
-                    </div>`;
-            });
-        });
-    </script>
-</body>
-</html>
+<html lang="hi"><head><meta charset="UTF-8"><title>Amazon Deals</title><style>.banner{background:#ff9900;color:white;padding:20px;text-align:center;border-radius:10px;margin-bottom:20px}.card{border:1px solid #ddd;padding:15px;margin:10px;border-radius:10px;text-align:center}.btn{display:block;background:#28a745;color:white;padding:10px;text-decoration:none;border-radius:5px;margin-top:10px}.price{color:red;font-weight:bold}</style></head><body>
+<div class="banner"><h2>🔥 Amazon Mega Sale: Up to 80% OFF! 🔥</h2></div>
+<div id="product-container"></div>
+<script>
+const myCategory = 'amazon';
+fetch('products.json').then(r=>r.json()).then(data=>{
+const container = document.getElementById('product-container');
+data.filter(p=>p.category === myCategory).forEach(p=>{
+container.innerHTML += `<div class="card"><h3>${p.name}</h3><p class="price">${p.price}</p><a href="${p.link}" target="_blank" class="btn">Grab Deal</a></div>`;
+});});
+</script></body></html>
