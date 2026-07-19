@@ -1,35 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deals Page</title>
     <style>
-        .banner { background: #ff4500; color: white; padding: 20px; text-align: center; border-radius: 10px; }
-        .product-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 200px; }
-        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .banner { background: #ff4500; color: white; padding: 20px; text-align: center; }
+        .product-card { background: white; border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 200px; vertical-align: top; }
+        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="banner"><h2 id="page-title">Loading...</h2></div>
-    <div id="product-container"></div>
+    <div id="product-container" style="text-align: center;"></div>
 
     <script>
-        // बस यहाँ अपनी कैटेगरी का नाम बदलें (जैसे: 'amazon', 'flipkart', 'myntra', 'hamaramall')
-        const myCategory = 'flipkart; 
+        // यह कोड फाइल का नाम (जैसे amazon.html) खुद पढ़ लेगा और 'amazon' कैटेगरी लोड करेगा
+        const path = window.location.pathname;
+        const pageName = path.split("/").pop().replace(".html", "").toLowerCase();
+        
+        // अगर फाइल का नाम index.html है तो कैटेगरी 'amazon' सेट कर दें, वरना फाइल का नाम लें
+        const myCategory = (pageName === "" || pageName === "index") ? "amazon" : pageName;
+
         document.getElementById('page-title').innerText = myCategory.toUpperCase() + " DEALS";
 
-        fetch('./products.json')
-        .then(r => r.json())
+        fetch('products.json')
+        .then(response => response.json())
         .then(data => {
             const container = document.getElementById('product-container');
-            // यह कोड अपने आप फिल्टर कर लेगा
-            data.filter(p => p.category.toLowerCase() === myCategory.toLowerCase()).forEach(p => {
-                container.innerHTML += `
-                    <div class="product-card">
-                        <h3>${p.name}</h3>
-                        <p style="color:red; font-weight:bold;">${p.price}</p>
-                        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
-                    </div>`;
-            });
+            container.innerHTML = ""; 
+            
+            const filtered = data.filter(p => p.category.toLowerCase() === myCategory);
+            
+            if (filtered.length > 0) {
+                filtered.forEach(p => {
+                    container.innerHTML += `
+                        <div class="product-card">
+                            <h3>${p.name}</h3>
+                            <p style="color:red; font-weight:bold;">${p.price}</p>
+                            <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+                        </div>`;
+                });
+            } else {
+                container.innerHTML = "<p>इस कैटेगरी में अभी कोई डील्स नहीं हैं।</p>";
+            }
+        })
+        .catch(err => {
+            document.getElementById('page-title').innerText = "Error Loading!";
         });
     </script>
 </body>
