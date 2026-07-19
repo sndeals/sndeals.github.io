@@ -17,7 +17,7 @@
         const myCategory = 'nikolatoy; 
         document.getElementById('page-title').innerText = myCategory.toUpperCase() + " DEALS";
 
-        fetch('products.json')
+        fetch('./products.json')
         .then(r => r.json())
         .then(data => {
             const container = document.getElementById('product-container');
