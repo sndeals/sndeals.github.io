@@ -6,60 +6,49 @@
     <title>SN DEALS</title>
     <style>
         body { font-family: sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        .banner { background: #0056b3; color: white; padding: 15px; text-align: center; }
+        .banner-slider { width: 100%; height: 200px; background: #ddd; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+        .banner-slider img { width: 100%; height: 100%; object-fit: cover; }
         .nav-bar { background: #333; padding: 10px; text-align: center; overflow-x: auto; white-space: nowrap; }
-        .nav-bar a { color: white; padding: 10px; text-decoration: none; font-size: 14px; font-weight: bold; }
-        .nav-bar a:hover { color: #ff4500; }
-        .product-card { background: white; border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 160px; vertical-align: top; }
-        .btn { display: block; background: #28a745; color: white; padding: 8px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+        .nav-bar a { color: white; padding: 10px; text-decoration: none; font-weight: bold; font-size: 14px; }
+        .product-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; padding: 10px; }
+        .product-card { background: white; padding: 10px; border-radius: 8px; text-align: center; border: 1px solid #ddd; }
+        .btn { display: block; background: #28a745; color: white; padding: 8px; text-decoration: none; border-radius: 5px; margin-top: 5px; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="banner"><h2 id="page-title">SN DEALS</h2></div>
-    
+
+    <!-- 1. Live Slider Banner -->
+    <div class="banner-slider" id="slider">
+        <img src="https://via.placeholder.com/800x200?text=HOT+OFFERS+SLIDE+1" alt="Banner">
+    </div>
+
     <div class="nav-bar">
         <a href="#" onclick="filterDeals('amazon')">Amazon</a>
         <a href="#" onclick="filterDeals('flipkart')">Flipkart</a>
         <a href="#" onclick="filterDeals('myntra')">Myntra</a>
         <a href="#" onclick="filterDeals('ajio')">Ajio</a>
         <a href="#" onclick="filterDeals('bitli')">Bitli</a>
-        <a href="#" onclick="filterDeals('mavigadget')">MaviGadget</a>
-        <a href="#" onclick="filterDeals('nikolatoy')">NikolaToy</a>
-        <a href="#" onclick="filterDeals('hamaramall')">HamaraMall</a>
     </div>
 
-    <div id="product-container" style="text-align: center; padding-top: 20px;">
-        <p>Please select a category above to view deals.</p>
-    </div>
+    <h2 id="page-title" style="text-align:center;">Select a Category</h2>
+    <div class="product-container" id="product-container"></div>
 
     <script>
         let allProducts = [];
-
-        // JSON डेटा लोड करें
-        fetch('products.json')
-        .then(r => r.json())
-        .then(data => { allProducts = data; });
+        fetch('products.json').then(r => r.json()).then(data => { allProducts = data; });
 
         function filterDeals(cat) {
             document.getElementById('page-title').innerText = cat.toUpperCase() + " DEALS";
             const container = document.getElementById('product-container');
-            container.innerHTML = "Loading...";
-            
-            const filtered = allProducts.filter(p => p.category.toLowerCase() === cat.toLowerCase());
-            
             container.innerHTML = "";
-            if (filtered.length > 0) {
-                filtered.forEach(p => {
-                    container.innerHTML += `
-                        <div class="product-card">
-                            <h4 style="margin:5px 0;">${p.name}</h4>
-                            <p style="color:red; font-weight:bold; margin:5px 0;">${p.price}</p>
-                            <a href="${p.link}" target="_blank" class="btn">Grab Deal</a>
-                        </div>`;
-                });
-            } else {
-                container.innerHTML = "<p>No deals available in this category.</p>";
-            }
+            allProducts.filter(p => p.category.toLowerCase() === cat.toLowerCase()).forEach(p => {
+                container.innerHTML += `
+                    <div class="product-card">
+                        <h4 style="margin:5px 0;">${p.name}</h4>
+                        <p style="color:red; font-weight:bold;">${p.price}</p>
+                        <a href="${p.link}" target="_blank" class="btn">Grab Deal</a>
+                    </div>`;
+            });
         }
     </script>
 </body>
