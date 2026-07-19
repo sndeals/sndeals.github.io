@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deals Page</title>
     <style>
+        body { font-family: sans-serif; margin: 0; padding: 10px; }
         .banner { background: #ff4500; color: white; padding: 20px; text-align: center; border-radius: 10px; }
-        .product-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 200px; }
-        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        .product-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; text-align: center; display: inline-block; width: 200px; vertical-align: top; }
+        .btn { display: block; background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -13,7 +16,7 @@
     <div id="product-container"></div>
 
     <script>
-        // बस यहाँ अपनी कैटेगरी का नाम बदलें (जैसे: 'amazon', 'flipkart', 'myntra', 'hamaramall')
+        // बस यहाँ अपनी कैटेगरी का नाम बदलें (जैसे: 'amazon', 'flipkart', 'myntra', 'ajio', 'bitli', 'nikolatoy', 'hamaramall', 'mavigadget')
         const myCategory = 'amazon'; 
         document.getElementById('page-title').innerText = myCategory.toUpperCase() + " DEALS";
 
@@ -21,15 +24,25 @@
         .then(r => r.json())
         .then(data => {
             const container = document.getElementById('product-container');
-            // यह कोड अपने आप फिल्टर कर लेगा
-            data.filter(p => p.category.toLowerCase() === myCategory.toLowerCase()).forEach(p => {
-                container.innerHTML += `
-                    <div class="product-card">
-                        <h3>${p.name}</h3>
-                        <p style="color:red; font-weight:bold;">${p.price}</p>
-                        <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
-                    </div>`;
-            });
+            const filteredData = data.filter(p => p.category.toLowerCase() === myCategory.toLowerCase());
+            
+            if (filteredData.length === 0) {
+                container.innerHTML = "<p style='text-align:center;'>कोई डील्स उपलब्ध नहीं हैं।</p>";
+            } else {
+                container.innerHTML = ""; // Loading हटा दें
+                filteredData.forEach(p => {
+                    container.innerHTML += `
+                        <div class="product-card">
+                            <h3>${p.name}</h3>
+                            <p style="color:red; font-weight:bold;">${p.price}</p>
+                            <a href="${p.link}" target="_blank" class="btn">Buy Now</a>
+                        </div>`;
+                });
+            }
+        })
+        .catch(err => {
+            document.getElementById('page-title').innerText = "Error Loading Deals!";
+            console.error(err);
         });
     </script>
 </body>
