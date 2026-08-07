@@ -22,30 +22,63 @@
             margin: 0;
             padding: 20px;
             color: #333;
-            background-color: #faf8f5;
+            background-color: #f8fafc;
         }
+
+        /* 1. Ultra Attractive Top Banner */
         .header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #312e81 100%);
             color: white;
-            padding: 20px;
+            padding: 22px 15px;
             text-align: center;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
         }
-        .header h1 { margin: 0; font-size: 24px; }
-        .header p { margin: 5px 0 0; font-size: 13px; opacity: 0.9; }
-        
-        .fest-header {
-            background: linear-gradient(135deg, #ff4e50, #f9d423);
+        .live-dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            margin-right: 6px;
+            box-shadow: 0 0 8px #ef4444;
+            animation: blink 1.2s infinite ease-in-out;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .live-badge {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #ef4444;
+            color: #fca5a5;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .header h1 { margin: 6px 0; font-size: 22px; font-weight: 800; letter-spacing: 0.3px; }
+        .header p { margin: 4px 0 0; font-size: 13px; color: #cbd5e1; }
+
+        /* 2. 365 Days Daily Deals Banner */
+        .daily-deals-header {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
             color: white;
-            padding: 16px;
+            padding: 16px 15px;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 12px;
             margin: 35px 0 20px 0;
-            box-shadow: 0 4px 15px rgba(255, 78, 80, 0.2);
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.3);
+            border-bottom: 3px solid #b91c1c;
         }
-        .fest-header h2 { margin: 0; font-size: 20px; }
-        .fest-header p { margin: 4px 0 0; font-size: 12px; opacity: 0.95; }
+        .daily-deals-header h2 { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: 0.5px; }
+        .daily-deals-header p { margin: 4px 0 0; font-size: 12px; color: #fff1f2; opacity: 0.95; }
 
         .grid {
             display: grid;
@@ -54,31 +87,33 @@
         }
         .card {
             background: #ffffff;
-            border: 1px solid #e0dad0;
-            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
             padding: 12px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.2s ease;
         }
+        .card:hover { transform: translateY(-3px); }
         .product-img {
             width: 100%;
             height: 140px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 8px;
-            background-color: #f0ede6;
+            background-color: #f1f5f9;
         }
         .badge {
             display: inline-block;
-            background: #ffeb3b;
-            color: #333;
+            background: #fef08a;
+            color: #854d0e;
             font-size: 10px;
-            font-weight: bold;
-            padding: 2px 6px;
+            font-weight: 800;
+            padding: 2px 7px;
             border-radius: 4px;
             margin-bottom: 5px;
             align-self: center;
@@ -87,50 +122,53 @@
             position: absolute;
             top: 18px;
             right: 18px;
-            background: #e63946;
+            background: #dc2626;
             color: #fff;
             padding: 3px 7px;
             border-radius: 6px;
             font-size: 10px;
-            font-weight: bold;
+            font-weight: 800;
+            box-shadow: 0 2px 4px rgba(220, 38, 38, 0.4);
         }
         .title {
             font-size: 13px;
-            font-weight: bold;
+            font-weight: 700;
             margin: 4px 0;
-            color: #222;
+            color: #0f172a;
         }
         .price {
             font-size: 12px;
-            color: #e91e63;
-            font-weight: bold;
+            color: #db2777;
+            font-weight: 700;
             margin-bottom: 8px;
         }
         .btn {
             display: inline-block;
-            background: #ff5722;
+            background: #f97316;
             color: white;
             text-decoration: none;
             font-size: 11px;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: 800;
             margin-top: 6px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 4px rgba(249, 115, 22, 0.3);
         }
-        .btn:hover { background: #e64a19; }
+        .btn:hover { background: #ea580c; }
     </style>
 </head>
 <body>
 
-    <!-- Main Banner -->
+    <!-- Ultra Attractive Header -->
     <div class="header">
+        <div class="live-badge"><span class="live-dot"></span> 24/7 Live Catalog</div>
         <h1>🔥 Live Products & Real Pictures Catalog</h1>
-        <p>Ab sabhi products ki real live pictures aur direct deals yahan dikhengi!</p>
+        <p>Verified Live Deals • Direct Store Links • Updated Daily</p>
     </div>
 
-    <!-- Section 1: All Main Store Deals -->
+    <!-- Main Store Catalog Section -->
     <div class="grid">
-        <!-- Card 1 -->
         <div class="card">
             <div>
                 <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=400" alt="Mavi Gadget" class="product-img">
@@ -141,7 +179,6 @@
             <a href="https://mavigadget.com/?ref=3rqtosfk" target="_blank" class="btn">Grab Offer</a>
         </div>
 
-        <!-- Card 2 -->
         <div class="card">
             <div>
                 <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=400" alt="Nikola Toy Car" class="product-img">
@@ -152,7 +189,6 @@
             <a href="https://nikolatoy.com/?ref=exttozbk" target="_blank" class="btn">Grab Offer</a>
         </div>
 
-        <!-- Card 3 -->
         <div class="card">
             <div>
                 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="HamaraMall Item" class="product-img">
@@ -163,7 +199,6 @@
             <a href="https://hamaramall.com/" target="_blank" class="btn">Grab Offer</a>
         </div>
 
-        <!-- Card 4 -->
         <div class="card">
             <div>
                 <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Amazon Deal" class="product-img">
@@ -174,7 +209,6 @@
             <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Offer</a>
         </div>
 
-        <!-- Card 5 -->
         <div class="card">
             <div>
                 <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Flipkart Offer" class="product-img">
@@ -185,7 +219,6 @@
             <a href="https://fktr.in/lbA1Mm7" target="_blank" class="btn">Grab Offer</a>
         </div>
 
-        <!-- Card 6 -->
         <div class="card">
             <div>
                 <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400" alt="Myntra Fashion" class="product-img">
@@ -197,56 +230,54 @@
         </div>
     </div>
 
-    <!-- Section 2: 🎉 SN Live Festival Deals -->
-    <div class="fest-header">
-        <h2>🎉 SN Live Festival Deals & Discount Offers</h2>
-        <p>Top Festival Offers with Special Deal Prices!</p>
+    <!-- 365 Days Evergreen Banner -->
+    <div class="daily-deals-header">
+        <h2>⚡ 365 Days Mega Price Drops & Daily Deals</h2>
+        <p>Lowest Price Guaranteed • Handpicked Top Rated Discounts</p>
     </div>
 
+    <!-- Evergreen 24/7 Deals Section -->
     <div class="grid">
-        <!-- Festival Deal 1 -->
         <div class="card">
             <span class="off-tag">60% OFF</span>
             <div>
                 <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Gaming Headset" class="product-img">
-                <span class="badge" style="background:#e0f2fe; color:#0284c7;">Festival Special</span>
+                <span class="badge" style="background:#e0f2fe; color:#0369a1;">Today's Hot Deal</span>
                 <div class="title">Wireless Gaming Headset</div>
-                <div class="price" style="color:#333; margin: 4px 0;">
-                    <span style="text-decoration: line-through; color: #888;">₹3,999</span> 
-                    <strong style="color: #2e7d32; font-size: 13px; margin-left: 4px;">₹1,599</strong>
+                <div class="price" style="color:#0f172a; margin: 4px 0;">
+                    <span style="text-decoration: line-through; color: #94a3b8;">₹3,999</span> 
+                    <strong style="color: #16a34a; font-size: 13px; margin-left: 4px;">₹1,599</strong>
                 </div>
             </div>
-            <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Festival Deal</a>
+            <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Live Deal</a>
         </div>
 
-        <!-- Festival Deal 2 -->
         <div class="card">
             <span class="off-tag">50% OFF</span>
             <div>
                 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Smartwatch" class="product-img">
-                <span class="badge" style="background:#fef3c7; color:#d97706;">Diwali Dhamaka</span>
+                <span class="badge" style="background:#fef3c7; color:#b45309;">Lowest Price Ever</span>
                 <div class="title">Bluetooth Smartwatch</div>
-                <div class="price" style="color:#333; margin: 4px 0;">
-                    <span style="text-decoration: line-through; color: #888;">₹4,999</span> 
-                    <strong style="color: #2e7d32; font-size: 13px; margin-left: 4px;">₹2,499</strong>
+                <div class="price" style="color:#0f172a; margin: 4px 0;">
+                    <span style="text-decoration: line-through; color: #94a3b8;">₹4,999</span> 
+                    <strong style="color: #16a34a; font-size: 13px; margin-left: 4px;">₹2,499</strong>
                 </div>
             </div>
-            <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Festival Deal</a>
+            <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Live Deal</a>
         </div>
 
-        <!-- Festival Deal 3 -->
         <div class="card">
             <span class="off-tag">70% OFF</span>
             <div>
                 <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Sports Shoes" class="product-img">
-                <span class="badge" style="background:#dcfce7; color:#16a34a;">Mega Sale</span>
+                <span class="badge" style="background:#dcfce7; color:#15803d;">Flash Sale</span>
                 <div class="title">Branded Sports Shoes</div>
-                <div class="price" style="color:#333; margin: 4px 0;">
-                    <span style="text-decoration: line-through; color: #888;">₹2,999</span> 
-                    <strong style="color: #2e7d32; font-size: 13px; margin-left: 4px;">₹899</strong>
+                <div class="price" style="color:#0f172a; margin: 4px 0;">
+                    <span style="text-decoration: line-through; color: #94a3b8;">₹2,999</span> 
+                    <strong style="color: #16a34a; font-size: 13px; margin-left: 4px;">₹899</strong>
                 </div>
             </div>
-            <a href="https://fktr.in/lbA1Mm7" target="_blank" class="btn">Grab Festival Deal</a>
+            <a href="https://fktr.in/lbA1Mm7" target="_blank" class="btn">Grab Live Deal</a>
         </div>
     </div>
 
