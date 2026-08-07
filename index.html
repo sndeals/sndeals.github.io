@@ -39,10 +39,10 @@
             margin-bottom: 10px;
         }
 
-        /* Top Horizontal Cards Grid */
+        /* Top Stores Scrollable Grid */
         .top-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
             gap: 8px;
         }
         .top-card {
@@ -51,16 +51,20 @@
             padding: 8px 6px;
             text-align: center;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
         .top-card img {
             width: 100%;
-            height: 70px;
-            object-fit: contain;
+            height: 65px;
+            object-fit: cover;
             border-radius: 4px;
         }
         .top-card .brand {
             font-size: 10px;
-            color: #666;
+            font-weight: bold;
+            color: #222;
             margin-top: 4px;
             white-space: nowrap;
             overflow: hidden;
@@ -83,7 +87,7 @@
         /* Main Products Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 10px;
         }
         .card {
@@ -155,31 +159,41 @@
 </head>
 <body>
 
-    <!-- Green Section like Flipkart -->
+    <!-- Green Section like Flipkart with All Stores -->
     <div class="fk-section">
         <div class="fk-title">SN Deals, still looking for these?</div>
         
         <div class="top-grid">
-            <div class="top-card">
+            <a href="https://mavigadget.com/?ref=3rqtosfk" target="_blank" class="top-card">
                 <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=200" alt="Mavi Gadget">
-                <div class="brand">Mavi Gadget</div>
+                <div class="brand">Mavigadget</div>
                 <div class="subtext">View Store</div>
-            </div>
-            <div class="top-card">
+            </a>
+            <a href="https://nikolatoy.com/?ref=exttozbk" target="_blank" class="top-card">
                 <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=200" alt="Nikola Toy">
-                <div class="brand">Nikola Toy</div>
+                <div class="brand">Nikolatoy</div>
                 <div class="subtext">View Store</div>
-            </div>
-            <div class="top-card">
+            </a>
+            <a href="https://hamaramall.com/" target="_blank" class="top-card">
                 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200" alt="HamaraMall">
-                <div class="brand">HamaraMall</div>
+                <div class="brand">Hamaramall</div>
                 <div class="subtext">View Store</div>
-            </div>
-            <div class="top-card">
+            </a>
+            <a href="https://link.amazon/B028bTd9T" target="_blank" class="top-card">
                 <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200" alt="Amazon">
                 <div class="brand">Amazon</div>
                 <div class="subtext">View Store</div>
-            </div>
+            </a>
+            <a href="https://fktr.in/lbA1Mm7" target="_blank" class="top-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200" alt="Flipkart">
+                <div class="brand">Flipkart</div>
+                <div class="subtext">View Store</div>
+            </a>
+            <a href="https://myntr.it/cCC8S9X" target="_blank" class="top-card">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=200" alt="Myntra">
+                <div class="brand">Myntra</div>
+                <div class="subtext">View Store</div>
+            </a>
         </div>
     </div>
 
@@ -188,11 +202,12 @@
 
     <!-- Main Products Grid -->
     <div class="grid">
+        <!-- Amazon Deal -->
         <div class="card">
             <span class="off-tag">60% OFF</span>
             <div>
                 <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headset" class="product-img">
-                <span class="badge">Hot Deal</span>
+                <span class="badge">Amazon Deal</span>
                 <div class="title">Wireless Gaming Headset</div>
                 <div class="price">
                     <span style="text-decoration: line-through; color: #878787;">₹3,999</span> 
@@ -202,25 +217,12 @@
             <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Buy Now</a>
         </div>
 
-        <div class="card">
-            <span class="off-tag">50% OFF</span>
-            <div>
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Smartwatch" class="product-img">
-                <span class="badge">Best Price</span>
-                <div class="title">Bluetooth Smartwatch</div>
-                <div class="price">
-                    <span style="text-decoration: line-through; color: #878787;">₹4,999</span> 
-                    <strong style="color: #388e3c; font-size: 12px; margin-left: 3px;">₹2,499</strong>
-                </div>
-            </div>
-            <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Buy Now</a>
-        </div>
-
+        <!-- Flipkart Deal -->
         <div class="card">
             <span class="off-tag">70% OFF</span>
             <div>
                 <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Shoes" class="product-img">
-                <span class="badge">Flash Sale</span>
+                <span class="badge">Flipkart Sale</span>
                 <div class="title">Branded Sports Shoes</div>
                 <div class="price">
                     <span style="text-decoration: line-through; color: #878787;">₹2,999</span> 
@@ -230,14 +232,64 @@
             <a href="https://fktr.in/lbA1Mm7" target="_blank" class="btn">Buy Now</a>
         </div>
 
+        <!-- Myntra Fashion Deal -->
         <div class="card">
+            <span class="off-tag">50% OFF</span>
             <div>
-                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400" alt="Fashion" class="product-img">
-                <span class="badge">Trendy</span>
-                <div class="title">Myntra Fashion Collection</div>
-                <div class="price"><strong style="color: #388e3c; font-size: 12px;">Special Discount</strong></div>
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400" alt="Myntra Fashion" class="product-img">
+                <span class="badge">Myntra Fashion</span>
+                <div class="title">Trendy Winter Wear Collection</div>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #878787;">₹1,999</span> 
+                    <strong style="color: #388e3c; font-size: 12px; margin-left: 3px;">₹999</strong>
+                </div>
             </div>
             <a href="https://myntr.it/cCC8S9X" target="_blank" class="btn">Buy Now</a>
+        </div>
+
+        <!-- Ajio Fashion Deal -->
+        <div class="card">
+            <span class="off-tag">65% OFF</span>
+            <div>
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" alt="Ajio Fashion" class="product-img">
+                <span class="badge">Ajio Trends</span>
+                <div class="title">Stylish Casual Wear Clothing</div>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #878787;">₹2,499</span> 
+                    <strong style="color: #388e3c; font-size: 12px; margin-left: 3px;">₹874</strong>
+                </div>
+            </div>
+            <a href="https://www.ajio.com/" target="_blank" class="btn">Buy Now</a>
+        </div>
+
+        <!-- Meesho Super Deal -->
+        <div class="card">
+            <span class="off-tag">80% OFF</span>
+            <div>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Meesho Products" class="product-img">
+                <span class="badge">Meesho Deal</span>
+                <div class="title">Smartwatch & Accessories Combo</div>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #878787;">₹1,499</span> 
+                    <strong style="color: #388e3c; font-size: 12px; margin-left: 3px;">₹299</strong>
+                </div>
+            </div>
+            <a href="https://www.meesho.com/" target="_blank" class="btn">Buy Now</a>
+        </div>
+
+        <!-- Mavigadget Unique Gadget -->
+        <div class="card">
+            <span class="off-tag">40% OFF</span>
+            <div>
+                <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=400" alt="Mavigadget Tool" class="product-img">
+                <span class="badge">Mavigadget</span>
+                <div class="title">Multi-Function Smart Tool Kit</div>
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #878787;">₹2,999</span> 
+                    <strong style="color: #388e3c; font-size: 12px; margin-left: 3px;">₹1,799</strong>
+                </div>
+            </div>
+            <a href="https://mavigadget.com/?ref=3rqtosfk" target="_blank" class="btn">Buy Now</a>
         </div>
     </div>
 
