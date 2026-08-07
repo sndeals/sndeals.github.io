@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Products & Real Pictures Catalog</title>
     
     <!-- Google tag (gtag.js) -->
@@ -34,6 +35,18 @@
         .header h1 { margin: 0; font-size: 24px; }
         .header p { margin: 5px 0 0; font-size: 13px; opacity: 0.9; }
         
+        .fest-header {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: white;
+            padding: 16px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 35px 0 20px 0;
+            box-shadow: 0 4px 15px rgba(255, 78, 80, 0.2);
+        }
+        .fest-header h2 { margin: 0; font-size: 20px; }
+        .fest-header p { margin: 4px 0 0; font-size: 12px; opacity: 0.95; }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -46,6 +59,10 @@
             padding: 12px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .product-img {
             width: 100%;
@@ -64,6 +81,18 @@
             padding: 2px 6px;
             border-radius: 4px;
             margin-bottom: 5px;
+            align-self: center;
+        }
+        .off-tag {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: #e63946;
+            color: #fff;
+            padding: 3px 7px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: bold;
         }
         .title {
             font-size: 13px;
@@ -86,70 +115,140 @@
             padding: 6px 12px;
             border-radius: 4px;
             font-weight: bold;
+            margin-top: 6px;
         }
         .btn:hover { background: #e64a19; }
     </style>
 </head>
 <body>
+
+    <!-- Main Banner -->
     <div class="header">
         <h1>🔥 Live Products & Real Pictures Catalog</h1>
         <p>Ab sabhi products ki real live pictures aur direct deals yahan dikhengi!</p>
     </div>
 
+    <!-- Section 1: All Main Store Deals -->
     <div class="grid">
         <!-- Card 1 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=400" alt="Mavi Gadget" class="product-img">
-            <span class="badge">Mavigadget</span>
-            <div class="title">Mavi Gadget Tool</div>
-            <div class="price">🔥 Best Deal</div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=400" alt="Mavi Gadget" class="product-img">
+                <span class="badge">Mavigadget</span>
+                <div class="title">Mavi Gadget Tool</div>
+                <div class="price">🔥 Best Deal</div>
+            </div>
             <a href="https://mavigadget.com/?ref=3rqtosfk" target="_blank" class="btn">Grab Offer</a>
         </div>
 
         <!-- Card 2 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=400" alt="Nikola Toy Car" class="product-img">
-            <span class="badge">Nikolatoy</span>
-            <div class="title">Nikola Toy Car</div>
-            <div class="price">🔥 Best Deal</div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=400" alt="Nikola Toy Car" class="product-img">
+                <span class="badge">Nikolatoy</span>
+                <div class="title">Nikola Toy Car</div>
+                <div class="price">🔥 Best Deal</div>
+            </div>
             <a href="https://nikolatoy.com/?ref=exttozbk" target="_blank" class="btn">Grab Offer</a>
         </div>
 
         <!-- Card 3 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="HamaraMall Item" class="product-img">
-            <span class="badge">Hamaramall</span>
-            <div class="title">HamaraMall Item</div>
-            <div class="price">Exclusive Offer</div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="HamaraMall Item" class="product-img">
+                <span class="badge">Hamaramall</span>
+                <div class="title">HamaraMall Item</div>
+                <div class="price">Exclusive Offer</div>
+            </div>
             <a href="https://hamaramall.com/" target="_blank" class="btn">Grab Offer</a>
         </div>
 
         <!-- Card 4 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Amazon Deal" class="product-img">
-            <span class="badge">Amazon</span>
-            <div class="title">Amazon Special Deal</div>
-            <div class="price">⚡ Grab Now</div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Amazon Deal" class="product-img">
+                <span class="badge">Amazon</span>
+                <div class="title">Amazon Special Deal</div>
+                <div class="price">⚡ Grab Now</div>
+            </div>
             <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Offer</a>
         </div>
 
         <!-- Card 5 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Flipkart Offer" class="product-img">
-            <span class="badge">Flipkart</span>
-            <div class="title">Flipkart Super Offer</div>
-            <div class="price">🚀 Low Price</div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Flipkart Offer" class="product-img">
+                <span class="badge">Flipkart</span>
+                <div class="title">Flipkart Super Offer</div>
+                <div class="price">🚀 Low Price</div>
+            </div>
             <a href="https://fktr.in/lbA1Mm7" target="_blank" class="btn">Grab Offer</a>
         </div>
 
         <!-- Card 6 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400" alt="Myntra Fashion" class="product-img">
-            <span class="badge">Myntra</span>
-            <div class="title">Myntra Fashion Sale</div>
-            <div class="price">👗 Trendy Sale</div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400" alt="Myntra Fashion" class="product-img">
+                <span class="badge">Myntra</span>
+                <div class="title">Myntra Fashion Sale</div>
+                <div class="price">👗 Trendy Sale</div>
+            </div>
             <a href="https://myntr.it/cCC8S9X" target="_blank" class="btn">Grab Offer</a>
         </div>
     </div>
+
+    <!-- Section 2: 🎉 SN Live Festival Deals -->
+    <div class="fest-header">
+        <h2>🎉 SN Live Festival Deals & Discount Offers</h2>
+        <p>Top Festival Offers with Special Deal Prices!</p>
+    </div>
+
+    <div class="grid">
+        <!-- Festival Deal 1 -->
+        <div class="card">
+            <span class="off-tag">60% OFF</span>
+            <div>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Gaming Headset" class="product-img">
+                <span class="badge" style="background:#e0f2fe; color:#0284c7;">Festival Special</span>
+                <div class="title">Wireless Gaming Headset</div>
+                <div class="price" style="color:#333; margin: 4px 0;">
+                    <span style="text-decoration: line-through; color: #888;">₹3,999</span> 
+                    <strong style="color: #2e7d32; font-size: 13px; margin-left: 4px;">₹1,599</strong>
+                </div>
+            </div>
+            <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Festival Deal</a>
+        </div>
+
+        <!-- Festival Deal 2 -->
+        <div class="card">
+            <span class="off-tag">50% OFF</span>
+            <div>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Smartwatch" class="product-img">
+                <span class="badge" style="background:#fef3c7; color:#d97706;">Diwali Dhamaka</span>
+                <div class="title">Bluetooth Smartwatch</div>
+                <div class="price" style="color:#333; margin: 4px 0;">
+                    <span style="text-decoration: line-through; color: #888;">₹4,999</span> 
+                    <strong style="color: #2e7d32; font-size: 13px; margin-left: 4px;">₹2,499</strong>
+                </div>
+            </div>
+            <a href="https://link.amazon/B028bTd9T" target="_blank" class="btn">Grab Festival Deal</a>
+        </div>
+
+        <!-- Festival Deal 3 -->
+        <div class="card">
+            <span class="off-tag">70% OFF</span>
+            <div>
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Sports Shoes" class="product-img">
+                <span class="badge" style="background:#dcfce7; color:#16a34a;">Mega Sale</span>
+                <div class="title">Branded Sports Shoes</div>
+                <div class="price" style="color:#333; margin: 4px 0;">
+                    <span style="text-decoration: line-through; color: #888;">₹2,999</span> 
+                    <strong style="color: #2e7d32; font-size: 13px; margin-left: 4px;">₹899</strong>
+                </div>
+            </div>
+            <a href="https://fktr.in/lbA1Mm7" target="_blank" class="btn">Grab Festival Deal</a>
+        </div>
+    </div>
+
 </body>
 </html>
