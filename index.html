@@ -23,14 +23,15 @@
             padding: 12px;
             color: #333;
             background-color: #ffffff;
+            overflow-x: hidden;
         }
 
         /* Flipkart Style Green Header Section */
         .fk-section {
             background-color: #26d07c;
             border-radius: 8px;
-            padding: 12px 14px;
-            margin-bottom: 12px;
+            padding: 12px;
+            margin-bottom: 15px;
         }
         .fk-title {
             color: #0f172a;
@@ -39,25 +40,32 @@
             margin-bottom: 10px;
         }
 
-        /* Top Stores Scrollable Grid */
-        .top-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        /* Top Stores Horizontal Slider (All 8 Stores) */
+        .top-scroll {
+            display: flex;
             gap: 8px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
         }
+        .top-scroll::-webkit-scrollbar { display: none; }
+        
         .top-card {
+            min-width: 95px;
+            max-width: 100px;
             background: #ffffff;
             border-radius: 6px;
-            padding: 8px 6px;
+            padding: 8px 5px;
             text-align: center;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             text-decoration: none;
             color: inherit;
-            display: block;
+            flex-shrink: 0;
         }
         .top-card img {
             width: 100%;
-            height: 65px;
+            height: 60px;
             object-fit: cover;
             border-radius: 4px;
         }
@@ -71,26 +79,43 @@
             text-overflow: ellipsis;
         }
         .top-card .subtext {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: bold;
             color: #26a541;
         }
 
-        /* Section Title for Suggested Products */
+        /* Section Title */
         .section-header {
             font-size: 14px;
             font-weight: 700;
             color: #212121;
-            margin: 18px 0 10px 2px;
+            margin: 15px 0 10px 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .swipe-hint {
+            font-size: 10px;
+            color: #666;
+            font-weight: normal;
         }
 
-        /* Main Products Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
+        /* Horizontal Offers Slider (Slide-by-Slide) */
+        .slider-container {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
         }
+        .slider-container::-webkit-scrollbar { display: none; }
+
         .card {
+            min-width: 160px;
+            max-width: 170px;
+            scroll-snap-align: start;
             background: #ffffff;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
@@ -100,10 +125,11 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            flex-shrink: 0;
         }
         .product-img {
             width: 100%;
-            height: 130px;
+            height: 125px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 6px;
@@ -159,11 +185,11 @@
 </head>
 <body>
 
-    <!-- Green Section like Flipkart with All Stores -->
+    <!-- Green Top Header with All 8 Stores -->
     <div class="fk-section">
         <div class="fk-title">SN Deals, still looking for these?</div>
         
-        <div class="top-grid">
+        <div class="top-scroll">
             <a href="https://mavigadget.com/?ref=3rqtosfk" target="_blank" class="top-card">
                 <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=200" alt="Mavi Gadget">
                 <div class="brand">Mavigadget</div>
@@ -194,14 +220,27 @@
                 <div class="brand">Myntra</div>
                 <div class="subtext">View Store</div>
             </a>
+            <a href="https://www.ajio.com/" target="_blank" class="top-card">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200" alt="Ajio">
+                <div class="brand">Ajio</div>
+                <div class="subtext">View Store</div>
+            </a>
+            <a href="https://www.meesho.com/" target="_blank" class="top-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200" alt="Meesho">
+                <div class="brand">Meesho</div>
+                <div class="subtext">View Store</div>
+            </a>
         </div>
     </div>
 
-    <!-- Suggested Section Title -->
-    <div class="section-header">Suggested For You</div>
+    <!-- Suggested Live Deals Title -->
+    <div class="section-header">
+        <span>Suggested For You</span>
+        <span class="swipe-hint">Swipe 👉</span>
+    </div>
 
-    <!-- Main Products Grid -->
-    <div class="grid">
+    <!-- Slide-by-Slide Live Offers Section -->
+    <div class="slider-container">
         <!-- Amazon Deal -->
         <div class="card">
             <span class="off-tag">60% OFF</span>
