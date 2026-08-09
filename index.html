@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     
-    <title>SN Deals - Top Organic, Skincare & Lifestyle Deals</title>
-    <meta name="description" content="Find top daily deals, organic products, skincare, and lifestyle offers on SN Deals.">
+    <title>SN Deals - Top Deals & Offers</title>
+    <meta name="description" content="Find the best deals on Amazon, Flipkart, Myntra, AJIO, Meesho, and organic lifestyle brands at SN Deals.">
     <meta name="robots" content="index, follow">
 
     <!-- Google Analytics -->
@@ -21,66 +21,141 @@
     <style>
         * { box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 12px;
-            color: #333;
+            color: #1e293b;
             background-color: #f8fafc;
             overflow-x: hidden;
-            padding-bottom: 70px;
+            padding-bottom: 80px;
         }
 
+        /* ANNOUNCEMENT TICKER */
         .ticker-wrap {
             background: #059669;
             color: white;
-            padding: 6px;
-            font-size: 11px;
+            padding: 8px;
+            font-size: 12px;
             font-weight: 700;
             text-align: center;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
+        /* BRAND HEADER SECTION */
         .brand-header {
             background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
             border-radius: 16px;
-            padding: 18px 12px;
+            padding: 20px 15px;
             margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.35);
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.3);
             text-align: center;
         }
         .main-heading {
             color: #ffffff;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 900;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             margin: 0 0 4px 0;
-            text-shadow: 2px 3px 6px rgba(0,0,0,0.3);
+            text-shadow: 2px 3px 6px rgba(0,0,0,0.2);
         }
         .sub-heading {
             color: #ccfbf1;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
-            margin: 0 0 12px 0;
+            margin: 0;
         }
 
-        .search-box { margin-bottom: 12px; }
+        /* SEARCH BAR SECTION */
+        .search-box { margin-bottom: 15px; }
         .search-input {
             width: 100%;
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-radius: 10px;
             border: 1px solid #cbd5e1;
-            font-size: 13px;
+            font-size: 14px;
             outline: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
+        /* TOP PLATFORMS / STORES BAR (Amazon, Flipkart, etc.) */
+        .top-stores-section {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+        .top-stores-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .store-chip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            padding: 8px 4px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #0f172a;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+        .store-chip:hover {
+            transform: translateY(-2px);
+            border-color: #0d9488;
+        }
+        .store-chip img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            margin-bottom: 4px;
+        }
+        .store-chip span {
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        /* CATEGORY FILTER SECTION */
+        .category-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            scroll-behavior: smooth;
+        }
+        .category-scroll::-webkit-scrollbar { display: none; }
+        .cat-btn {
+            background: #ffffff;
+            border: 1px solid #0d9488;
+            color: #0d9488;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .cat-btn.active, .cat-btn:hover {
+            background: #0d9488;
+            color: #ffffff;
+        }
+
+        /* SECTION HEADERS */
         .section-header {
             font-size: 15px;
             font-weight: 800;
             color: #0f172a;
-            margin: 20px 0 10px 2px;
+            margin: 10px 0 10px 2px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -89,13 +164,14 @@
         }
         .swipe-hint { font-size: 11px; color: #64748b; font-weight: 500; }
 
+        /* FEATURED SLIDER SECTION */
         .live-offers-bar {
             background: #ffffff;
             border: 2px solid #0d9488;
             border-radius: 14px;
-            padding: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
+            padding: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.12);
         }
         .live-tag {
             background: #ef4444;
@@ -104,6 +180,7 @@
             font-size: 10px;
             font-weight: 800;
             border-radius: 20px;
+            margin-left: 5px;
         }
 
         .slider-container {
@@ -111,14 +188,14 @@
             gap: 12px;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            padding: 4px 2px 12px 2px;
+            padding: 4px 2px 10px 2px;
         }
         .slider-container::-webkit-scrollbar { display: none; }
 
+        /* DEALS GRID SECTION */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
             gap: 12px;
             padding: 4px 2px;
         }
@@ -138,34 +215,46 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.04);
             height: 100%;
         }
 
         .slider-container .card {
-            min-width: 150px;
-            max-width: 160px;
+            min-width: 155px;
+            max-width: 165px;
             scroll-snap-align: start;
             flex-shrink: 0;
         }
 
         .img-box {
             width: 100%;
-            height: 115px;
+            height: 95px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: #fff;
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
             border-radius: 8px;
             margin-bottom: 8px;
-            overflow: hidden;
+            text-align: center;
+            padding: 6px;
         }
-        .product-img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .img-icon {
+            font-size: 28px;
+            margin-bottom: 2px;
+        }
+        .img-brand-name {
+            font-size: 11px;
+            font-weight: 800;
+            color: #0f766e;
+            text-transform: uppercase;
+        }
+
         .badge {
             display: inline-block;
             background: #fef3c7;
             color: #d97706;
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 700;
             padding: 2px 6px;
             border-radius: 4px;
@@ -178,14 +267,14 @@
             background: #059669; color: #fff;
             padding: 2px 6px; border-radius: 6px;
             font-size: 10px; font-weight: 800;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
             z-index: 2;
         }
         .title {
-            font-size: 11px; font-weight: 700; color: #1e293b;
-            line-height: 1.35; margin: 2px 0 6px;
+            font-size: 12px; font-weight: 700; color: #1e293b;
+            line-height: 1.3; margin: 2px 0 6px;
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-            overflow: hidden; height: 30px;
+            overflow: hidden; height: 32px;
         }
         .price { font-size: 12px; margin-bottom: 8px; }
         .btn {
@@ -193,21 +282,24 @@
             background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
             color: white; font-size: 12px;
             padding: 8px 0; border-radius: 8px; font-weight: 800;
-            box-shadow: 0 3px 6px rgba(13, 148, 136, 0.25);
+            box-shadow: 0 3px 6px rgba(13, 148, 136, 0.2);
         }
 
+        /* FLOATING ACTION BUTTON */
         .floating-whatsapp {
             position: fixed;
-            bottom: 12px; left: 50%;
+            bottom: 15px; left: 50%;
             transform: translateX(-50%);
             background: #25d366; color: white;
-            padding: 10px 24px; border-radius: 30px;
+            padding: 12px 26px; border-radius: 30px;
             font-weight: 800; font-size: 13px;
             text-decoration: none;
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
             z-index: 999;
+            white-space: nowrap;
         }
 
+        /* FOOTER SECTION */
         .footer {
             margin-top: 30px; padding: 20px 10px;
             background: #0f172a; color: #94a3b8;
@@ -217,31 +309,86 @@
 </head>
 <body>
 
-    <div class="ticker-wrap">🌿 Verified Organic, Health & Beauty Deals!</div>
+    <!-- ANNOUNCEMENT TICKER -->
+    <div class="ticker-wrap">🌿 Verified Deals from Amazon, Flipkart, Myntra & Top Brands!</div>
 
-    <!-- BRAND HEADER -->
+    <!-- BRAND HEADER SECTION -->
     <div class="brand-header">
         <h1 class="main-heading">🌿 SN DEALS 🌿</h1>
-        <div class="sub-heading">Best Organic, Wellness & Lifestyle Offers</div>
+        <div class="sub-heading">Best Discounts, Coupons & Affiliate Offers</div>
     </div>
 
-    <!-- SEARCH BOX -->
+    <!-- SEARCH BOX SECTION -->
     <div class="search-box">
-        <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search brand or product...">
+        <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search store, brand or deal...">
     </div>
 
-    <!-- FEATURED BRAND DEALS -->
+    <!-- TOP SHOPPING PLATFORMS SECTION WITH LOGOS -->
+    <div class="top-stores-section">
+        <div class="section-header" style="border:none; padding:0; margin:0;">
+            <span>🛍️ Top Shopping Stores</span>
+        </div>
+        <div class="top-stores-grid">
+            <a href="https://amazon.in" target="_blank" rel="noopener" class="store-chip">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+                <span>Amazon</span>
+            </a>
+            <a href="https://flipkart.com" target="_blank" rel="noopener" class="store-chip">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Flipkart_logo.svg" alt="Flipkart">
+                <span>Flipkart</span>
+            </a>
+            <a href="https://myntra.com" target="_blank" rel="noopener" class="store-chip">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Myntra_Logo.png" alt="Myntra">
+                <span>Myntra</span>
+            </a>
+            <a href="https://ajio.com" target="_blank" rel="noopener" class="store-chip">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Ajio_logo.svg" alt="AJIO">
+                <span>AJIO</span>
+            </a>
+            <a href="https://meesho.com" target="_blank" rel="noopener" class="store-chip">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Meesho_Logo.png" alt="Meesho">
+                <span>Meesho</span>
+            </a>
+            <a href="#" class="store-chip">
+                <span style="font-size:22px;">🏢</span>
+                <span>Hamara Mall</span>
+            </a>
+            <a href="#" class="store-chip">
+                <span style="font-size:22px;">⚙️</span>
+                <span>MaviGadget</span>
+            </a>
+            <a href="#" class="store-chip">
+                <span style="font-size:22px;">🧸</span>
+                <span>NikolaToy</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- CATEGORY FILTER BUTTONS SECTION -->
+    <div class="category-scroll">
+        <button class="cat-btn active" onclick="filterCategory('All')">All Deals</button>
+        <button class="cat-btn" onclick="filterCategory('Beauty')">💄 Skincare</button>
+        <button class="cat-btn" onclick="filterCategory('Health')">💊 Health & Energy</button>
+        <button class="cat-btn" onclick="filterCategory('Home')">🏡 Home & Cleaning</button>
+        <button class="cat-btn" onclick="filterCategory('Lifestyle')">🧸 Toys & Gifts</button>
+        <button class="cat-btn" onclick="filterCategory('Services')">🔮 Astro & Services</button>
+    </div>
+
+    <!-- FEATURED LIVE DEALS SECTION -->
     <div class="live-offers-bar">
         <div class="section-header" style="margin-top:0;">
             <span>⚡ Featured Brand Deals <span class="live-tag">LIVE</span></span>
             <span class="swipe-hint">Swipe Right 👉</span>
         </div>
         <div class="slider-container">
-            <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="card-link product-card">
+            <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="card-link">
                 <div class="card">
                     <span class="off-tag">10% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://ounceorganics.com/cdn/shop/files/Ounce_Gifting_Set.jpg" class="product-img" alt="Ounce Organics" onerror="this.src='https://via.placeholder.com/150?text=Ounce+Organics'"></div>
+                        <div class="img-box">
+                            <span class="img-icon">🌿</span>
+                            <span class="img-brand-name">Ounce Organics</span>
+                        </div>
                         <span class="badge">Skin Care</span>
                         <div class="title">Ounce Organics Skin Essentials Set</div>
                         <div class="price"><strong style="color: #059669;">Code: Ounce10</strong></div>
@@ -249,23 +396,29 @@
                     <div class="btn">Shop Now</div>
                 </div>
             </a>
-            <a href="https://bitli.in/wJAlFrg" target="_blank" rel="noopener" class="card-link product-card">
+            <a href="https://bitli.in/wJAlFrg" target="_blank" rel="noopener" class="card-link">
                 <div class="card">
                     <span class="off-tag">BUY 3 @ ₹499</span>
                     <div>
-                        <div class="img-box"><img src="https://neurogumindia.com/cdn/shop/files/Neuro_Mints.jpg" class="product-img" alt="Neurogum" onerror="this.src='https://via.placeholder.com/150?text=Neurogum'"></div>
+                        <div class="img-box">
+                            <span class="img-icon">⚡</span>
+                            <span class="img-brand-name">Neurogum</span>
+                        </div>
                         <span class="badge">Energy & Focus</span>
                         <div class="title">Neurogum Energy & Focus Mints</div>
-                        <div class="price"><strong style="color: #059669;">₹440</strong></div>
+                        <div class="price"><strong style="color: #059669;">From ₹440</strong></div>
                     </div>
                     <div class="btn">Shop Now</div>
                 </div>
             </a>
-            <a href="https://bitli.in/ldwb2h8" target="_blank" rel="noopener" class="card-link product-card">
+            <a href="https://bitli.in/ldwb2h8" target="_blank" rel="noopener" class="card-link">
                 <div class="card">
                     <span class="off-tag">29% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://koparoclean.com/cdn/shop/files/Dishwash_Lime.jpg" class="product-img" alt="Koparo Clean" onerror="this.src='https://via.placeholder.com/150?text=Koparo+Clean'"></div>
+                        <div class="img-box">
+                            <span class="img-icon">🧼</span>
+                            <span class="img-brand-name">Koparo Clean</span>
+                        </div>
                         <span class="badge">Home Care</span>
                         <div class="title">Koparo Natural Dishwashing Liquid</div>
                         <div class="price"><strong style="color: #059669;">₹189</strong></div>
@@ -273,13 +426,16 @@
                     <div class="btn">Shop Now</div>
                 </div>
             </a>
-            <a href="https://bitli.in/LRvzvns" target="_blank" rel="noopener" class="card-link product-card">
+            <a href="https://bitli.in/LRvzvns" target="_blank" rel="noopener" class="card-link">
                 <div class="card">
                     <span class="off-tag">50% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://loophoop.co.in/cdn/shop/files/Pink_Woolen_Flowers.jpg" class="product-img" alt="Loophoop" onerror="this.src='https://via.placeholder.com/150?text=Loophoop'"></div>
+                        <div class="img-box">
+                            <span class="img-icon">🧸</span>
+                            <span class="img-brand-name">Loophoop</span>
+                        </div>
                         <span class="badge">Handmade</span>
-                        <div class="title">Loophoop Pink Woolen Crochet Bouquet</div>
+                        <div class="title">Loophoop Crochet Flower Bouquet</div>
                         <div class="price"><strong style="color: #059669;">Handmade Toys</strong></div>
                     </div>
                     <div class="btn">Shop Now</div>
@@ -288,71 +444,92 @@
         </div>
     </div>
 
-    <!-- ALL BRAND OFFERS GRID -->
+    <!-- ALL PARTNER STORES & DEALS GRID SECTION -->
     <div class="section-header">
         <span>🛍️ All Partner Stores & Deals</span>
     </div>
     <div class="grid-container" id="allDealsContainer">
-        <!-- JS Rendered -->
+        <!-- Rendered via Javascript -->
     </div>
 
-    <a href="https://api.whatsapp.com/send?text=Check%20out%20the%20best%20organic%20and%20lifestyle%20deals:%20https://sndeals.github.io" target="_blank" rel="noopener" class="floating-whatsapp">
+    <!-- WHATSAPP SHARE BUTTON -->
+    <a href="https://api.whatsapp.com/send?text=Check%20out%20the%20best%20deals%20from%20Amazon,%20Flipkart%20and%20Organic%20Brands:%20https://sndeals.github.io" target="_blank" rel="noopener" class="floating-whatsapp">
         💬 Share Deals on WhatsApp
     </a>
 
+    <!-- FOOTER SECTION -->
     <div class="footer">
         <p><strong>SN DEALS</strong> - Your Verified Deals Hub</p>
         <p>© 2026 SN Deals. All Rights Reserved.</p>
     </div>
 
     <script>
-        // Exact mapping from provided screenshot links
         const dealsData = [
-            { link: "https://bitli.in/8d4Y7FC", title: "Ounce Organics Skin Care", badge: "Skin Essentials", off: "10% OFF", price: "Code: Ounce10", category: "Beauty" },
-            { link: "https://bitli.in/3y4uYu8", title: "Curiously Positive", badge: "Lifestyle", off: "Special Offer", price: "Best Price", category: "Lifestyle" },
-            { link: "https://bitli.in/wJAlFrg", title: "Neurogum Energy & Focus", badge: "Health & Mints", off: "Buy 3 @ ₹499", price: "From ₹440", category: "Health" },
-            { link: "https://bitli.in/20zQL2m", title: "JiViSa Wellness & Tea", badge: "Organic", off: "Exclusive", price: "Check Offer", category: "Wellness" },
-            { link: "https://bitli.in/X419Hkm", title: "Nature For Nature Skincare", badge: "Herbal Actives", off: "Up to 40%", price: "From ₹279", category: "Beauty" },
-            { link: "https://bitli.in/JECXhdr", title: "Nippon Paint Neo Service", badge: "Home Painting", off: "Free Quote", price: "Book Service", category: "Home" },
-            { link: "https://bitli.in/CZ7H75s", title: "Indus Astro Kundali Report", badge: "Astrology", off: "Free Report", price: "Paid / Free", category: "Services" },
-            { link: "https://bitli.in/ldwb2h8", title: "Coparo Clean Eco Products", badge: "Home Cleaning", off: "Up to 38%", price: "From ₹189", category: "Home" },
-            { link: "https://bitli.in/LRvzvns", title: "Loophoop Crochet Toys", badge: "Handmade", off: "50% OFF", price: "Handmade", category: "Toys" },
-            { link: "https://bitli.in/7XzKZDV", title: "The Moms Co. Baby Care", badge: "Mom & Baby", off: "Free Gifts", price: "Toxin-Free", category: "Baby Care" },
-            { link: "https://bitli.in/L3udAvy", title: "Nutri O Burst Gummies", badge: "Nutrition", off: "Special Offer", price: "Best Deal", category: "Health" },
-            { link: "https://bitli.in/EBqetp7", title: "RAMAM Ethnic Wear", badge: "Fashion", off: "Trending", price: "Check Offer", category: "Fashion" },
-            { link: "https://bitli.in/VNMj4Yi", title: "Kerala Ayurveda", badge: "Wellness", off: "Ayurvedic", price: "Best Price", category: "Health" }
+            { link: "https://bitli.in/8d4Y7FC", title: "Ounce Organics Skin Care", icon: "🌿", brand: "Ounce Organics", badge: "Skin Essentials", off: "10% OFF", price: "Code: Ounce10", category: "Beauty" },
+            { link: "https://bitli.in/3y4uYu8", title: "Curiously Positive Lifestyle", icon: "✨", brand: "Curiously Positive", badge: "Lifestyle", off: "Special Offer", price: "Best Price", category: "Lifestyle" },
+            { link: "https://bitli.in/wJAlFrg", title: "Neurogum Energy & Focus", icon: "⚡", brand: "Neurogum", badge: "Health & Mints", off: "Buy 3 @ ₹499", price: "From ₹440", category: "Health" },
+            { link: "https://bitli.in/20zQL2m", title: "JiViSa Wellness & Tea", icon: "🍵", brand: "JiViSa", badge: "Organic Tea", off: "Exclusive", price: "Check Offer", category: "Health" },
+            { link: "https://bitli.in/X419Hkm", title: "Nature For Nature Skincare", icon: "🍃", brand: "Nature 4 Nature", badge: "Herbal Actives", off: "Up to 40%", price: "From ₹279", category: "Beauty" },
+            { link: "https://bitli.in/JECXhdr", title: "Nippon Paint Neo Service", icon: "🎨", brand: "Nippon Paint", badge: "Home Painting", off: "Free Quote", price: "Book Service", category: "Home" },
+            { link: "https://bitli.in/CZ7H75s", title: "Indus Astro Kundali Report", icon: "🔮", brand: "Indus Astro", badge: "Astrology", off: "Free Report", price: "Free / Paid", category: "Services" },
+            { link: "https://bitli.in/ldwb2h8", title: "Koparo Clean Eco Products", icon: "🧼", brand: "Koparo Clean", badge: "Home Cleaning", off: "Up to 38%", price: "From ₹189", category: "Home" },
+            { link: "https://bitli.in/LRvzvns", title: "Loophoop Crochet Toys", icon: "🧸", brand: "Loophoop", badge: "Handmade", off: "50% OFF", price: "Handmade", category: "Lifestyle" },
+            { link: "https://bitli.in/7XzKZDV", title: "The Moms Co. Baby Care", icon: "👶", brand: "The Moms Co.", badge: "Mom & Baby", off: "Free Gifts", price: "Toxin-Free", category: "Beauty" },
+            { link: "https://bitli.in/L3udAvy", title: "Nutri O Burst Gummies", icon: "🍬", brand: "Nutri O Burst", badge: "Nutrition", off: "Special Offer", price: "Best Deal", category: "Health" },
+            { link: "https://bitli.in/EBqetp7", title: "RAMAM Ethnic Wear", icon: "👗", brand: "RAMAM", badge: "Fashion", off: "Trending", price: "Check Offer", category: "Lifestyle" },
+            { link: "https://bitli.in/VNMj4Yi", title: "Kerala Ayurveda Products", icon: "🌱", brand: "Kerala Ayurveda", badge: "Ayurvedic", off: "Special Discount", price: "Best Price", category: "Health" }
         ];
 
         const container = document.getElementById('allDealsContainer');
-        let htmlContent = "";
-        
-        dealsData.forEach(deal => {
-            htmlContent += `
-                <a href="${deal.link}" target="_blank" rel="noopener" class="card-link product-card">
-                    <div class="card">
-                        <span class="off-tag">${deal.off}</span>
-                        <div>
-                            <div class="img-box">
-                                <span style="font-weight:800; font-size:14px; color:#0d9488; text-align:center; padding:10px;">${deal.title.split(' ')[0]}</span>
+
+        function renderDeals(data) {
+            let htmlContent = "";
+            data.forEach(deal => {
+                htmlContent += `
+                    <a href="${deal.link}" target="_blank" rel="noopener" class="card-link product-card" data-category="${deal.category}">
+                        <div class="card">
+                            <span class="off-tag">${deal.off}</span>
+                            <div>
+                                <div class="img-box">
+                                    <span class="img-icon">${deal.icon}</span>
+                                    <span class="img-brand-name">${deal.brand}</span>
+                                </div>
+                                <span class="badge">${deal.badge}</span>
+                                <div class="title">${deal.title}</div>
+                                <div class="price"><strong style="color: #059669;">${deal.price}</strong></div>
                             </div>
-                            <span class="badge">${deal.badge}</span>
-                            <div class="title">${deal.title}</div>
-                            <div class="price"><strong style="color: #059669;">${deal.price}</strong></div>
+                            <div class="btn">Explore Deal</div>
                         </div>
-                        <div class="btn">Explore Deal</div>
-                    </div>
-                </a>
-            `;
-        });
-        container.innerHTML = htmlContent;
+                    </a>
+                `;
+            });
+            container.innerHTML = htmlContent;
+        }
+
+        renderDeals(dealsData);
 
         function filterProducts() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('product-card');
             
             for (let i = 0; i < cards.length; i++) {
-                let title = cards[i].querySelector('.title').innerText.toLowerCase();
-                if (title.includes(input)) {
+                let text = cards[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterCategory(catName) {
+            let buttons = document.getElementsByClassName('cat-btn');
+            for(let btn of buttons) { btn.classList.remove('active'); }
+            event.target.classList.add('active');
+
+            let cards = document.getElementsByClassName('product-card');
+            for (let i = 0; i < cards.length; i++) {
+                if (catName === 'All' || cards[i].getAttribute('data-category') === catName) {
                     cards[i].style.display = "";
                 } else {
                     cards[i].style.display = "none";
