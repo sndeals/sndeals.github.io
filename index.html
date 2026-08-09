@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     
-    <!-- SEO Meta Tags for Google Ranking -->
     <title>SN Deals - Best Daily Online Loot Deals & Discount Offers</title>
-    <meta name="description" content="Find top daily loot deals, discounts, and offers on electronics, fashion, and smart devices at SN Deals. Grab the best online shopping prices now!">
-    <meta name="keywords" content="SN Deals, loot deals, online discounts, amazon deals, flipkart offers, smart watch deals, fashion sale">
+    <meta name="description" content="Find top daily loot deals, discounts, and offers on SN Deals.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://sndeals.github.io/" />
 
-    <!-- Open Graph Tags (For Social Media & Sharing Preview) -->
-    <meta property="og:title" content="SN Deals - Best Live Deals & Offers">
-    <meta property="og:description" content="Get exclusive online deals updated daily. Save big on your shopping!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sndeals.github.io/">
-
-    <!-- Google Search Console Verification Tag (Yahan apna verification code badlein) -->
-    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
-
-    <!-- Google Analytics (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBL69N85XD"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -42,7 +30,6 @@
             padding-bottom: 70px;
         }
 
-        /* Top Banner */
         .ticker-wrap {
             background: #ef4444;
             color: white;
@@ -54,7 +41,6 @@
             margin-bottom: 10px;
         }
 
-        /* Top Header & Store Banner */
         .brand-header {
             background: linear-gradient(135deg, #059669 0%, #10b981 100%);
             border-radius: 16px;
@@ -79,10 +65,7 @@
             margin: 0 0 12px 0;
         }
 
-        /* Search Bar Box */
-        .search-box {
-            margin-bottom: 12px;
-        }
+        .search-box { margin-bottom: 12px; }
         .search-input {
             width: 100%;
             padding: 10px 14px;
@@ -93,14 +76,12 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        /* Top Stores Bar */
         .top-scroll {
             display: flex;
             gap: 10px;
             overflow-x: auto;
             scroll-behavior: smooth;
             padding-bottom: 5px;
-            -webkit-overflow-scrolling: touch;
         }
         .top-scroll::-webkit-scrollbar { display: none; }
         
@@ -117,21 +98,9 @@
             align-items: center;
             justify-content: center;
         }
-        .top-card img {
-            max-width: 100%;
-            max-height: 32px;
-            object-fit: contain;
-        }
-
+        .top-card img { max-width: 100%; max-height: 32px; object-fit: contain; }
         .store-btn-text { font-weight: 900; font-size: 12px; }
-        .flipkart-text { color: #2874f0; }
-        .myntra-text { color: #ff3f6c; }
-        .meesho-text { color: #51007a; }
-        .mavi-text { color: #0284c7; }
-        .hamara-text { color: #d97706; }
-        .nikola-text { color: #dc2626; }
 
-        /* Section Headings */
         .section-header {
             font-size: 15px;
             font-weight: 800;
@@ -145,7 +114,6 @@
         }
         .swipe-hint { font-size: 11px; color: #64748b; font-weight: 500; }
 
-        /* Live Offer Section */
         .live-offers-bar {
             background: #ffffff;
             border: 2px solid #3b82f6;
@@ -161,11 +129,8 @@
             font-size: 10px;
             font-weight: 800;
             border-radius: 20px;
-            animation: pulse 1.5s infinite;
         }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
-        /* Horizontal Slider for Products */
         .slider-container {
             display: flex;
             gap: 12px;
@@ -173,14 +138,24 @@
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             padding: 4px 2px 12px 2px;
-            -webkit-overflow-scrolling: touch;
         }
         .slider-container::-webkit-scrollbar { display: none; }
 
+        /* Bottom Section Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            padding: 4px 2px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .card {
-            min-width: 150px;
-            max-width: 160px;
-            scroll-snap-align: start;
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
@@ -189,9 +164,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            flex-shrink: 0;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            height: 100%;
         }
+
+        .slider-container .card {
+            min-width: 150px;
+            max-width: 160px;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+
         .img-box {
             width: 100%;
             height: 115px;
@@ -234,7 +217,7 @@
         .btn {
             display: block; text-align: center;
             background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-            color: white; text-decoration: none; font-size: 12px;
+            color: white; font-size: 12px;
             padding: 8px 0; border-radius: 8px; font-weight: 800;
             box-shadow: 0 3px 6px rgba(234, 88, 12, 0.25);
         }
@@ -243,7 +226,6 @@
             box-shadow: 0 3px 6px rgba(37, 99, 235, 0.25);
         }
 
-        /* Floating WhatsApp Share Button */
         .floating-whatsapp {
             position: fixed;
             bottom: 12px; left: 50%;
@@ -254,10 +236,8 @@
             text-decoration: none;
             box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
             z-index: 999;
-            display: flex; align-items: center; gap: 8px;
         }
 
-        /* Footer */
         .footer {
             margin-top: 30px; padding: 20px 10px;
             background: #0f172a; color: #94a3b8;
@@ -267,197 +247,256 @@
 </head>
 <body>
 
-    <!-- Notification Bar -->
     <div class="ticker-wrap">⚡ Exclusive Loot Deals Updated Every Hour!</div>
 
-    <!-- Header & Brand Bar -->
+    <!-- PURANA HEADER -->
     <div class="brand-header">
         <h1 class="main-heading">🔥 SN DEALS 🔥</h1>
         <div class="sub-heading">Best Daily Deals & Discount Offers</div>
         
         <div class="top-scroll">
             <a href="https://www.amazon.in" target="_blank" rel="noopener" class="top-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Store">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
             </a>
             <a href="https://www.flipkart.com" target="_blank" rel="noopener" class="top-card">
-                <span class="store-btn-text flipkart-text">Flipkart</span>
+                <span class="store-btn-text" style="color:#2874f0;">Flipkart</span>
             </a>
             <a href="https://www.myntra.com" target="_blank" rel="noopener" class="top-card">
-                <span class="store-btn-text myntra-text">Myntra</span>
-            </a>
-            <a href="https://www.ajio.com" target="_blank" rel="noopener" class="top-card">
-                <img src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="Ajio Store">
+                <span class="store-btn-text" style="color:#ff3f6c;">Myntra</span>
             </a>
             <a href="https://www.meesho.com" target="_blank" rel="noopener" class="top-card">
-                <span class="store-btn-text meesho-text">Meesho</span>
-            </a>
-            <a href="https://mavigadget.com" target="_blank" rel="noopener" class="top-card">
-                <span class="store-btn-text mavi-text">MaviGadget</span>
-            </a>
-            <a href="https://hamaramall.com" target="_blank" rel="noopener" class="top-card">
-                <span class="store-btn-text hamara-text">HamaraMall</span>
-            </a>
-            <a href="https://nikolatoy.com" target="_blank" rel="noopener" class="top-card">
-                <span class="store-btn-text nikola-text">NikolaToy</span>
+                <span class="store-btn-text" style="color:#51007a;">Meesho</span>
             </a>
         </div>
     </div>
 
-    <!-- Search Box -->
+    <!-- PURANA SEARCH BOX -->
     <div class="search-box">
-        <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search deals (e.g. Headphones, Shoes, Smartwatch)...">
+        <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search deals...">
     </div>
 
-    <!-- LIVE AFFILIATE DEALS SECTION -->
+    <!-- PURANA TOP SECTION: TRENDING BITLI DEALS -->
     <div class="live-offers-bar">
         <div class="section-header" style="margin-top:0;">
             <span>⚡ Trending Bitli Deals <span class="live-tag">LIVE</span></span>
             <span class="swipe-hint">Swipe Right 👉</span>
         </div>
         <div class="slider-container">
-            <div class="card product-card">
-                <span class="off-tag">70% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300" class="product-img" alt="Smart Device Offer">
+            <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="card-link product-card">
+                <div class="card">
+                    <span class="off-tag">70% OFF</span>
+                    <div>
+                        <div class="img-box"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300" class="product-img" alt="Bitli Deal 1"></div>
+                        <span class="badge">Hot Deal</span>
+                        <div class="title">Special Smart Device Deal #1</div>
+                        <div class="price"><strong style="color: #15803d;">Best Price Online</strong></div>
                     </div>
-                    <span class="badge">Hot Deal</span>
-                    <div class="title">Exclusive Smart Offer #1</div>
-                    <div class="price"><strong style="color: #15803d;">Best Price Online</strong></div>
+                    <div class="btn btn-live">Grab Deal</div>
                 </div>
-                <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card product-card">
-                <span class="off-tag">65% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="Audio Gadget Offer">
+            </a>
+            <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="card-link product-card">
+                <div class="card">
+                    <span class="off-tag">65% OFF</span>
+                    <div>
+                        <div class="img-box"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="Bitli Deal 2"></div>
+                        <span class="badge">Super Sale</span>
+                        <div class="title">Audio & Wireless Gadget #2</div>
+                        <div class="price"><strong style="color: #15803d;">Special Discount</strong></div>
                     </div>
-                    <span class="badge">Super Sale</span>
-                    <div class="title">Trending Tech Headphones Gadget #2</div>
-                    <div class="price"><strong style="color: #15803d;">Special Discount</strong></div>
+                    <div class="btn btn-live">Grab Deal</div>
                 </div>
-                <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card product-card">
-                <span class="off-tag">80% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Wearable Smartwatch">
+            </a>
+            <a href="https://bitli.in/wJAlFrg" target="_blank" rel="noopener" class="card-link product-card">
+                <div class="card">
+                    <span class="off-tag">80% OFF</span>
+                    <div>
+                        <div class="img-box"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Bitli Deal 3"></div>
+                        <span class="badge">Limited Stock</span>
+                        <div class="title">Smartwatch & Wearable #3</div>
+                        <div class="price"><strong style="color: #15803d;">Lowest Price</strong></div>
                     </div>
-                    <span class="badge">Limited Stock</span>
-                    <div class="title">Premium Wearable Smartwatch #3</div>
-                    <div class="price"><strong style="color: #15803d;">Lowest Price</strong></div>
+                    <div class="btn btn-live">Grab Deal</div>
                 </div>
-                <a href="https://bitli.in/wJAlFrg" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card product-card">
-                <span class="off-tag">50% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300" class="product-img" alt="Sunglasses Deal">
+            </a>
+            <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="card-link product-card">
+                <div class="card">
+                    <span class="off-tag">50% OFF</span>
+                    <div>
+                        <div class="img-box"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300" class="product-img" alt="Bitli Deal 4"></div>
+                        <span class="badge">Best Seller</span>
+                        <div class="title">Fashion & Sunglasses Deal #4</div>
+                        <div class="price"><strong style="color: #15803d;">Flash Offer</strong></div>
                     </div>
-                    <span class="badge">Best Seller</span>
-                    <div class="title">Lifestyle & Sunglasses Deal #4</div>
-                    <div class="price"><strong style="color: #15803d;">Flash Offer</strong></div>
+                    <div class="btn btn-live">Grab Deal</div>
                 </div>
-                <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card product-card">
-                <span class="off-tag">75% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300" class="product-img" alt="Electronics Headphones">
+            </a>
+            <a href="https://bitli.in/X419Hkm" target="_blank" rel="noopener" class="card-link product-card">
+                <div class="card">
+                    <span class="off-tag">75% OFF</span>
+                    <div>
+                        <div class="img-box"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300" class="product-img" alt="Bitli Deal 5"></div>
+                        <span class="badge">Top Pick</span>
+                        <div class="title">Electronics Special Offer #5</div>
+                        <div class="price"><strong style="color: #15803d;">Check Price</strong></div>
                     </div>
-                    <span class="badge">Top Pick</span>
-                    <div class="title">Electronics Special Headphones #5</div>
-                    <div class="price"><strong style="color: #15803d;">Check Price</strong></div>
+                    <div class="btn btn-live">Grab Deal</div>
                 </div>
-                <a href="https://bitli.in/X419Hkm" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
+            </a>
         </div>
     </div>
 
-    <!-- AMAZON DEALS -->
+    <!-- PURANA MIDDLE SECTION: AMAZON LIVE DEALS -->
     <div class="section-header">
         <span>🛒 Amazon Live Deals</span>
         <span class="swipe-hint">Swipe 👉</span>
     </div>
     <div class="slider-container">
-        <div class="card product-card">
-            <span class="off-tag">68% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="boAt Headphones">
+        <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="card-link product-card">
+            <div class="card">
+                <span class="off-tag">68% OFF</span>
+                <div>
+                    <div class="img-box"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="boAt Headphones"></div>
+                    <span class="badge">Hot Deal</span>
+                    <div class="title">boAt Rockerz 450 Bluetooth Headphones</div>
+                    <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,990</span> <strong style="color: #15803d;">₹1,299</strong></div>
                 </div>
-                <span class="badge">Hot Deal</span>
-                <div class="title">boAt Rockerz 450 Bluetooth Headphones</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,990</span> <strong style="color: #15803d;">₹1,299</strong></div>
+                <div class="btn">Buy Now</div>
             </div>
-            <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
-        <div class="card product-card">
-            <span class="off-tag">75% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Noise Smartwatch">
+        </a>
+        <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="card-link product-card">
+            <div class="card">
+                <span class="off-tag">75% OFF</span>
+                <div>
+                    <div class="img-box"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Noise Smartwatch"></div>
+                    <span class="badge">Best Seller</span>
+                    <div class="title">Noise Pulse 2 Max Smartwatch</div>
+                    <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹5,999</span> <strong style="color: #15803d;">₹1,499</strong></div>
                 </div>
-                <span class="badge">Best Seller</span>
-                <div class="title">Noise Pulse 2 Max Smartwatch</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹5,999</span> <strong style="color: #15803d;">₹1,499</strong></div>
+                <div class="btn">Buy Now</div>
             </div>
-            <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
+        </a>
     </div>
 
-    <!-- FASHION DEALS -->
+    <!-- PURANA MIDDLE SECTION: FASHION & LIFESTYLE -->
     <div class="section-header">
         <span>👗 Fashion & Lifestyle Hits</span>
         <span class="swipe-hint">Swipe 👉</span>
     </div>
     <div class="slider-container">
-        <div class="card product-card">
-            <span class="off-tag">65% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" class="product-img" alt="Puma Shoes">
+        <a href="https://bitli.in/LRvzvns" target="_blank" rel="noopener" class="card-link product-card">
+            <div class="card">
+                <span class="off-tag">65% OFF</span>
+                <div>
+                    <div class="img-box"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" class="product-img" alt="Puma Shoes"></div>
+                    <span class="badge">Big Saver</span>
+                    <div class="title">Puma Men Sports Running Shoes</div>
+                    <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,999</span> <strong style="color: #15803d;">₹1,399</strong></div>
                 </div>
-                <span class="badge">Big Saver</span>
-                <div class="title">Puma Men Sports Running Shoes</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,999</span> <strong style="color: #15803d;">₹1,399</strong></div>
+                <div class="btn">Buy Now</div>
             </div>
-            <a href="https://bitli.in/LRvzvns" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
-        <div class="card product-card">
-            <span class="off-tag">70% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300" class="product-img" alt="Casual Sneakers">
+        </a>
+        <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="card-link product-card">
+            <div class="card">
+                <span class="off-tag">70% OFF</span>
+                <div>
+                    <div class="img-box"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300" class="product-img" alt="Casual Sneakers"></div>
+                    <span class="badge">Popular</span>
+                    <div class="title">Casual Lightweight Sneakers Shoes</div>
+                    <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹2,499</span> <strong style="color: #15803d;">₹749</strong></div>
                 </div>
-                <span class="badge">Popular</span>
-                <div class="title">Casual Lightweight Sneakers Shoes</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹2,499</span> <strong style="color: #15803d;">₹749</strong></div>
+                <div class="btn">Buy Now</div>
             </div>
-            <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
+        </a>
     </div>
 
-    <!-- FLOATING WHATSAPP SHARE BUTTON ONLY -->
-    <a href="https://api.whatsapp.com/send?text=Check%20out%20the%20best%20daily%20loot%20deals%20and%20discounts%20on%20SN%20Deals:%20https://sndeals.github.io" target="_blank" rel="noopener" class="floating-whatsapp">
+    <!-- NEW SECTION: KHALI JAGAH MEIN SAARE 40+ LIVE BITLI OFFERS -->
+    <div class="section-header">
+        <span>🔥 All 40+ Live Bitli Offers</span>
+    </div>
+    <div class="grid-container" id="all40BitliContainer">
+        <!-- JavaScript se Saare 40+ Offers Yahan Render Honge -->
+    </div>
+
+    <!-- PURANA WHATSAPP BUTTON -->
+    <a href="https://api.whatsapp.com/send?text=Check%20out%20the%20best%20daily%20loot%20deals:%20https://sndeals.github.io" target="_blank" rel="noopener" class="floating-whatsapp">
         💬 Share Deals on WhatsApp
     </a>
 
-    <!-- Footer Section -->
+    <!-- PURANA FOOTER -->
     <div class="footer">
         <p><strong>SN DEALS</strong> - Your Daily Savings Hub</p>
         <p>© 2026 SN Deals. All Rights Reserved.</p>
     </div>
 
+    <!-- JAVASCRIPT FOR 40+ BITLI LINKS (Khali Jagah Ke Liye) -->
     <script>
+        const extra40Deals = [
+            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Device Offer #1", badge: "Hot Deal", off: "70% OFF", price: "Best Price" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Wireless Headphones #2", badge: "Super Sale", off: "65% OFF", price: "Special Offer" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Smartwatch Limited #3", badge: "Limited Stock", off: "80% OFF", price: "Lowest Price" },
+            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "Sunglasses & Fashion #4", badge: "Best Seller", off: "50% OFF", price: "Flash Offer" },
+            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Electronics Special #5", badge: "Top Pick", off: "75% OFF", price: "Check Offer" },
+            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300", title: "Sports Running Shoes #6", badge: "Big Saver", off: "60% OFF", price: "Grab Deal" },
+            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300", title: "Casual Sneakers #7", badge: "Popular", off: "68% OFF", price: "Best Discount" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300", title: "Branded Sports Shoes #8", badge: "Hot Deal", off: "55% OFF", price: "Lowest Ever" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300", title: "Analog Men's Watch #9", badge: "Flash Sale", off: "72% OFF", price: "Limited Price" },
+            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300", title: "Trendy Formal Shoes #10", badge: "Top Rated", off: "40% OFF", price: "Super Saver" },
+            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300", title: "Mobile Accessories #11", badge: "Loot Deal", off: "85% OFF", price: "Unbeatable" },
+            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300", title: "Bluetooth Speaker #12", badge: "Best Buy", off: "50% OFF", price: "Special Price" },
+            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Earbuds TWS Offer #13", badge: "Hot Pick", off: "70% OFF", price: "Check Deal" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Fitness Band Tracker #14", badge: "New Arrival", off: "60% OFF", price: "Top Value" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Home Gadget #15", badge: "Super Deal", off: "75% OFF", price: "Best Rate" },
+            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "Stylish Eyewear #16", badge: "Trending", off: "45% OFF", price: "Grab Now" },
+            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Over-Ear Headphones #17", badge: "Big Savings", off: "65% OFF", price: "Offer Active" },
+            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300", title: "Men Fitness Shoes #18", badge: "Limited", off: "50% OFF", price: "Price Drop" },
+            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300", title: "Women Fashion Shoes #19", badge: "Hot Deal", off: "70% OFF", price: "Super Price" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300", title: "Casual Wear Shoes #20", badge: "Best Seller", off: "55% OFF", price: "Buy Now" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300", title: "Luxury Style Watch #21", badge: "Top Choice", off: "80% OFF", price: "Lowest Price" },
+            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300", title: "Men Leather Shoes #22", badge: "Special", off: "60% OFF", price: "Check Offer" },
+            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300", title: "Fast Charger Cable #23", badge: "Loot Deal", off: "90% OFF", price: "Crazy Price" },
+            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300", title: "Mini Wireless Speaker #24", badge: "Best Value", off: "50% OFF", price: "Grab Fast" },
+            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Noise Cancelling Buds #25", badge: "Hot Pick", off: "65% OFF", price: "Flash Deal" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Smart Watch Display #26", badge: "Featured", off: "75% OFF", price: "Best Price" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Device Loot #27", badge: "Super Offer", off: "70% OFF", price: "Special" },
+            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "Polarized Sunglasses #28", badge: "Best Seller", off: "50% OFF", price: "Low Price" },
+            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Gaming Headphones #29", badge: "Top Pick", off: "80% OFF", price: "Huge Off" },
+            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300", title: "Lightweight Sneakers #30", badge: "Big Saver", off: "60% OFF", price: "Check Deal" },
+            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300", title: "Running Sports Shoes #31", badge: "Popular", off: "65% OFF", price: "Grab Now" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300", title: "Athletic Shoes #32", badge: "Hot Deal", off: "55% OFF", price: "Lowest Price" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300", title: "Classic Men Watch #33", badge: "Limited", off: "75% OFF", price: "Offer Active" },
+            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300", title: "Formal Party Shoes #34", badge: "Top Rated", off: "45% OFF", price: "Best Buy" },
+            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300", title: "Power Bank Special #35", badge: "Loot Deal", off: "80% OFF", price: "Super Rate" },
+            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300", title: "Soundbar Speaker #36", badge: "Best Value", off: "50% OFF", price: "Price Drop" },
+            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Wireless Neckband #37", badge: "Hot Pick", off: "70% OFF", price: "Grab Fast" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Calling Smartwatch #38", badge: "Featured", off: "60% OFF", price: "Top Value" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Gadget Offer #39", badge: "Super Offer", off: "85% OFF", price: "Lowest Ever" },
+            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "UV Sunglasses Pack #40", badge: "Best Seller", off: "50% OFF", price: "Flash Deal" },
+            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Audio Headphones #41", badge: "Top Pick", off: "70% OFF", price: "Check Offer" }
+        ];
+
+        // Bottom Section Rendering
+        const gridContainer = document.getElementById('all40BitliContainer');
+        let htmlContent = "";
+        
+        extra40Deals.forEach(deal => {
+            htmlContent += `
+                <a href="${deal.link}" target="_blank" rel="noopener" class="card-link product-card">
+                    <div class="card">
+                        <span class="off-tag">${deal.off}</span>
+                        <div>
+                            <div class="img-box"><img src="${deal.img}" class="product-img" alt="${deal.title}"></div>
+                            <span class="badge">${deal.badge}</span>
+                            <div class="title">${deal.title}</div>
+                            <div class="price"><strong style="color: #15803d;">${deal.price}</strong></div>
+                        </div>
+                        <div class="btn btn-live">View Deal</div>
+                    </div>
+                </a>
+            `;
+        });
+        gridContainer.innerHTML = htmlContent;
+
+        // Search Filter Function (Purana + Naya Dono Filter Karega)
         function filterProducts() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('product-card');
