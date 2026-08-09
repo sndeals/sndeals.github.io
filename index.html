@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- इमेज ब्लॉकिंग फिक्स करने के लिए Referrer Policy -->
     <meta name="referrer" content="no-referrer">
-    <title>SN Deals - Live Deals & Offers</title>
+    <title>SN Deals - Best Live Deals & Discount Offers</title>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBL69N85XD"></script>
@@ -38,16 +37,12 @@
         }
         .main-heading {
             color: #ffffff;
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin: 0 0 4px 0;
             text-shadow: 2px 3px 6px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
         .sub-heading {
             color: #ecfdf5;
@@ -60,7 +55,7 @@
         /* Top Stores Slider */
         .top-scroll {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             overflow-x: auto;
             scroll-behavior: smooth;
             padding-bottom: 5px;
@@ -69,31 +64,24 @@
         .top-scroll::-webkit-scrollbar { display: none; }
         
         .top-card {
-            min-width: 90px;
+            min-width: 95px;
+            height: 60px;
             background: #ffffff;
             border-radius: 10px;
-            padding: 8px 6px;
+            padding: 8px;
             text-align: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.12);
             text-decoration: none;
             color: inherit;
             flex-shrink: 0;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
         .top-card img {
-            width: 100%;
-            height: 35px;
+            max-width: 100%;
+            max-height: 40px;
             object-fit: contain;
-            border-radius: 4px;
-        }
-        .top-card .brand {
-            font-size: 11px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-top: 4px;
         }
 
         /* Section Headings */
@@ -204,14 +192,10 @@
             color: white;
             text-decoration: none;
             font-size: 12px;
-            padding: 7px 0;
+            padding: 8px 0;
             border-radius: 8px;
             font-weight: 800;
             box-shadow: 0 3px 6px rgba(234, 88, 12, 0.25);
-            transition: transform 0.1s;
-        }
-        .btn:active {
-            transform: scale(0.96);
         }
     </style>
 </head>
@@ -220,33 +204,28 @@
     <!-- Top Stores Header -->
     <div class="brand-header">
         <h1 class="main-heading">🔥 SN DEALS 🔥</h1>
-        <div class="sub-heading">Live Discount Offers & Best Daily Deals</div>
+        <div class="sub-heading">Best Daily Deals & Discount Offers</div>
         
         <div class="top-scroll">
-            <a href="https://www.amazon.in" target="_blank" class="top-card">
+            <a href="https://www.amazon.in" target="_blank" rel="noopener" class="top-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
-                <div class="brand">Amazon</div>
             </a>
-            <a href="https://www.flipkart.com" target="_blank" class="top-card">
+            <a href="https://www.flipkart.com" target="_blank" rel="noopener" class="top-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Flipkart_logo.svg" alt="Flipkart">
-                <div class="brand">Flipkart</div>
             </a>
-            <a href="https://www.myntra.com" target="_blank" class="top-card">
+            <a href="https://www.myntra.com" target="_blank" rel="noopener" class="top-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png" alt="Myntra">
-                <div class="brand">Myntra</div>
             </a>
-            <a href="https://www.ajio.com" target="_blank" class="top-card">
+            <a href="https://www.ajio.com" target="_blank" rel="noopener" class="top-card">
                 <img src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="Ajio">
-                <div class="brand">Ajio</div>
             </a>
-            <a href="https://www.meesho.com" target="_blank" class="top-card">
+            <a href="https://www.meesho.com" target="_blank" rel="noopener" class="top-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Meesho_Logo.png" alt="Meesho">
-                <div class="brand">Meesho</div>
             </a>
         </div>
     </div>
 
-    <!-- 1. AMAZON LIVE DEALS -->
+    <!-- 1. AMAZON DEALS -->
     <div class="section-header">
         <span>🛒 Amazon Live Deals</span>
         <span class="swipe-hint">Swipe 👉</span>
@@ -256,65 +235,41 @@
             <span class="off-tag">68% OFF</span>
             <div>
                 <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/61K-K2a10sL._SL1500_.jpg" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="Headphones">
                 </div>
                 <span class="badge">Hot Deal</span>
-                <div class="title">boAt Rockerz 450 Bluetooth Headphone</div>
+                <div class="title">boAt Rockerz 450 Bluetooth Headphones</div>
                 <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,990</span> <strong style="color: #15803d;">₹1,299</strong></div>
             </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
+            <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
         <div class="card">
             <span class="off-tag">75% OFF</span>
             <div>
                 <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/61S9aE28tCL._SL1500_.jpg" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Smartwatch">
                 </div>
                 <span class="badge">Best Seller</span>
                 <div class="title">Noise Pulse 2 Max Smartwatch</div>
                 <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹5,999</span> <strong style="color: #15803d;">₹1,499</strong></div>
             </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
+            <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
         <div class="card">
             <span class="off-tag">62% OFF</span>
             <div>
                 <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/51f8B4UakHL._SL1200_.jpg" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300" class="product-img" alt="Earbuds">
                 </div>
                 <span class="badge">Prime</span>
                 <div class="title">boAt Airdopes 141 TWS Earbuds</div>
                 <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹4,490</span> <strong style="color: #15803d;">₹1,299</strong></div>
             </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">50% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/71o8Q5XJS5L._SL1500_.jpg" class="product-img">
-                </div>
-                <span class="badge">Limited</span>
-                <div class="title">JBL Go 2 Wireless Speaker</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹2,999</span> <strong style="color: #15803d;">₹1,499</strong></div>
-            </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">55% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/61+bt-O2O3L._SL1500_.jpg" class="product-img">
-                </div>
-                <span class="badge">Special</span>
-                <div class="title">Sony WH-CH520 Wireless Headphones</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹4,990</span> <strong style="color: #15803d;">₹3,990</strong></div>
-            </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
+            <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
     </div>
 
-    <!-- 2. FLIPKART SUPER SALE -->
+    <!-- 2. FLIPKART DEALS -->
     <div class="section-header">
         <span>🚀 Flipkart Super Sale</span>
         <span class="swipe-hint">Swipe 👉</span>
@@ -324,37 +279,25 @@
             <span class="off-tag">65% OFF</span>
             <div>
                 <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._SL1500_.jpg" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" class="product-img" alt="Shoes">
                 </div>
                 <span class="badge">Big Saver</span>
                 <div class="title">Puma Men Sports Running Shoes</div>
                 <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,999</span> <strong style="color: #15803d;">₹1,399</strong></div>
             </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">55% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/613a-3PZu8L._SL1500_.jpg" class="product-img">
-                </div>
-                <span class="badge">Trending</span>
-                <div class="title">Smart Electronic Fitness Gadget</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹1,999</span> <strong style="color: #15803d;">₹899</strong></div>
-            </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
+            <a href="https://www.flipkart.com" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
         <div class="card">
             <span class="off-tag">70% OFF</span>
             <div>
                 <div class="img-box">
-                    <img src="https://m.media-amazon.com/images/I/6125yAfsJKL._SL1500_.jpg" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300" class="product-img" alt="Sneakers">
                 </div>
                 <span class="badge">Popular</span>
-                <div class="title">Casual Lightweight White Sneakers</div>
+                <div class="title">Casual Lightweight Sneakers</div>
                 <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹2,499</span> <strong style="color: #15803d;">₹749</strong></div>
             </div>
-            <a href="#" target="_blank" class="btn">Buy Now</a>
+            <a href="https://www.flipkart.com" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
     </div>
 
