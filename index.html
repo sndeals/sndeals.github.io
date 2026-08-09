@@ -22,7 +22,7 @@
     <style>
         * { box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             margin: 0;
             padding: 12px;
             color: #1e293b;
@@ -31,7 +31,7 @@
             padding-bottom: 80px;
         }
 
-        /* ANNOUNCEMENT TICKER */
+        /* TICKER */
         .ticker-wrap {
             background: #059669;
             color: white;
@@ -43,32 +43,31 @@
             margin-bottom: 12px;
         }
 
-        /* BRAND HEADER SECTION */
+        /* HEADER */
         .brand-header {
             background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
             border-radius: 16px;
             padding: 20px 15px;
             margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.3);
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.25);
             text-align: center;
         }
         .main-heading {
             color: #ffffff;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 900;
             letter-spacing: 1px;
             text-transform: uppercase;
             margin: 0 0 4px 0;
-            text-shadow: 2px 3px 6px rgba(0,0,0,0.2);
         }
         .sub-heading {
             color: #ccfbf1;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             margin: 0;
         }
 
-        /* SEARCH BAR SECTION */
+        /* SEARCH BAR */
         .search-box { margin-bottom: 15px; }
         .search-input {
             width: 100%;
@@ -77,23 +76,28 @@
             border: 1px solid #cbd5e1;
             font-size: 14px;
             outline: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
         }
 
-        /* TOP SHOPPING STORES GRID (VECTOR LOGOS) */
+        /* TOP STORES GRID (OFFICIAL LOGOS) */
         .top-stores-section {
             background: #ffffff;
             border-radius: 14px;
-            padding: 12px;
+            padding: 14px 12px;
             margin-bottom: 16px;
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+        .stores-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
         }
         .top-stores-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            margin-top: 10px;
         }
         .store-chip {
             display: flex;
@@ -105,33 +109,35 @@
             border-radius: 10px;
             text-decoration: none;
             color: #0f172a;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
             transition: all 0.2s ease;
         }
         .store-chip:hover {
             transform: translateY(-2px);
             border-color: #0d9488;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
         }
-        .store-chip svg {
-            width: 36px;
-            height: 36px;
-            margin-bottom: 4px;
+        .store-chip img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            margin-bottom: 6px;
         }
         .store-chip span {
             font-size: 11px;
             font-weight: 700;
             text-align: center;
+            color: #334155;
         }
 
-        /* CATEGORY FILTER SECTION */
+        /* CATEGORIES */
         .category-scroll {
             display: flex;
             gap: 8px;
             overflow-x: auto;
             padding-bottom: 8px;
             margin-bottom: 16px;
-            scroll-behavior: smooth;
         }
         .category-scroll::-webkit-scrollbar { display: none; }
         .cat-btn {
@@ -144,14 +150,13 @@
             font-weight: 700;
             white-space: nowrap;
             cursor: pointer;
-            transition: all 0.2s ease;
         }
         .cat-btn.active, .cat-btn:hover {
             background: #0d9488;
             color: #ffffff;
         }
 
-        /* SECTION HEADERS */
+        /* SECTIONS */
         .section-header {
             font-size: 15px;
             font-weight: 800;
@@ -160,19 +165,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-left: 5px solid #0d9488;
+            border-left: 4px solid #0d9488;
             padding-left: 10px;
         }
         .swipe-hint { font-size: 11px; color: #64748b; font-weight: 500; }
 
-        /* FEATURED SLIDER SECTION */
+        /* FEATURED SLIDER */
         .live-offers-bar {
             background: #ffffff;
             border: 2px solid #0d9488;
             border-radius: 14px;
             padding: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.12);
         }
         .live-tag {
             background: #ef4444;
@@ -193,12 +197,11 @@
         }
         .slider-container::-webkit-scrollbar { display: none; }
 
-        /* DEALS GRID SECTION */
+        /* DEALS GRID */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
             gap: 12px;
-            padding: 4px 2px;
         }
 
         .card-link {
@@ -216,7 +219,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
             height: 100%;
         }
 
@@ -229,15 +232,14 @@
 
         .img-box {
             width: 100%;
-            height: 95px;
+            height: 90px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            background: #f1f5f9;
             border-radius: 8px;
             margin-bottom: 8px;
-            text-align: center;
             padding: 6px;
         }
         .img-icon {
@@ -283,7 +285,6 @@
             background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
             color: white; font-size: 12px;
             padding: 8px 0; border-radius: 8px; font-weight: 800;
-            box-shadow: 0 3px 6px rgba(13, 148, 136, 0.2);
         }
 
         /* FLOATING ACTION BUTTON */
@@ -300,7 +301,6 @@
             white-space: nowrap;
         }
 
-        /* FOOTER SECTION */
         .footer {
             margin-top: 30px; padding: 20px 10px;
             background: #0f172a; color: #94a3b8;
@@ -310,70 +310,68 @@
 </head>
 <body class="notranslate" translate="no">
 
-    <!-- ANNOUNCEMENT TICKER -->
+    <!-- TICKER -->
     <div class="ticker-wrap">🌿 Verified Deals from Amazon, Flipkart, Myntra & Top Brands!</div>
 
-    <!-- BRAND HEADER SECTION -->
+    <!-- HEADER -->
     <div class="brand-header">
         <h1 class="main-heading">🌿 SN DEALS 🌿</h1>
         <div class="sub-heading">Best Discounts, Coupons & Affiliate Offers</div>
     </div>
 
-    <!-- SEARCH BOX SECTION -->
+    <!-- SEARCH BAR -->
     <div class="search-box">
         <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search store, brand or deal...">
     </div>
 
-    <!-- TOP SHOPPING STORES -->
+    <!-- TOP SHOPPING STORES (WITH HIGH-QUALITY OFFICIAL LOGOS) -->
     <div class="top-stores-section">
-        <div class="section-header" style="border:none; padding:0; margin:0;">
-            <span>🛍️ Top Shopping Stores</span>
-        </div>
+        <div class="stores-title">🛍️ Top Shopping Stores</div>
         <div class="top-stores-grid">
-            <!-- AMAZON -->
+            <!-- AMAZON OFFICIAL LOGO -->
             <a href="https://amazon.in" target="_blank" rel="noopener" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M15.3 12.8c-.8.6-1.8.9-2.8.9-2.1 0-3.6-1.3-3.6-3.3 0-2.2 1.7-3.4 4.3-3.4h2v-.3c0-1.2-.7-1.8-2-1.8-1.1 0-2.1.4-2.8.9l-.6-1.1c1-.7 2.3-1.1 3.8-1.1 2.3 0 3.8 1.1 3.8 3.3v4.6c0 1 .4 1.5 1 1.5.3 0 .7-.1 1-.3l.4 1c-.5.4-1.2.6-1.9.6-1.1 0-1.8-.6-2.2-1.5zm-2.3-1c.9 0 1.7-.3 2.3-.8v-2.3h-1.8c-1.5 0-2.5.6-2.5 1.8 0 .9.8 1.3 2 1.3z" fill="#232F3E"/><path d="M4 17.5c4.5 3.3 11 3.3 15.5 0" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/><path d="M18.5 15.5l2 2-2.8 1" fill="#FF9900"/></svg>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
                 <span>Amazon</span>
             </a>
-            <!-- FLIPKART -->
+            <!-- FLIPKART OFFICIAL LOGO -->
             <a href="https://flipkart.com" target="_blank" rel="noopener" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#2874F0"/><path d="M6 7h12l-1.5 8H7.5L6 7z" fill="#FFE500"/><path d="M11 11h3m-2-2v4" stroke="#2874F0" stroke-width="1.5" stroke-linecap="round"/></svg>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Flipkart_logo.svg" alt="Flipkart">
                 <span>Flipkart</span>
             </a>
-            <!-- MYNTRA -->
+            <!-- MYNTRA OFFICIAL LOGO -->
             <a href="https://myntra.com" target="_blank" rel="noopener" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4 17V8l4 5 4-5v9" stroke="#E11B22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 17V8l4 5 4-5v9" stroke="#F44336" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Myntra_Logo.png" alt="Myntra">
                 <span>Myntra</span>
             </a>
-            <!-- AJIO -->
+            <!-- AJIO OFFICIAL LOGO -->
             <a href="https://ajio.com" target="_blank" rel="noopener" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#2C4152"/><text x="12" y="16" font-family="Arial, sans-serif" font-weight="bold" font-size="9" fill="#FFFFFF" text-anchor="middle">AJIO</text></svg>
+                <img src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="AJIO">
                 <span>AJIO</span>
             </a>
-            <!-- MEESHO -->
+            <!-- MEESHO OFFICIAL LOGO -->
             <a href="https://meesho.com" target="_blank" rel="noopener" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#F43397"/><path d="M6 16V8l3 4 3-4v8m3 0V8l3 4 3-4v8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Meesho_Logo.png" alt="Meesho">
                 <span>Meesho</span>
             </a>
             <!-- HAMARA MALL -->
             <a href="#" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#0284C7"/><path d="M5 19V9l7-4 7 4v10H5z" stroke="#FFFFFF" stroke-width="1.8"/><path d="M9 19v-6h6v6" fill="#FFFFFF"/></svg>
+                <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Hamara Mall">
                 <span>Hamara Mall</span>
             </a>
             <!-- MAVI GADGET -->
             <a href="#" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#0F172A"/><path d="M7 16V8l5 5 5-5v8" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="https://cdn-icons-png.flaticon.com/512/2972/2972528.png" alt="MaviGadget">
                 <span>MaviGadget</span>
             </a>
             <!-- NIKOLA TOY -->
             <a href="#" class="store-chip">
-                <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#8B5CF6"/><path d="M12 6a3 3 0 100 6 3 3 0 000-6zM7 18a5 5 0 0110 0H7z" fill="#FFFFFF"/></svg>
+                <img src="https://cdn-icons-png.flaticon.com/512/3082/3082060.png" alt="NikolaToy">
                 <span>NikolaToy</span>
             </a>
         </div>
     </div>
 
-    <!-- CATEGORY FILTER BUTTONS SECTION -->
+    <!-- CATEGORY FILTER BUTTONS -->
     <div class="category-scroll">
         <button class="cat-btn active" onclick="filterCategory('All')">All Deals</button>
         <button class="cat-btn" onclick="filterCategory('Beauty')">💄 Skincare</button>
@@ -453,12 +451,12 @@
         </div>
     </div>
 
-    <!-- ALL PARTNER STORES & DEALS GRID SECTION -->
+    <!-- ALL PARTNER STORES GRID -->
     <div class="section-header">
         <span>🛍️ All Partner Stores & Deals</span>
     </div>
     <div class="grid-container" id="allDealsContainer">
-        <!-- Rendered via Javascript -->
+        <!-- Rendered via JavaScript -->
     </div>
 
     <!-- WHATSAPP SHARE BUTTON -->
@@ -466,7 +464,7 @@
         💬 Share Deals on WhatsApp
     </a>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <div class="footer">
         <p><strong>SN DEALS</strong> - Your Verified Deals Hub</p>
         <p>© 2026 SN Deals. All Rights Reserved.</p>
