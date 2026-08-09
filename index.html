@@ -26,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* Top Banner & Highlighted Heading */
+        /* Top Banner Header */
         .brand-header {
             background: linear-gradient(135deg, #059669 0%, #10b981 100%);
             border-radius: 16px;
@@ -65,14 +65,12 @@
         
         .top-card {
             min-width: 95px;
-            height: 60px;
+            height: 55px;
             background: #ffffff;
             border-radius: 10px;
-            padding: 8px;
-            text-align: center;
+            padding: 6px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.12);
             text-decoration: none;
-            color: inherit;
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -80,9 +78,19 @@
         }
         .top-card img {
             max-width: 100%;
-            max-height: 40px;
+            max-height: 38px;
             object-fit: contain;
         }
+
+        /* Text Logo Fallback Buttons */
+        .store-btn-text {
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: -0.5px;
+        }
+        .flipkart-text { color: #2874f0; font-style: italic; }
+        .myntra-text { color: #ff3f6c; }
+        .meesho-text { color: #51007a; }
 
         /* Section Headings */
         .section-header {
@@ -207,20 +215,29 @@
         <div class="sub-heading">Best Daily Deals & Discount Offers</div>
         
         <div class="top-scroll">
+            <!-- Amazon SVG Logo -->
             <a href="https://www.amazon.in" target="_blank" rel="noopener" class="top-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
             </a>
+            
+            <!-- Flipkart CSS/SVG Hybrid Logo (100% Reliable) -->
             <a href="https://www.flipkart.com" target="_blank" rel="noopener" class="top-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Flipkart_logo.svg" alt="Flipkart">
+                <span class="store-btn-text flipkart-text">Flipkart</span>
             </a>
+            
+            <!-- Myntra CSS/SVG Hybrid Logo (100% Reliable) -->
             <a href="https://www.myntra.com" target="_blank" rel="noopener" class="top-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png" alt="Myntra">
+                <span class="store-btn-text myntra-text">Myntra</span>
             </a>
+            
+            <!-- Ajio Logo -->
             <a href="https://www.ajio.com" target="_blank" rel="noopener" class="top-card">
                 <img src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="Ajio">
             </a>
+            
+            <!-- Meesho CSS/SVG Hybrid Logo (100% Reliable) -->
             <a href="https://www.meesho.com" target="_blank" rel="noopener" class="top-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Meesho_Logo.png" alt="Meesho">
+                <span class="store-btn-text meesho-text">meesho</span>
             </a>
         </div>
     </div>
