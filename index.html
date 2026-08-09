@@ -24,20 +24,33 @@
             color: #333;
             background-color: #f1f5f9;
             overflow-x: hidden;
+            padding-bottom: 70px;
+        }
+
+        /* Top Banner */
+        .ticker-wrap {
+            background: #ef4444;
+            color: white;
+            padding: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         /* Top Header & Store Banner */
         .brand-header {
             background: linear-gradient(135deg, #059669 0%, #10b981 100%);
             border-radius: 16px;
-            padding: 20px 15px;
-            margin-bottom: 20px;
+            padding: 18px 12px;
+            margin-bottom: 15px;
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
             text-align: center;
         }
         .main-heading {
             color: #ffffff;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 900;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -46,9 +59,23 @@
         }
         .sub-heading {
             color: #ecfdf5;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            margin: 0 0 15px 0;
+            margin: 0 0 12px 0;
+        }
+
+        /* Search Bar Box */
+        .search-box {
+            margin-bottom: 12px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            font-size: 13px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         /* Top Stores Bar */
@@ -63,11 +90,11 @@
         .top-scroll::-webkit-scrollbar { display: none; }
         
         .top-card {
-            min-width: 90px;
-            height: 50px;
+            min-width: 85px;
+            height: 48px;
             background: #ffffff;
             border-radius: 10px;
-            padding: 6px 10px;
+            padding: 6px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.12);
             text-decoration: none;
             flex-shrink: 0;
@@ -77,15 +104,11 @@
         }
         .top-card img {
             max-width: 100%;
-            max-height: 35px;
+            max-height: 32px;
             object-fit: contain;
         }
 
-        .store-btn-text {
-            font-weight: 900;
-            font-size: 13px;
-            letter-spacing: -0.3px;
-        }
+        .store-btn-text { font-weight: 900; font-size: 12px; }
         .flipkart-text { color: #2874f0; }
         .myntra-text { color: #ff3f6c; }
         .meesho-text { color: #51007a; }
@@ -95,29 +118,25 @@
 
         /* Section Headings */
         .section-header {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 800;
             color: #0f172a;
-            margin: 22px 0 10px 2px;
+            margin: 20px 0 10px 2px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-left: 5px solid #10b981;
             padding-left: 10px;
         }
-        .swipe-hint {
-            font-size: 11px;
-            color: #64748b;
-            font-weight: 500;
-        }
+        .swipe-hint { font-size: 11px; color: #64748b; font-weight: 500; }
 
-        /* Live Offer Ads / Bitli Link Horizontal Section */
+        /* Live Offer Section */
         .live-offers-bar {
             background: #ffffff;
             border: 2px solid #3b82f6;
             border-radius: 14px;
-            padding: 12px;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin-bottom: 15px;
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
         }
         .live-tag {
@@ -129,11 +148,7 @@
             border-radius: 20px;
             animation: pulse 1.5s infinite;
         }
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
         /* Horizontal Slider for Products */
         .slider-container {
@@ -148,8 +163,8 @@
         .slider-container::-webkit-scrollbar { display: none; }
 
         .card {
-            min-width: 155px;
-            max-width: 165px;
+            min-width: 150px;
+            max-width: 160px;
             scroll-snap-align: start;
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -164,7 +179,7 @@
         }
         .img-box {
             width: 100%;
-            height: 120px;
+            height: 115px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -173,11 +188,7 @@
             margin-bottom: 8px;
             overflow: hidden;
         }
-        .product-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
+        .product-img { max-width: 100%; max-height: 100%; object-fit: contain; }
         .badge {
             display: inline-block;
             background: #fef3c7;
@@ -191,43 +202,25 @@
         }
         .off-tag {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #15803d;
-            color: #fff;
-            padding: 3px 6px;
-            border-radius: 6px;
-            font-size: 10px;
-            font-weight: 800;
+            top: 8px; right: 8px;
+            background: #15803d; color: #fff;
+            padding: 2px 6px; border-radius: 6px;
+            font-size: 10px; font-weight: 800;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             z-index: 2;
         }
         .title {
-            font-size: 11px;
-            font-weight: 700;
-            color: #1e293b;
-            line-height: 1.35;
-            margin: 2px 0 6px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            height: 30px;
+            font-size: 11px; font-weight: 700; color: #1e293b;
+            line-height: 1.35; margin: 2px 0 6px;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            overflow: hidden; height: 30px;
         }
-        .price {
-            font-size: 12px;
-            margin-bottom: 8px;
-        }
+        .price { font-size: 12px; margin-bottom: 8px; }
         .btn {
-            display: block;
-            text-align: center;
+            display: block; text-align: center;
             background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            padding: 8px 0;
-            border-radius: 8px;
-            font-weight: 800;
+            color: white; text-decoration: none; font-size: 12px;
+            padding: 8px 0; border-radius: 8px; font-weight: 800;
             box-shadow: 0 3px 6px rgba(234, 88, 12, 0.25);
         }
         .btn-live {
@@ -235,24 +228,32 @@
             box-shadow: 0 3px 6px rgba(37, 99, 235, 0.25);
         }
 
-        /* Footer Styling */
-        .footer {
-            margin-top: 35px;
-            padding: 20px 10px;
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            border-radius: 12px;
-            font-size: 12px;
-        }
-        .footer a {
-            color: #10b981;
+        /* Floating WhatsApp Share Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 12px; left: 50%;
+            transform: translateX(-50%);
+            background: #25d366; color: white;
+            padding: 10px 24px; border-radius: 30px;
+            font-weight: 800; font-size: 13px;
             text-decoration: none;
-            font-weight: 600;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px; padding: 20px 10px;
+            background: #0f172a; color: #94a3b8;
+            text-align: center; border-radius: 12px; font-size: 12px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Notification Bar -->
+    <div class="ticker-wrap">⚡ Exclusive Loot Deals Updated Every Hour!</div>
 
     <!-- Header & Brand Bar -->
     <div class="brand-header">
@@ -287,14 +288,19 @@
         </div>
     </div>
 
-    <!-- 🔥 SPECIAL LIVE AFFILIATE DEALS SECTION (YOUR BITLI LINKS) -->
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search deals (e.g. Headphones, Shoes, Smartwatch)...">
+    </div>
+
+    <!-- LIVE AFFILIATE DEALS SECTION -->
     <div class="live-offers-bar">
         <div class="section-header" style="margin-top:0;">
             <span>⚡ Trending Bitli Deals <span class="live-tag">LIVE</span></span>
             <span class="swipe-hint">Swipe Right 👉</span>
         </div>
         <div class="slider-container">
-            <div class="card">
+            <div class="card product-card">
                 <span class="off-tag">70% OFF</span>
                 <div>
                     <div class="img-box">
@@ -307,184 +313,67 @@
                 <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
             </div>
 
-            <div class="card">
+            <div class="card product-card">
                 <span class="off-tag">65% OFF</span>
                 <div>
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="Audio Gadget">
                     </div>
                     <span class="badge">Super Sale</span>
-                    <div class="title">Trending Tech Gadget #2</div>
+                    <div class="title">Trending Tech Headphones Gadget #2</div>
                     <div class="price"><strong style="color: #15803d;">Special Discount</strong></div>
                 </div>
                 <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
             </div>
 
-            <div class="card">
+            <div class="card product-card">
                 <span class="off-tag">80% OFF</span>
                 <div>
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Wearable">
                     </div>
                     <span class="badge">Limited Stock</span>
-                    <div class="title">Premium Wearable Offer #3</div>
+                    <div class="title">Premium Wearable Smartwatch #3</div>
                     <div class="price"><strong style="color: #15803d;">Lowest Price</strong></div>
                 </div>
                 <a href="https://bitli.in/wJAlFrg" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
             </div>
 
-            <div class="card">
+            <div class="card product-card">
                 <span class="off-tag">50% OFF</span>
                 <div>
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300" class="product-img" alt="Fashion Item">
                     </div>
                     <span class="badge">Best Seller</span>
-                    <div class="title">Lifestyle & Fashion Deal #4</div>
+                    <div class="title">Lifestyle & Sunglasses Deal #4</div>
                     <div class="price"><strong style="color: #15803d;">Flash Offer</strong></div>
                 </div>
                 <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
             </div>
 
-            <div class="card">
+            <div class="card product-card">
                 <span class="off-tag">75% OFF</span>
                 <div>
                     <div class="img-box">
                         <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300" class="product-img" alt="Electronics">
                     </div>
                     <span class="badge">Top Pick</span>
-                    <div class="title">Electronics Special #5</div>
+                    <div class="title">Electronics Special Headphones #5</div>
                     <div class="price"><strong style="color: #15803d;">Check Price</strong></div>
                 </div>
                 <a href="https://bitli.in/X419Hkm" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
             </div>
-
-            <div class="card">
-                <span class="off-tag">60% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300" class="product-img" alt="Shoes">
-                    </div>
-                    <span class="badge">Must Buy</span>
-                    <div class="title">Footwear & Style Deal #6</div>
-                    <div class="price"><strong style="color: #15803d;">Best Price</strong></div>
-                </div>
-                <a href="https://bitli.in/JECXhdr" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">85% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300" class="product-img" alt="Mobile Accessory">
-                    </div>
-                    <span class="badge">Loot Offer</span>
-                    <div class="title">Mobile & Accessories #7</div>
-                    <div class="price"><strong style="color: #15803d;">Loot Price</strong></div>
-                </div>
-                <a href="https://bitli.in/CZ7H75s" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">55% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300" class="product-img" alt="Camera / Tech">
-                    </div>
-                    <span class="badge">Exclusive</span>
-                    <div class="title">Tech Loot Deal #8</div>
-                    <div class="price"><strong style="color: #15803d;">Limited Time</strong></div>
-                </div>
-                <a href="https://bitli.in/7XzKZDV" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">70% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" class="product-img" alt="Sneakers">
-                    </div>
-                    <span class="badge">Trending</span>
-                    <div class="title">Sports & Active Offer #9</div>
-                    <div class="price"><strong style="color: #15803d;">Mega Sale</strong></div>
-                </div>
-                <a href="https://bitli.in/LRvzvns" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">65% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300" class="product-img" alt="Earbuds">
-                    </div>
-                    <span class="badge">Prime Deal</span>
-                    <div class="title">Wireless Earbuds Deal #10</div>
-                    <div class="price"><strong style="color: #15803d;">Extra Savings</strong></div>
-                </div>
-                <a href="https://bitli.in/EBqetp7" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">45% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?w=300" class="product-img" alt="Home Gadget">
-                    </div>
-                    <span class="badge">Home Deal</span>
-                    <div class="title">Smart Home Gadget #11</div>
-                    <div class="price"><strong style="color: #15803d;">Best Offer</strong></div>
-                </div>
-                <a href="https://bitli.in/r7i43Pj" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">80% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300" class="product-img" alt="Beauty / Care">
-                    </div>
-                    <span class="badge">Popular</span>
-                    <div class="title">Personal Care Offer #12</div>
-                    <div class="price"><strong style="color: #15803d;">Best Price</strong></div>
-                </div>
-                <a href="https://bitli.in/wTdepnY" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">60% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300" class="product-img" alt="Health / Care">
-                    </div>
-                    <span class="badge">Special</span>
-                    <div class="title">Health & Wellness #13</div>
-                    <div class="price"><strong style="color: #15803d;">Discount Price</strong></div>
-                </div>
-                <a href="https://bitli.in/ogA6eGq" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
-
-            <div class="card">
-                <span class="off-tag">75% OFF</span>
-                <div>
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=300" class="product-img" alt="Accessories">
-                    </div>
-                    <span class="badge">Hot Deal</span>
-                    <div class="title">Daily Essentials Deal #14</div>
-                    <div class="price"><strong style="color: #15803d;">Massive Discount</strong></div>
-                </div>
-                <a href="https://bitli.in/Tzj8Y7y" target="_blank" rel="noopener" class="btn btn-live">Grab Deal</a>
-            </div>
         </div>
     </div>
 
-    <!-- 1. AMAZON DEALS -->
+    <!-- AMAZON DEALS -->
     <div class="section-header">
         <span>🛒 Amazon Live Deals</span>
         <span class="swipe-hint">Swipe 👉</span>
     </div>
     <div class="slider-container">
-        <div class="card">
+        <div class="card product-card">
             <span class="off-tag">68% OFF</span>
             <div>
                 <div class="img-box">
@@ -496,7 +385,7 @@
             </div>
             <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
-        <div class="card">
+        <div class="card product-card">
             <span class="off-tag">75% OFF</span>
             <div>
                 <div class="img-box">
@@ -508,39 +397,15 @@
             </div>
             <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
-        <div class="card">
-            <span class="off-tag">62% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300" class="product-img" alt="Earbuds">
-                </div>
-                <span class="badge">Prime</span>
-                <div class="title">boAt Airdopes 141 TWS Earbuds</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹4,490</span> <strong style="color: #15803d;">₹1,299</strong></div>
-            </div>
-            <a href="https://bitli.in/EBqetp7" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">50% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300" class="product-img" alt="Sports Shoes">
-                </div>
-                <span class="badge">Top Rated</span>
-                <div class="title">Asian Mens Waterproof Shoes</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹1,999</span> <strong style="color: #15803d;">₹999</strong></div>
-            </div>
-            <a href="https://bitli.in/JECXhdr" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
     </div>
 
-    <!-- 2. FLIPKART & MYNTRA FASHION DEALS -->
+    <!-- FASHION DEALS -->
     <div class="section-header">
         <span>👗 Fashion & Lifestyle Hits</span>
         <span class="swipe-hint">Swipe 👉</span>
     </div>
     <div class="slider-container">
-        <div class="card">
+        <div class="card product-card">
             <span class="off-tag">65% OFF</span>
             <div>
                 <div class="img-box">
@@ -552,146 +417,45 @@
             </div>
             <a href="https://bitli.in/LRvzvns" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
-        <div class="card">
+        <div class="card product-card">
             <span class="off-tag">70% OFF</span>
             <div>
                 <div class="img-box">
                     <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300" class="product-img" alt="Sneakers">
                 </div>
                 <span class="badge">Popular</span>
-                <div class="title">Casual Lightweight Sneakers</div>
+                <div class="title">Casual Lightweight Sneakers Shoes</div>
                 <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹2,499</span> <strong style="color: #15803d;">₹749</strong></div>
             </div>
             <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="btn">Buy Now</a>
         </div>
-        <div class="card">
-            <span class="off-tag">55% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300" class="product-img" alt="Sunglasses">
-                </div>
-                <span class="badge">Trending</span>
-                <div class="title">Stylish Polarized Sunglasses</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹1,599</span> <strong style="color: #15803d;">₹699</strong></div>
-            </div>
-            <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
     </div>
 
-    <!-- 3. MAVIGADGET & INNOVATIVE GADGETS -->
-    <div class="section-header">
-        <span>💡 MaviGadget Unique Cool Inventions</span>
-        <span class="swipe-hint">Swipe 👉</span>
-    </div>
-    <div class="slider-container">
-        <div class="card">
-            <span class="off-tag">40% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1503602642458-232111445657?w=300" class="product-img" alt="Levitating Moon Lamp">
-                </div>
-                <span class="badge">Unique Gadget</span>
-                <div class="title">Creative Levitating Moon Lamp</div>
-                <div class="price"><strong style="color: #15803d;">Explore Offer</strong></div>
-            </div>
-            <a href="https://bitli.in/r7i43Pj" target="_blank" rel="noopener" class="btn">View Deal</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">35% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300" class="product-img" alt="Smart Mug">
-                </div>
-                <span class="badge">Innovative</span>
-                <div class="title">Temperature Control Smart Mug</div>
-                <div class="price"><strong style="color: #15803d;">Special Price</strong></div>
-            </div>
-            <a href="https://bitli.in/CZ7H75s" target="_blank" rel="noopener" class="btn">View Deal</a>
-        </div>
-    </div>
-
-    <!-- 4. NIKOLATOY DIY & MECH KITS -->
-    <div class="section-header">
-        <span>⚙️ NikolaToy Mech, DIY & STEAM Toys</span>
-        <span class="swipe-hint">Swipe 👉</span>
-    </div>
-    <div class="slider-container">
-        <div class="card">
-            <span class="off-tag">30% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=300" class="product-img" alt="Engine Model">
-                </div>
-                <span class="badge">DIY Model</span>
-                <div class="title">Turbofan Engine DIY Model Kit</div>
-                <div class="price"><strong style="color: #15803d;">Trending Toy</strong></div>
-            </div>
-            <a href="https://nikolatoy.com" target="_blank" rel="noopener" class="btn">View Deal</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">25% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=300" class="product-img" alt="Robotics Kit">
-                </div>
-                <span class="badge">STEAM Kit</span>
-                <div class="title">Programmable Mechanical Arm Kit</div>
-                <div class="price"><strong style="color: #15803d;">Best Gift</strong></div>
-            </div>
-            <a href="https://nikolatoy.com" target="_blank" rel="noopener" class="btn">View Deal</a>
-        </div>
-    </div>
-
-    <!-- 5. BEAUTY, HEALTH & HOME ESSENTIALS -->
-    <div class="section-header">
-        <span>✨ Home, Beauty & Wellness Essentials</span>
-        <span class="swipe-hint">Swipe 👉</span>
-    </div>
-    <div class="slider-container">
-        <div class="card">
-            <span class="off-tag">50% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300" class="product-img" alt="Skincare">
-                </div>
-                <span class="badge">Self Care</span>
-                <div class="title">Skincare & Glow Facial Kit</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹1,299</span> <strong style="color: #15803d;">₹649</strong></div>
-            </div>
-            <a href="https://bitli.in/wTdepnY" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">45% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300" class="product-img" alt="Wellness">
-                </div>
-                <span class="badge">Daily Health</span>
-                <div class="title">Multivitamin & Wellness Pack</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹999</span> <strong style="color: #15803d;">₹549</strong></div>
-            </div>
-            <a href="https://bitli.in/ogA6eGq" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
-        <div class="card">
-            <span class="off-tag">60% OFF</span>
-            <div>
-                <div class="img-box">
-                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=300" class="product-img" alt="Home Decor">
-                </div>
-                <span class="badge">Home Care</span>
-                <div class="title">Aroma Diffuser & Essential Oils</div>
-                <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹1,999</span> <strong style="color: #15803d;">₹799</strong></div>
-            </div>
-            <a href="https://bitli.in/Tzj8Y7y" target="_blank" rel="noopener" class="btn">Buy Now</a>
-        </div>
-    </div>
+    <!-- FLOATING WHATSAPP SHARE BUTTON -->
+    <a href="https://api.whatsapp.com/send?text=Check%20out%20the%20best%20daily%20loot%20deals%20and%20discounts%20on%20SN%20Deals:%20https://sndeals.github.io" target="_blank" rel="noopener" class="floating-whatsapp">
+        💬 Share Deals on WhatsApp
+    </a>
 
     <!-- Footer Section -->
     <div class="footer">
         <p><strong>SN DEALS</strong> - Your Daily Savings Hub</p>
-        <p>Handpicked Discount Deals & Offers across Top Online Stores.</p>
         <p>© 2026 SN Deals. All Rights Reserved.</p>
     </div>
 
+    <script>
+        function filterProducts() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].querySelector('.title').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
