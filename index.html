@@ -86,11 +86,11 @@
         .top-scroll::-webkit-scrollbar { display: none; }
         
         .top-card {
-            min-width: 85px;
+            min-width: 90px;
             height: 48px;
             background: #ffffff;
             border-radius: 10px;
-            padding: 6px;
+            padding: 6px 10px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.12);
             text-decoration: none;
             flex-shrink: 0;
@@ -99,7 +99,7 @@
             justify-content: center;
         }
         .top-card img { max-width: 100%; max-height: 32px; object-fit: contain; }
-        .store-btn-text { font-weight: 900; font-size: 12px; }
+        .store-btn-text { font-weight: 900; font-size: 12px; white-space: nowrap; }
 
         .section-header {
             font-size: 15px;
@@ -141,7 +141,6 @@
         }
         .slider-container::-webkit-scrollbar { display: none; }
 
-        /* Bottom Section Grid */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -249,7 +248,7 @@
 
     <div class="ticker-wrap">⚡ Exclusive Loot Deals Updated Every Hour!</div>
 
-    <!-- PURANA HEADER -->
+    <!-- BRAND HEADER WITH ALL STORES -->
     <div class="brand-header">
         <h1 class="main-heading">🔥 SN DEALS 🔥</h1>
         <div class="sub-heading">Best Daily Deals & Discount Offers</div>
@@ -267,15 +266,27 @@
             <a href="https://www.meesho.com" target="_blank" rel="noopener" class="top-card">
                 <span class="store-btn-text" style="color:#51007a;">Meesho</span>
             </a>
+            <a href="https://www.ajio.com" target="_blank" rel="noopener" class="top-card">
+                <span class="store-btn-text" style="color:#2c4152;">Ajio</span>
+            </a>
+            <a href="https://hamaramall.com" target="_blank" rel="noopener" class="top-card">
+                <span class="store-btn-text" style="color:#e11d48;">Hamaramall</span>
+            </a>
+            <a href="https://mavigadget.com" target="_blank" rel="noopener" class="top-card">
+                <span class="store-btn-text" style="color:#0284c7;">MaviGadget</span>
+            </a>
+            <a href="https://nikolatoy.com" target="_blank" rel="noopener" class="top-card">
+                <span class="store-btn-text" style="color:#7c3aed;">NikolaToy</span>
+            </a>
         </div>
     </div>
 
-    <!-- PURANA SEARCH BOX -->
+    <!-- SEARCH BOX -->
     <div class="search-box">
         <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search deals...">
     </div>
 
-    <!-- PURANA TOP SECTION: TRENDING BITLI DEALS -->
+    <!-- TRENDING BITLI DEALS -->
     <div class="live-offers-bar">
         <div class="section-header" style="margin-top:0;">
             <span>⚡ Trending Bitli Deals <span class="live-tag">LIVE</span></span>
@@ -286,9 +297,9 @@
                 <div class="card">
                     <span class="off-tag">70% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300" class="product-img" alt="Bitli Deal 1"></div>
+                        <div class="img-box"><img src="https://m.media-amazon.com/images/I/71L5lFC2XpL._SL1500_.jpg" class="product-img" alt="Smart Device"></div>
                         <span class="badge">Hot Deal</span>
-                        <div class="title">Special Smart Device Deal #1</div>
+                        <div class="title">Apple Watch Ultra Clone / Smartwatch</div>
                         <div class="price"><strong style="color: #15803d;">Best Price Online</strong></div>
                     </div>
                     <div class="btn btn-live">Grab Deal</div>
@@ -296,36 +307,36 @@
             </a>
             <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="card-link product-card">
                 <div class="card">
-                    <span class="off-tag">65% OFF</span>
+                    <span class="off-tag">68% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="Bitli Deal 2"></div>
+                        <div class="img-box"><img src="https://m.media-amazon.com/images/I/51rpbV892mL._SL1100_.jpg" class="product-img" alt="boAt Headphones"></div>
                         <span class="badge">Super Sale</span>
-                        <div class="title">Audio & Wireless Gadget #2</div>
-                        <div class="price"><strong style="color: #15803d;">Special Discount</strong></div>
+                        <div class="title">boAt Rockerz 450 Wireless Headphones</div>
+                        <div class="price"><strong style="color: #15803d;">₹1,299</strong></div>
                     </div>
                     <div class="btn btn-live">Grab Deal</div>
                 </div>
             </a>
             <a href="https://bitli.in/wJAlFrg" target="_blank" rel="noopener" class="card-link product-card">
                 <div class="card">
-                    <span class="off-tag">80% OFF</span>
+                    <span class="off-tag">75% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Bitli Deal 3"></div>
+                        <div class="img-box"><img src="https://m.media-amazon.com/images/I/61SSVxTSs3L._SL1500_.jpg" class="product-img" alt="Noise Smartwatch"></div>
                         <span class="badge">Limited Stock</span>
-                        <div class="title">Smartwatch & Wearable #3</div>
-                        <div class="price"><strong style="color: #15803d;">Lowest Price</strong></div>
+                        <div class="title">Noise Pulse 2 Max Smartwatch</div>
+                        <div class="price"><strong style="color: #15803d;">₹1,499</strong></div>
                     </div>
                     <div class="btn btn-live">Grab Deal</div>
                 </div>
             </a>
             <a href="https://bitli.in/20zQL2m" target="_blank" rel="noopener" class="card-link product-card">
                 <div class="card">
-                    <span class="off-tag">50% OFF</span>
+                    <span class="off-tag">70% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300" class="product-img" alt="Bitli Deal 4"></div>
+                        <div class="img-box"><img src="https://m.media-amazon.com/images/I/71D9ImsvEtL._UY695_.jpg" class="product-img" alt="Casual Shoes"></div>
                         <span class="badge">Best Seller</span>
-                        <div class="title">Fashion & Sunglasses Deal #4</div>
-                        <div class="price"><strong style="color: #15803d;">Flash Offer</strong></div>
+                        <div class="title">Casual Lightweight Sneakers Shoes</div>
+                        <div class="price"><strong style="color: #15803d;">₹749</strong></div>
                     </div>
                     <div class="btn btn-live">Grab Deal</div>
                 </div>
@@ -334,10 +345,22 @@
                 <div class="card">
                     <span class="off-tag">75% OFF</span>
                     <div>
-                        <div class="img-box"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300" class="product-img" alt="Bitli Deal 5"></div>
+                        <div class="img-box"><img src="https://m.media-amazon.com/images/I/61K-K2e3+SL._SL1500_.jpg" class="product-img" alt="Over Ear Headphones"></div>
                         <span class="badge">Top Pick</span>
-                        <div class="title">Electronics Special Offer #5</div>
+                        <div class="title">Studio Over-Ear Stereo Headphones</div>
                         <div class="price"><strong style="color: #15803d;">Check Price</strong></div>
+                    </div>
+                    <div class="btn btn-live">Grab Deal</div>
+                </div>
+            </a>
+            <a href="https://bitli.in/LRvzvns" target="_blank" rel="noopener" class="card-link product-card">
+                <div class="card">
+                    <span class="off-tag">65% OFF</span>
+                    <div>
+                        <div class="img-box"><img src="https://m.media-amazon.com/images/I/71+9S82DToL._UX695_.jpg" class="product-img" alt="Puma Shoes"></div>
+                        <span class="badge">Big Saver</span>
+                        <div class="title">Puma Men Sports Running Shoes</div>
+                        <div class="price"><strong style="color: #15803d;">₹1,399</strong></div>
                     </div>
                     <div class="btn btn-live">Grab Deal</div>
                 </div>
@@ -345,17 +368,17 @@
         </div>
     </div>
 
-    <!-- PURANA MIDDLE SECTION: AMAZON LIVE DEALS -->
+    <!-- AMAZON LIVE DEALS -->
     <div class="section-header">
         <span>🛒 Amazon Live Deals</span>
         <span class="swipe-hint">Swipe 👉</span>
     </div>
     <div class="slider-container">
-        <a href="https://bitli.in/8d4Y7FC" target="_blank" rel="noopener" class="card-link product-card">
+        <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="card-link product-card">
             <div class="card">
                 <span class="off-tag">68% OFF</span>
                 <div>
-                    <div class="img-box"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="boAt Headphones"></div>
+                    <div class="img-box"><img src="https://m.media-amazon.com/images/I/51rpbV892mL._SL1100_.jpg" class="product-img" alt="boAt Headphones"></div>
                     <span class="badge">Hot Deal</span>
                     <div class="title">boAt Rockerz 450 Bluetooth Headphones</div>
                     <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,990</span> <strong style="color: #15803d;">₹1,299</strong></div>
@@ -363,11 +386,11 @@
                 <div class="btn">Buy Now</div>
             </div>
         </a>
-        <a href="https://bitli.in/3y4uYu8" target="_blank" rel="noopener" class="card-link product-card">
+        <a href="https://bitli.in/wJAlFrg" target="_blank" rel="noopener" class="card-link product-card">
             <div class="card">
                 <span class="off-tag">75% OFF</span>
                 <div>
-                    <div class="img-box"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Noise Smartwatch"></div>
+                    <div class="img-box"><img src="https://m.media-amazon.com/images/I/61SSVxTSs3L._SL1500_.jpg" class="product-img" alt="Noise Smartwatch"></div>
                     <span class="badge">Best Seller</span>
                     <div class="title">Noise Pulse 2 Max Smartwatch</div>
                     <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹5,999</span> <strong style="color: #15803d;">₹1,499</strong></div>
@@ -377,7 +400,7 @@
         </a>
     </div>
 
-    <!-- PURANA MIDDLE SECTION: FASHION & LIFESTYLE -->
+    <!-- FASHION & LIFESTYLE HITS -->
     <div class="section-header">
         <span>👗 Fashion & Lifestyle Hits</span>
         <span class="swipe-hint">Swipe 👉</span>
@@ -387,7 +410,7 @@
             <div class="card">
                 <span class="off-tag">65% OFF</span>
                 <div>
-                    <div class="img-box"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" class="product-img" alt="Puma Shoes"></div>
+                    <div class="img-box"><img src="https://m.media-amazon.com/images/I/71+9S82DToL._UX695_.jpg" class="product-img" alt="Puma Shoes"></div>
                     <span class="badge">Big Saver</span>
                     <div class="title">Puma Men Sports Running Shoes</div>
                     <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹3,999</span> <strong style="color: #15803d;">₹1,399</strong></div>
@@ -399,7 +422,7 @@
             <div class="card">
                 <span class="off-tag">70% OFF</span>
                 <div>
-                    <div class="img-box"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300" class="product-img" alt="Casual Sneakers"></div>
+                    <div class="img-box"><img src="https://m.media-amazon.com/images/I/71D9ImsvEtL._UY695_.jpg" class="product-img" alt="Casual Shoes"></div>
                     <span class="badge">Popular</span>
                     <div class="title">Casual Lightweight Sneakers Shoes</div>
                     <div class="price"><span style="text-decoration: line-through; color: #94a3b8;">₹2,499</span> <strong style="color: #15803d;">₹749</strong></div>
@@ -409,72 +432,52 @@
         </a>
     </div>
 
-    <!-- NEW SECTION: KHALI JAGAH MEIN SAARE 40+ LIVE BITLI OFFERS -->
+    <!-- ALL 40+ LIVE BITLI OFFERS SECTION -->
     <div class="section-header">
         <span>🔥 All 40+ Live Bitli Offers</span>
     </div>
     <div class="grid-container" id="all40BitliContainer">
-        <!-- JavaScript se Saare 40+ Offers Yahan Render Honge -->
+        <!-- Rendered via JavaScript -->
     </div>
 
-    <!-- PURANA WHATSAPP BUTTON -->
     <a href="https://api.whatsapp.com/send?text=Check%20out%20the%20best%20daily%20loot%20deals:%20https://sndeals.github.io" target="_blank" rel="noopener" class="floating-whatsapp">
         💬 Share Deals on WhatsApp
     </a>
 
-    <!-- PURANA FOOTER -->
     <div class="footer">
         <p><strong>SN DEALS</strong> - Your Daily Savings Hub</p>
         <p>© 2026 SN Deals. All Rights Reserved.</p>
     </div>
 
-    <!-- JAVASCRIPT FOR 40+ BITLI LINKS (Khali Jagah Ke Liye) -->
+    <!-- EXACT PRODUCT MAPPING WITH BITLI LINKS -->
     <script>
         const extra40Deals = [
-            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Device Offer #1", badge: "Hot Deal", off: "70% OFF", price: "Best Price" },
-            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Wireless Headphones #2", badge: "Super Sale", off: "65% OFF", price: "Special Offer" },
-            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Smartwatch Limited #3", badge: "Limited Stock", off: "80% OFF", price: "Lowest Price" },
-            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "Sunglasses & Fashion #4", badge: "Best Seller", off: "50% OFF", price: "Flash Offer" },
-            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Electronics Special #5", badge: "Top Pick", off: "75% OFF", price: "Check Offer" },
-            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300", title: "Sports Running Shoes #6", badge: "Big Saver", off: "60% OFF", price: "Grab Deal" },
-            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300", title: "Casual Sneakers #7", badge: "Popular", off: "68% OFF", price: "Best Discount" },
-            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300", title: "Branded Sports Shoes #8", badge: "Hot Deal", off: "55% OFF", price: "Lowest Ever" },
-            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300", title: "Analog Men's Watch #9", badge: "Flash Sale", off: "72% OFF", price: "Limited Price" },
-            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300", title: "Trendy Formal Shoes #10", badge: "Top Rated", off: "40% OFF", price: "Super Saver" },
-            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300", title: "Mobile Accessories #11", badge: "Loot Deal", off: "85% OFF", price: "Unbeatable" },
-            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300", title: "Bluetooth Speaker #12", badge: "Best Buy", off: "50% OFF", price: "Special Price" },
-            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Earbuds TWS Offer #13", badge: "Hot Pick", off: "70% OFF", price: "Check Deal" },
-            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Fitness Band Tracker #14", badge: "New Arrival", off: "60% OFF", price: "Top Value" },
-            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Home Gadget #15", badge: "Super Deal", off: "75% OFF", price: "Best Rate" },
-            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "Stylish Eyewear #16", badge: "Trending", off: "45% OFF", price: "Grab Now" },
-            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Over-Ear Headphones #17", badge: "Big Savings", off: "65% OFF", price: "Offer Active" },
-            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300", title: "Men Fitness Shoes #18", badge: "Limited", off: "50% OFF", price: "Price Drop" },
-            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300", title: "Women Fashion Shoes #19", badge: "Hot Deal", off: "70% OFF", price: "Super Price" },
-            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300", title: "Casual Wear Shoes #20", badge: "Best Seller", off: "55% OFF", price: "Buy Now" },
-            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300", title: "Luxury Style Watch #21", badge: "Top Choice", off: "80% OFF", price: "Lowest Price" },
-            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300", title: "Men Leather Shoes #22", badge: "Special", off: "60% OFF", price: "Check Offer" },
-            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300", title: "Fast Charger Cable #23", badge: "Loot Deal", off: "90% OFF", price: "Crazy Price" },
-            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300", title: "Mini Wireless Speaker #24", badge: "Best Value", off: "50% OFF", price: "Grab Fast" },
-            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Noise Cancelling Buds #25", badge: "Hot Pick", off: "65% OFF", price: "Flash Deal" },
-            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Smart Watch Display #26", badge: "Featured", off: "75% OFF", price: "Best Price" },
-            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Device Loot #27", badge: "Super Offer", off: "70% OFF", price: "Special" },
-            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "Polarized Sunglasses #28", badge: "Best Seller", off: "50% OFF", price: "Low Price" },
-            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Gaming Headphones #29", badge: "Top Pick", off: "80% OFF", price: "Huge Off" },
-            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300", title: "Lightweight Sneakers #30", badge: "Big Saver", off: "60% OFF", price: "Check Deal" },
-            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300", title: "Running Sports Shoes #31", badge: "Popular", off: "65% OFF", price: "Grab Now" },
-            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=300", title: "Athletic Shoes #32", badge: "Hot Deal", off: "55% OFF", price: "Lowest Price" },
-            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=300", title: "Classic Men Watch #33", badge: "Limited", off: "75% OFF", price: "Offer Active" },
-            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300", title: "Formal Party Shoes #34", badge: "Top Rated", off: "45% OFF", price: "Best Buy" },
-            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300", title: "Power Bank Special #35", badge: "Loot Deal", off: "80% OFF", price: "Super Rate" },
-            { link: "https://bitli.in/LRvzvns", img: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=300", title: "Soundbar Speaker #36", badge: "Best Value", off: "50% OFF", price: "Price Drop" },
-            { link: "https://bitli.in/8d4Y7FC", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300", title: "Wireless Neckband #37", badge: "Hot Pick", off: "70% OFF", price: "Grab Fast" },
-            { link: "https://bitli.in/3y4uYu8", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", title: "Calling Smartwatch #38", badge: "Featured", off: "60% OFF", price: "Top Value" },
-            { link: "https://bitli.in/wJAlFrg", img: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300", title: "Smart Gadget Offer #39", badge: "Super Offer", off: "85% OFF", price: "Lowest Ever" },
-            { link: "https://bitli.in/20zQL2m", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300", title: "UV Sunglasses Pack #40", badge: "Best Seller", off: "50% OFF", price: "Flash Deal" },
-            { link: "https://bitli.in/X419Hkm", img: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", title: "Audio Headphones #41", badge: "Top Pick", off: "70% OFF", price: "Check Offer" }
+            { link: "https://bitli.in/8d4Y7FC", img: "https://m.media-amazon.com/images/I/71L5lFC2XpL._SL1500_.jpg", title: "Smart Watch Ultra Clone", badge: "Hot Deal", off: "70% OFF", price: "₹1,499" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://m.media-amazon.com/images/I/51rpbV892mL._SL1100_.jpg", title: "boAt Rockerz 450 Bluetooth Headphone", badge: "Super Sale", off: "68% OFF", price: "₹1,299" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://m.media-amazon.com/images/I/61SSVxTSs3L._SL1500_.jpg", title: "Noise Pulse 2 Max Smartwatch", badge: "Limited Stock", off: "75% OFF", price: "₹1,499" },
+            { link: "https://bitli.in/20zQL2m", img: "https://m.media-amazon.com/images/I/51-24N49v3L._UX695_.jpg", title: "Retro UV Protection Sunglasses", badge: "Best Seller", off: "50% OFF", price: "₹399" },
+            { link: "https://bitli.in/X419Hkm", img: "https://m.media-amazon.com/images/I/61K-K2e3+SL._SL1500_.jpg", title: "Over-Ear Extra Bass Headphones", badge: "Top Pick", off: "75% OFF", price: "₹899" },
+            { link: "https://bitli.in/LRvzvns", img: "https://m.media-amazon.com/images/I/71+9S82DToL._UX695_.jpg", title: "Puma Men Sports Running Shoes", badge: "Big Saver", off: "65% OFF", price: "₹1,399" },
+            { link: "https://bitli.in/20zQL2m", img: "https://m.media-amazon.com/images/I/71D9ImsvEtL._UY695_.jpg", title: "Casual Canvas Sneakers Shoes", badge: "Popular", off: "70% OFF", price: "₹749" },
+            { link: "https://bitli.in/LRvzvns", img: "https://m.media-amazon.com/images/I/61UTX87-GJL._UX695_.jpg", title: "White Branded Sports Shoes", badge: "Hot Deal", off: "55% OFF", price: "₹999" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://m.media-amazon.com/images/I/71c3BOn5nDL._SL1500_.jpg", title: "Analog Chronograph Men's Watch", badge: "Flash Sale", off: "72% OFF", price: "₹899" },
+            { link: "https://bitli.in/20zQL2m", img: "https://m.media-amazon.com/images/I/61+R+xPqJSL._UY695_.jpg", title: "Trendy Formal Synthetic Shoes", badge: "Top Rated", off: "40% OFF", price: "₹899" },
+            { link: "https://bitli.in/X419Hkm", img: "https://m.media-amazon.com/images/I/613YAn3aQ3L._SL1500_.jpg", title: "Fast Charging Cable & Accessories", badge: "Loot Deal", off: "85% OFF", price: "₹199" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://m.media-amazon.com/images/I/71y-1yq-m3L._SL1500_.jpg", title: "Portable Wireless Bluetooth Speaker", badge: "Best Buy", off: "50% OFF", price: "₹499" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://m.media-amazon.com/images/I/51rpbV892mL._SL1100_.jpg", title: "boAt Rockerz 450", badge: "Hot Deal", off: "68% OFF", price: "₹1,299" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://m.media-amazon.com/images/I/61SSVxTSs3L._SL1500_.jpg", title: "Noise Pulse 2 Max", badge: "Best Seller", off: "75% OFF", price: "₹1,499" },
+            { link: "https://bitli.in/8d4Y7FC", img: "https://m.media-amazon.com/images/I/71L5lFC2XpL._SL1500_.jpg", title: "Smart Watch Ultra", badge: "Super Deal", off: "70% OFF", price: "₹1,499" },
+            { link: "https://bitli.in/20zQL2m", img: "https://m.media-amazon.com/images/I/51-24N49v3L._UX695_.jpg", title: "UV Polarized Sunglasses", badge: "Trending", off: "50% OFF", price: "₹399" },
+            { link: "https://bitli.in/X419Hkm", img: "https://m.media-amazon.com/images/I/61K-K2e3+SL._SL1500_.jpg", title: "Over-Ear Studio Headset", badge: "Big Savings", off: "65% OFF", price: "₹899" },
+            { link: "https://bitli.in/LRvzvns", img: "https://m.media-amazon.com/images/I/71+9S82DToL._UX695_.jpg", title: "Men Running Red Shoes", badge: "Limited", off: "60% OFF", price: "₹1,299" },
+            { link: "https://bitli.in/20zQL2m", img: "https://m.media-amazon.com/images/I/71D9ImsvEtL._UY695_.jpg", title: "Lightweight Casual Canvas", badge: "Popular", off: "70% OFF", price: "₹749" },
+            { link: "https://bitli.in/LRvzvns", img: "https://m.media-amazon.com/images/I/61UTX87-GJL._UX695_.jpg", title: "White Athletic Shoes", badge: "Best Seller", off: "55% OFF", price: "₹999" },
+            { link: "https://bitli.in/wJAlFrg", img: "https://m.media-amazon.com/images/I/71c3BOn5nDL._SL1500_.jpg", title: "Chronograph Leather Watch", badge: "Top Choice", off: "80% OFF", price: "₹899" },
+            { link: "https://bitli.in/20zQL2m", img: "https://m.media-amazon.com/images/I/61+R+xPqJSL._UY695_.jpg", title: "Classic Formal Shoes", badge: "Special", off: "45% OFF", price: "₹899" },
+            { link: "https://bitli.in/X419Hkm", img: "https://m.media-amazon.com/images/I/613YAn3aQ3L._SL1500_.jpg", title: "High Speed Type-C Cable", badge: "Loot Deal", off: "90% OFF", price: "₹99" },
+            { link: "https://bitli.in/3y4uYu8", img: "https://m.media-amazon.com/images/I/71y-1yq-m3L._SL1500_.jpg", title: "Mini Wireless Speaker", badge: "Best Value", off: "50% OFF", price: "₹499" }
         ];
 
-        // Bottom Section Rendering
         const gridContainer = document.getElementById('all40BitliContainer');
         let htmlContent = "";
         
@@ -496,7 +499,6 @@
         });
         gridContainer.innerHTML = htmlContent;
 
-        // Search Filter Function (Purana + Naya Dono Filter Karega)
         function filterProducts() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('product-card');
