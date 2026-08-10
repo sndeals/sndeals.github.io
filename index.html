@@ -119,10 +119,10 @@
             box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
         }
         
-        /* LOGO IMAGE & SVG STYLING */
+        /* LOGO SVG & IMAGE STYLING */
         .store-chip img, .store-chip svg {
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             object-fit: contain;
             margin-bottom: 4px;
             border-radius: 8px;
@@ -327,58 +327,84 @@
         <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search store, brand or deal...">
     </div>
 
-    <!-- TOP SHOPPING STORES -->
+    <!-- TOP SHOPPING STORES (100% RELIABLE INLINE SVG LOGOS) -->
     <div class="top-stores-section">
         <div class="stores-title">🛍️ Top Shopping Stores</div>
         <div class="top-stores-grid">
             
-            <!-- AMAZON -->
+            <!-- AMAZON INLINE SVG -->
             <a href="https://amazon.in" target="_blank" rel="noopener" class="store-chip">
-                <img src="https://img.icons8.com/color/96/amazon.png" alt="Amazon Logo">
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#232f3e"/>
+                    <path d="M28 62 C 45 74, 65 74, 75 58 C 76 56, 78 58, 77 60 C 65 77, 42 78, 28 62 Z" fill="#ff9900"/>
+                    <path d="M72 55 L79 60 L73 66 Z" fill="#ff9900"/>
+                    <text x="50" y="46" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="#ffffff" text-anchor="middle">a</text>
+                </svg>
                 <span>Amazon</span>
             </a>
 
-            <!-- FLIPKART (FIXED WITH HIGH-RES PNG) -->
+            <!-- FLIPKART INLINE SVG -->
             <a href="https://flipkart.com" target="_blank" rel="noopener" class="store-chip">
-                <img src="https://img.icons8.com/color/96/flipkart.png" alt="Flipkart Logo">
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#ffe500"/>
+                    <path d="M25 25 H70 V75 H25 Z" fill="#2874f0" rx="6"/>
+                    <text x="47" y="62" font-family="Arial, sans-serif" font-weight="900" font-size="42" fill="#ffe500" text-anchor="middle" font-style="italic">f</text>
+                </svg>
                 <span>Flipkart</span>
             </a>
 
-            <!-- MYNTRA -->
+            <!-- MYNTRA INLINE SVG -->
             <a href="https://myntra.com" target="_blank" rel="noopener" class="store-chip">
-                <img src="https://img.icons8.com/color/96/myntra.png" alt="Myntra Logo">
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#ffffff"/>
+                    <path d="M20 70 L35 30 L50 55 L65 30 L80 70" fill="none" stroke="#ff3f6c" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M35 30 L50 55 L65 30" fill="none" stroke="#f26a10" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <span>Myntra</span>
             </a>
 
-            <!-- AJIO -->
+            <!-- AJIO INLINE SVG -->
             <a href="https://ajio.com" target="_blank" rel="noopener" class="store-chip">
-                <img src="https://assets.ajio.com/static/img/Ajio-Logo.svg" alt="AJIO Logo" style="background: #222; padding: 4px;">
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#2c4152"/>
+                    <text x="50" y="58" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#ffffff" text-anchor="middle" letter-spacing="2">AJIO</text>
+                </svg>
                 <span>AJIO</span>
             </a>
 
-            <!-- MEESHO (FIXED INLINE HIGH-QUALITY ICON/SVG) -->
+            <!-- MEESHO INLINE SVG -->
             <a href="https://meesho.com" target="_blank" rel="noopener" class="store-chip">
-                <svg viewBox="0 0 100 100" style="background:#5b0e4e; border-radius:8px; padding:6px;">
-                    <path d="M20 75 V30 Q20 20 35 20 Q50 20 50 35 V75 M50 35 Q50 20 65 20 Q80 20 80 30 V75" fill="none" stroke="#f48220" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#511835"/>
+                    <path d="M25 72 V35 Q25 22 40 22 Q50 22 50 35 V72 M50 35 Q50 22 60 22 Q75 22 75 35 V72" fill="none" stroke="#f48220" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span>Meesho</span>
             </a>
 
             <!-- HAMARA MALL -->
             <a href="#" class="store-chip">
-                <img src="https://img.icons8.com/color/96/shopping-bag--v1.png" alt="Hamara Mall Logo">
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#10b981"/>
+                    <text x="50" y="62" font-size="40" text-anchor="middle">🛍️</text>
+                </svg>
                 <span>Hamara Mall</span>
             </a>
 
             <!-- MAVIGADGET -->
             <a href="#" class="store-chip">
-                <img src="https://img.icons8.com/color/96/electronics.png" alt="MaviGadget Logo">
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#0284c7"/>
+                    <text x="50" y="62" font-size="40" text-anchor="middle">🔌</text>
+                </svg>
                 <span>MaviGadget</span>
             </a>
 
             <!-- NIKOLATOY -->
             <a href="#" class="store-chip">
-                <img src="https://img.icons8.com/color/96/teddy-bear.png" alt="NikolaToy Logo">
+                <svg viewBox="0 0 100 100">
+                    <rect width="100" height="100" rx="20" fill="#f43f5e"/>
+                    <text x="50" y="62" font-size="40" text-anchor="middle">🧸</text>
+                </svg>
                 <span>NikolaToy</span>
             </a>
 
