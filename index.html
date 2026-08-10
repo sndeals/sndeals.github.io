@@ -26,14 +26,14 @@
             margin: 0;
             padding: 12px;
             color: #1e293b;
-            background-color: #f8fafc;
+            background-color: #f1f5f9;
             overflow-x: hidden;
             padding-bottom: 80px;
         }
 
         /* TICKER */
         .ticker-wrap {
-            background: #059669;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
             color: white;
             padding: 8px;
             font-size: 12px;
@@ -41,11 +41,12 @@
             text-align: center;
             border-radius: 8px;
             margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
         }
 
         /* HEADER */
         .brand-header {
-            background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
             border-radius: 16px;
             padding: 20px 15px;
             margin-bottom: 15px;
@@ -72,21 +73,26 @@
         .search-input {
             width: 100%;
             padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
             font-size: 14px;
             outline: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+        }
+        .search-input:focus {
+            border-color: #0d9488;
         }
 
         /* TOP STORES GRID */
         .top-stores-section {
             background: #ffffff;
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 14px 12px;
             margin-bottom: 16px;
             border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
         .stores-title {
             font-size: 14px;
@@ -106,22 +112,22 @@
             justify-content: center;
             background: #ffffff;
             padding: 8px 4px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-decoration: none;
             color: #0f172a;
             border: 1px solid #f1f5f9;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
             transition: all 0.2s ease;
         }
         .store-chip:hover {
-            transform: translateY(-2px);
-            border-color: #0d9488;
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
         .store-chip svg {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             margin-bottom: 4px;
+            border-radius: 8px;
         }
         .store-chip span {
             font-size: 11px;
@@ -141,14 +147,16 @@
         .category-scroll::-webkit-scrollbar { display: none; }
         .cat-btn {
             background: #ffffff;
-            border: 1px solid #0d9488;
+            border: 1.5px solid #0d9488;
             color: #0d9488;
-            padding: 6px 14px;
+            padding: 7px 15px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 700;
             white-space: nowrap;
             cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
         }
         .cat-btn.active, .cat-btn:hover {
             background: #0d9488;
@@ -173,9 +181,10 @@
         .live-offers-bar {
             background: #ffffff;
             border: 2px solid #0d9488;
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 12px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.08);
         }
         .live-tag {
             background: #ef4444;
@@ -236,7 +245,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: #f1f5f9;
+            background: #f8fafc;
             border-radius: 8px;
             margin-bottom: 8px;
             padding: 6px;
@@ -291,11 +300,12 @@
             position: fixed;
             bottom: 15px; left: 50%;
             transform: translateX(-50%);
-            background: #25d366; color: white;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
             padding: 12px 26px; border-radius: 30px;
             font-weight: 800; font-size: 13px;
             text-decoration: none;
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             z-index: 999;
             white-space: nowrap;
         }
@@ -323,86 +333,92 @@
         <input type="text" id="searchInput" class="search-input" onkeyup="filterProducts()" placeholder="🔍 Search store, brand or deal...">
     </div>
 
-    <!-- TOP SHOPPING STORES (100% ORIGINAL VECTOR BRAND LOGOS) -->
+    <!-- TOP SHOPPING STORES (COLORFUL & VIBRANT BRAND LOGOS) -->
     <div class="top-stores-section">
         <div class="stores-title">🛍️ Top Shopping Stores</div>
         <div class="top-stores-grid">
             
-            <!-- AMAZON ORIGINAL LOGO -->
+            <!-- AMAZON LOGO (Dark Navy + Orange Arrow) -->
             <a href="https://amazon.in" target="_blank" rel="noopener" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#232F3E"/>
+                    <rect width="100" height="100" rx="18" fill="#131921"/>
                     <text x="50" y="44" font-family="'Arial Black', sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle">amazon</text>
-                    <path d="M 28 56 C 45 68 68 62 76 50" stroke="#FF9900" stroke-width="5" fill="none" stroke-linecap="round"/>
-                    <path d="M 72 47 L 80 50 L 75 58 Z" fill="#FF9900"/>
+                    <path d="M 26 58 C 45 70 68 64 76 52" stroke="#FF9900" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <path d="M 72 49 L 81 52 L 75 60 Z" fill="#FF9900"/>
                 </svg>
                 <span>Amazon</span>
             </a>
 
-            <!-- FLIPKART ORIGINAL LOGO -->
+            <!-- FLIPKART LOGO (Bright Blue + Yellow) -->
             <a href="https://flipkart.com" target="_blank" rel="noopener" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#2874F0"/>
-                    <path d="M22 25 H68 L60 75 H22 Z" fill="#FFE500"/>
-                    <text x="41" y="62" font-family="'Trebuchet MS', Arial, sans-serif" font-weight="900" font-style="italic" font-size="40" fill="#2874F0" text-anchor="middle">f</text>
-                    <circle cx="68" cy="38" r="4" fill="#2874F0"/>
+                    <rect width="100" height="100" rx="18" fill="#2874F0"/>
+                    <path d="M 22 22 H 68 L 60 78 H 22 Z" fill="#FFE500"/>
+                    <text x="41" y="64" font-family="'Trebuchet MS', Arial, sans-serif" font-weight="900" font-style="italic" font-size="42" fill="#2874F0" text-anchor="middle">f</text>
+                    <circle cx="68" cy="36" r="4.5" fill="#2874F0"/>
                 </svg>
                 <span>Flipkart</span>
             </a>
 
-            <!-- MYNTRA ORIGINAL LOGO -->
+            <!-- MYNTRA LOGO (Magenta + Orange Gradient) -->
             <a href="https://myntra.com" target="_blank" rel="noopener" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
-                    <path d="M 20 68 V 32 L 35 54 L 50 32 V 68" fill="none" stroke="#FF3F6C" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M 50 68 V 32 L 65 54 L 80 32 V 68" fill="none" stroke="#FF905A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="myntraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF3F6C;" />
+                            <stop offset="100%" style="stop-color:#FF905A;" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100" height="100" rx="18" fill="#FFF0F5"/>
+                    <path d="M 18 68 V 32 L 34 54 L 50 32 V 68" fill="none" stroke="url(#myntraGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 50 68 V 32 L 66 54 L 82 32 V 68" fill="none" stroke="#FF3F6C" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span>Myntra</span>
             </a>
 
-            <!-- AJIO ORIGINAL LOGO -->
+            <!-- AJIO LOGO (Bold Dark Charcoal) -->
             <a href="https://ajio.com" target="_blank" rel="noopener" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#212529"/>
+                    <rect width="100" height="100" rx="18" fill="#2C3E50"/>
                     <text x="50" y="58" font-family="-apple-system, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">AJIO</text>
                 </svg>
                 <span>AJIO</span>
             </a>
 
-            <!-- MEESHO ORIGINAL LOGO -->
+            <!-- MEESHO LOGO (Vibrant Pink/Magenta) -->
             <a href="https://meesho.com" target="_blank" rel="noopener" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#9F2089"/>
-                    <path d="M 22 70 V 30 L 36 50 L 50 30 V 70" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M 50 70 V 30 L 64 50 L 78 30 V 70" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect width="100" height="100" rx="18" fill="#9F2089"/>
+                    <path d="M 22 70 V 30 L 36 50 L 50 30 V 70" fill="none" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 50 70 V 30 L 64 50 L 78 30 V 70" fill="none" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span>Meesho</span>
             </a>
 
-            <!-- HAMARA MALL LOGO -->
+            <!-- HAMARA MALL LOGO (Vibrant Sky Blue) -->
             <a href="#" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#0EA5E9"/>
+                    <rect width="100" height="100" rx="18" fill="#0284C7"/>
                     <path d="M25 75 V 42 L 50 25 L 75 42 V 75 Z" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
                     <rect x="42" y="52" width="16" height="23" fill="#FFFFFF"/>
                 </svg>
                 <span>Hamara Mall</span>
             </a>
 
-            <!-- MAVIGADGET LOGO -->
+            <!-- MAVIGADGET LOGO (Tech Emerald Green) -->
             <a href="#" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#111827"/>
+                    <rect width="100" height="100" rx="18" fill="#0F172A"/>
                     <circle cx="50" cy="50" r="26" fill="none" stroke="#10B981" stroke-width="6"/>
                     <polygon points="42,36 64,50 42,64" fill="#10B981"/>
                 </svg>
                 <span>MaviGadget</span>
             </a>
 
-            <!-- NIKOLATOY LOGO -->
+            <!-- NIKOLATOY LOGO (Playful Purple & Rose) -->
             <a href="#" class="store-chip">
                 <svg viewBox="0 0 100 100">
-                    <rect width="100" height="100" rx="20" fill="#8B5CF6"/>
+                    <rect width="100" height="100" rx="18" fill="#8B5CF6"/>
                     <circle cx="36" cy="32" r="8" fill="#F43F5E"/>
                     <circle cx="64" cy="32" r="8" fill="#F43F5E"/>
                     <circle cx="50" cy="46" r="16" fill="#FFFFFF"/>
